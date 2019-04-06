@@ -2,8 +2,19 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import * as firebase from 'Firebase';
+const config = {
+  apiKey: "AIzaSyBnv2FDzNmV3Auz8FlHkkApsgujK6ASTXk",
+  authDomain: "teste-c17e4.firebaseapp.com",
+  databaseURL: "https://teste-c17e4.firebaseio.com",
+  projectId: "teste-c17e4",
+  storageBucket: "teste-c17e4.appspot.com",
+  messagingSenderId: "872085547758"
+};
+firebase.initializeApp(config);
 
 import { TabsPage } from '../pages/tabs/tabs';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -18,5 +29,6 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+    
   }
 }
