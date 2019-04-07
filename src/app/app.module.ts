@@ -8,6 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FeedNoticiaProvider } from '../providers/feed-noticia/feed-noticia';
 import { FeedNoticiaPage } from '../pages/feed-noticia/feed-noticia';
+import { MenuPage } from '../pages/menu/menu';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FeedNoticiaPage } from '../pages/feed-noticia/feed-noticia';
     HomePage,
     TabsPage,
     FeedNoticiaPage,
+    MenuPage
     
   ],
   imports: [
@@ -26,7 +28,8 @@ import { FeedNoticiaPage } from '../pages/feed-noticia/feed-noticia';
     MyApp,
     HomePage,
     TabsPage,
-    FeedNoticiaPage
+    FeedNoticiaPage,
+    MenuPage
   ],
   providers: [
     StatusBar,
