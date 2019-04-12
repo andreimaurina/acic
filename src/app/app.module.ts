@@ -8,6 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FeedNoticiaProvider } from '../providers/feed-noticia/feed-noticia';
 import { FeedNoticiaPage } from '../pages/feed-noticia/feed-noticia';
+import { CadastrarAssociadoPage } from '../pages/cadastrar-associado/cadastrar-associado';
 import { MenuPage } from '../pages/menu/menu';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { MenuPage } from '../pages/menu/menu';
     HomePage,
     TabsPage,
     FeedNoticiaPage,
+    CadastrarAssociadoPage,
     MenuPage
     
   ],
@@ -29,6 +31,7 @@ import { MenuPage } from '../pages/menu/menu';
     HomePage,
     TabsPage,
     FeedNoticiaPage,
+    CadastrarAssociadoPage,
     MenuPage
   ],
   providers: [

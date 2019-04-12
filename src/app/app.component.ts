@@ -13,6 +13,7 @@ const config = {
 };
 firebase.initializeApp(config);
 
+import { CadastrarAssociadoPage } from '../pages/cadastrar-associado/cadastrar-associado';
 import { TabsPage } from '../pages/tabs/tabs';
 
 
