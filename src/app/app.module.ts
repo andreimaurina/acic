@@ -9,6 +9,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { FeedNoticiaProvider } from '../providers/feed-noticia/feed-noticia';
 import { FeedNoticiaPage } from '../pages/feed-noticia/feed-noticia';
 import { MenuPage } from '../pages/menu/menu';
+import { EventoProvider } from '../providers/evento/evento';
+import { CadastroEventoPage } from '../pages/cadastro-evento/cadastro-evento';
+import { ListaEventoPage } from '../pages/lista-evento/lista-evento';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { MenuPage } from '../pages/menu/menu';
     HomePage,
     TabsPage,
     FeedNoticiaPage,
-    MenuPage
+    MenuPage,
+    CadastroEventoPage,
+    ListaEventoPage
     
   ],
   imports: [
@@ -29,13 +34,16 @@ import { MenuPage } from '../pages/menu/menu';
     HomePage,
     TabsPage,
     FeedNoticiaPage,
-    MenuPage
+    MenuPage,
+    CadastroEventoPage,
+    ListaEventoPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    FeedNoticiaProvider
+    FeedNoticiaProvider,
+    EventoProvider
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
