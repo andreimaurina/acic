@@ -8,6 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FeedNoticiaProvider } from '../providers/feed-noticia/feed-noticia';
 import { FeedNoticiaPage } from '../pages/feed-noticia/feed-noticia';
+import { CadastrarAssociadoPage } from '../pages/cadastrar-associado/cadastrar-associado';
 import { MenuPage } from '../pages/menu/menu';
 import { EventoProvider } from '../providers/evento/evento';
 import { CadastroEventoPage } from '../pages/cadastro-evento/cadastro-evento';
@@ -21,7 +22,9 @@ import { ListaEventoPage } from '../pages/lista-evento/lista-evento';
     FeedNoticiaPage,
     MenuPage,
     CadastroEventoPage,
-    ListaEventoPage
+    ListaEventoPage,
+    CadastrarAssociadoPage,
+    MenuPage
     
   ],
   imports: [
@@ -36,7 +39,9 @@ import { ListaEventoPage } from '../pages/lista-evento/lista-evento';
     FeedNoticiaPage,
     MenuPage,
     CadastroEventoPage,
-    ListaEventoPage
+    ListaEventoPage,
+    CadastrarAssociadoPage,
+    MenuPage
   ],
   providers: [
     StatusBar,
