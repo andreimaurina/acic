@@ -13,6 +13,14 @@ import { MenuPage } from '../pages/menu/menu';
 import { EventoProvider } from '../providers/evento/evento';
 import { CadastroEventoPage } from '../pages/cadastro-evento/cadastro-evento';
 import { ListaEventoPage } from '../pages/lista-evento/lista-evento';
+import { ListaAssociadoPage } from '../pages/lista-associado/lista-associado';
+import { ListaBeneficioPage } from '../pages/lista-beneficio/lista-beneficio';
+import { CadastroBeneficioPage } from '../pages/cadastro-beneficio/cadastro-beneficio';
+import { CadastroServicoPage } from '../pages/cadastro-servico/cadastro-servico';
+import { ListaServicoPage } from '../pages/lista-servico/lista-servico';
+import { ListaVagaPage } from '../pages/lista-vaga/lista-vaga';
+import { CadastroVagaPage } from '../pages/cadastro-vaga/cadastro-vaga';
+import { SobrePage } from '../pages/sobre/sobre';
 
 @NgModule({
   declarations: [
@@ -21,10 +29,18 @@ import { ListaEventoPage } from '../pages/lista-evento/lista-evento';
     TabsPage,
     FeedNoticiaPage,
     MenuPage,
-    CadastroEventoPage,
     ListaEventoPage,
+    CadastroEventoPage, 
+    ListaAssociadoPage,  
     CadastrarAssociadoPage,
-    MenuPage
+    ListaBeneficioPage,
+    CadastroBeneficioPage,
+    ListaServicoPage,
+    CadastroServicoPage,    
+    ListaVagaPage,
+    CadastroVagaPage,
+    SobrePage
+    
     
   ],
   imports: [
@@ -38,10 +54,18 @@ import { ListaEventoPage } from '../pages/lista-evento/lista-evento';
     TabsPage,
     FeedNoticiaPage,
     MenuPage,
-    CadastroEventoPage,
     ListaEventoPage,
+    CadastroEventoPage, 
+    ListaAssociadoPage,  
     CadastrarAssociadoPage,
-    MenuPage
+    ListaBeneficioPage,
+    CadastroBeneficioPage,
+    ListaServicoPage,
+    CadastroServicoPage,    
+    ListaVagaPage,
+    CadastroVagaPage,
+    SobrePage
+    
   ],
   providers: [
     StatusBar,
