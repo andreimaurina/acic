@@ -12,12 +12,13 @@
 
 <ion-content padding>
     <ion-content>
-      <ion-list>
-        <ion-item value="S"(click)="direciona(value)">Associados</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
+      <ion-list> 
+        <ion-item (click)="direciona('A')">Associados</ion-item>
+        <ion-item (click)="direciona('S')">Serviço</ion-item>
+        <ion-item (click)="direciona('E')">Eventos</ion-item>
+        <ion-item (click)="direciona('B')">Benefícios</ion-item>
+        <ion-item (click)="direciona('V')">Vagas de Emprego</ion-item>
+        <ion-item (click)="direciona('SO')">Sobre</ion-item>
       </ion-list>
     </ion-content>
 </ion-content>
