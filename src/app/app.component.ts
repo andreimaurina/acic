@@ -15,6 +15,8 @@ firebase.initializeApp(config);
 
 import { CadastrarAssociadoPage } from '../pages/cadastrar-associado/cadastrar-associado';
 import { TabsPage } from '../pages/tabs/tabs';
+import { CadastroEventoPage } from '../pages/cadastro-evento/cadastro-evento';
+import { ListaEventoPage } from '../pages/lista-evento/lista-evento';
 
 
 @Component({

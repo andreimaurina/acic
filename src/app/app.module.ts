@@ -10,6 +10,9 @@ import { FeedNoticiaProvider } from '../providers/feed-noticia/feed-noticia';
 import { FeedNoticiaPage } from '../pages/feed-noticia/feed-noticia';
 import { CadastrarAssociadoPage } from '../pages/cadastrar-associado/cadastrar-associado';
 import { MenuPage } from '../pages/menu/menu';
+import { EventoProvider } from '../providers/evento/evento';
+import { CadastroEventoPage } from '../pages/cadastro-evento/cadastro-evento';
+import { ListaEventoPage } from '../pages/lista-evento/lista-evento';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { MenuPage } from '../pages/menu/menu';
     HomePage,
     TabsPage,
     FeedNoticiaPage,
+    MenuPage,
+    CadastroEventoPage,
+    ListaEventoPage,
     CadastrarAssociadoPage,
     MenuPage
     
@@ -31,6 +37,9 @@ import { MenuPage } from '../pages/menu/menu';
     HomePage,
     TabsPage,
     FeedNoticiaPage,
+    MenuPage,
+    CadastroEventoPage,
+    ListaEventoPage,
     CadastrarAssociadoPage,
     MenuPage
   ],
@@ -38,7 +47,8 @@ import { MenuPage } from '../pages/menu/menu';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    FeedNoticiaProvider
+    FeedNoticiaProvider,
+    EventoProvider
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
