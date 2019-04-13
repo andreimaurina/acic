@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CadastrarAssociadoPage } from '../cadastrar-associado/cadastrar-associado';
 
 /**
  * Generated class for the MenuPage page.
@@ -20,6 +21,12 @@ export class MenuPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
+  }
+
+  direciona(local){
+    if(local = "S"){
+      this.navCtrl.push(CadastrarAssociadoPage)
+    }
   }
 
 }
