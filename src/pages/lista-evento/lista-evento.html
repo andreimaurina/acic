@@ -11,12 +11,16 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-list inset>
-        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-          {{ item }}
-        </button> 
-      </ion-list>
-
+  <form>
+    <ion-item>
+      <ion-label position="floating">local</ion-label>
+      <ion-input type="text" name="local" [(ngModel)]="evento.local"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Data</ion-label>
+      <ion-input type="text"  name="data" [(ngModel)]="evento.data"></ion-input>
+    </ion-item>
+  </form>
 </ion-content>
 
 

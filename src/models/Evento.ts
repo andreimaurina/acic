@@ -1,7 +1,7 @@
 import { Associado } from "./Associado";
 
 export class Evento {
-    cod: number;
+    codigo: number;
     nome: string;
     data: Date;
     hora: string;
