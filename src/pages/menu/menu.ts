@@ -30,21 +30,26 @@ export class MenuPage {
 
   direciona(local){
     console.log(local)
-    if(local == "A"){
-      this.navCtrl.push(CadastrarAssociadoPage);
-    } else if (local == "S"){
+    switch(local){
+      case(local = "A"):
+        this.navCtrl.push(CadastrarAssociadoPage);
+      break;
+      case(local = "S"):
         this.navCtrl.push(ListaServicoPage);
-    } else if (local == "E"){
+      break;
+      case(local = "E"):
         this.navCtrl.push(ListaEventoPage);
-    } else if (local == "B"){
+      break;
+      case(local = "B"):
         this.navCtrl.push(ListaBeneficioPage);
-    } else if (local == "V"){
+      break;
+      case(local = "V"):
         this.navCtrl.push(ListaVagaPage);
-    } else {
+      break;
+      case(local = "SO"):
         this.navCtrl.push(SobrePage);
+      break;
     }
-    
-    // tentar alterar para switch case
 
   }
 
