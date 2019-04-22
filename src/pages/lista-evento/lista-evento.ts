@@ -3,39 +3,35 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as firebase from 'Firebase';
 import { Evento } from '../../models/Evento';
 
-/**
- * Generated class for the ListaEventoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-lista-evento',
   templateUrl: 'lista-evento.html',
 })
 export class ListaEventoPage {
-
-  codigo = null;
-  evento : Evento;
+  
+  eventos = [];
+  ref = firebase.database().ref('evento/');
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.codigo = this.navParams.data.codigo;
-      firebase.database().ref(`evento/${this.codigo}`).on('value', resp => {
-        this.evento = snapshotToObject(resp);
-      });
-    }
-  
-
-
+    this.ref.on('value', resp => {
+    this.eventos = [];
+    this.eventos = snapshotToArray(resp);
+    console.log(this.eventos);
+    })
+  }
     ionViewDidLoad() {
       console.log('ionViewDidLoad FormInfoPage');
     }
   }
-  export const snapshotToObject = snapshot => {
-    let item = snapshot.val();
-    item.codigo = snapshot.codigo;
-  
-    return item;
+
+  export const snapshotToArray = snapshot => {
+    let returnArr = [];
+
+    snapshot.forEach(childSnapshot => {
+        let item = childSnapshot.val();
+        item.codigo = childSnapshot.codigo;
+        returnArr.push(item);
+    });
+    return returnArr;
   }

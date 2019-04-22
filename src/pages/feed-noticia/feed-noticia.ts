@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the FeedNoticiaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -22,4 +16,13 @@ export class FeedNoticiaPage {
     console.log('ionViewDidLoad FeedNoticiaPage');
   }
 
+
+  // converte(){
+  //   var parseString = require('xml2js').parseString;
+  //   var xml = "<root>Hello xml2js!</root>"
+  //   parseString(xml, function (err, result) {
+  //       console.dir(result);
+  //   });
+  // }
 }
+

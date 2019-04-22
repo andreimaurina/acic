@@ -17,6 +17,7 @@ import { CadastrarAssociadoPage } from '../pages/cadastrar-associado/cadastrar-a
 import { TabsPage } from '../pages/tabs/tabs';
 import { CadastroEventoPage } from '../pages/cadastro-evento/cadastro-evento';
 import { ListaEventoPage } from '../pages/lista-evento/lista-evento';
+import { HomePage } from '../pages/home/home';
 
 
 @Component({
