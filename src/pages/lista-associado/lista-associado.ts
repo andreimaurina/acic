@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ListaAssociadoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import * as firebase from 'Firebase';
 
 @IonicPage()
 @Component({
@@ -14,12 +8,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'lista-associado.html',
 })
 export class ListaAssociadoPage {
+  
+  associados = [];
+  ref = firebase.database().ref('Associados/');
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.ref.on('value', resp => {
+    this.associados = [];
+    this.associados = snapshotToArray(resp);
+    console.log(this.associados);
+    })
+  }  
+  novoAssociado() {
+    this.navCtrl.push('CadastrarAssociadoPage');
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ListaAssociadoPage');
-  }
-
 }
+
+  export const snapshotToArray = snapshot => {
+    let returnArr = [];
+
+    snapshot.forEach(childSnapshot => {
+        let item = childSnapshot.val();
+        item.codigo = childSnapshot.codigo;
+        returnArr.push(item);
+    });
+    return returnArr;
+  }
+
