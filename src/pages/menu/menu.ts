@@ -6,6 +6,7 @@ import { ListaServicoPage } from '../lista-servico/lista-servico';
 import { ListaBeneficioPage } from '../lista-beneficio/lista-beneficio';
 import { ListaVagaPage } from '../lista-vaga/lista-vaga';
 import { SobrePage } from '../sobre/sobre';
+import { ListaAssociadoPage } from '../lista-associado/lista-associado';
 
 /**
  * Generated class for the MenuPage page.
@@ -32,7 +33,7 @@ export class MenuPage {
     console.log(local)
     switch(local){
       case(local = "A"):
-        this.navCtrl.push(CadastrarAssociadoPage);
+        this.navCtrl.push(ListaAssociadoPage);
       break;
       case(local = "S"):
         this.navCtrl.push(ListaServicoPage);
