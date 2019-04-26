@@ -6,10 +6,17 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Sobre a ACIC</ion-title>
+    <ion-title>sobre</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  
+  <ion-list>
+    <ion-item *ngFor="let sobre of sobres">
+      <h2>texto do sobre: {{sobre.texto}}</h2>
+      
+    </ion-item>  
+  </ion-list>
 
 </ion-content>
