@@ -23,15 +23,14 @@ export class ListaEventoPage {
     ionViewDidLoad() {
       console.log('ionViewDidLoad FormInfoPage');
     }
-  }
+}
 
-  export const snapshotToArray = snapshot => {
-    let returnArr = [];
-
-    snapshot.forEach(childSnapshot => {
-        let item = childSnapshot.val();
-        item.codigo = childSnapshot.codigo;
-        returnArr.push(item);
-    });
-    return returnArr;
-  }
+export const snapshotToArray = snapshot => {
+  let returnArr = [];
+  snapshot.forEach(childSnapshot => {
+      let item = childSnapshot.val();
+      item.codigo = childSnapshot.codigo;
+      returnArr.push(item);
+  });
+  return returnArr;
+}

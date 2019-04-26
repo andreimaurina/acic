@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import * as firebase from 'Firebase';
+import {Servico} from '../../models/Servico'
 
-/**
- * Generated class for the ListaServicoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +11,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ListaServicoPage {
 
+  servicos = [];
+  ref = firebase.database().ref('servico/');
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.ref.on('value',resp => {
+      this.servicos = [];
+      this.servicos = snapshotToArray(resp);
+      console.log(this.servicos); 
+    })
   }
+}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ListaServicoPage');
-  }
-
+export const snapshotToArray = snapshot => {
+  let returnArr = [];
+  snapshot.forEach(childSnapshot => {
+      let item = childSnapshot.val();
+      item.codigo = childSnapshot.codigo;
+      returnArr.push(item);
+  });
+  return returnArr;
 }
