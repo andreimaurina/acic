@@ -27,7 +27,6 @@ export class ListaEventoPage {
 
   export const snapshotToArray = snapshot => {
     let returnArr = [];
-
     snapshot.forEach(childSnapshot => {
         let item = childSnapshot.val();
         item.codigo = childSnapshot.codigo;
