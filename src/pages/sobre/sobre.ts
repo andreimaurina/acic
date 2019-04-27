@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import firebase from 'Firebase';
 
 /**
  * Generated class for the SobrePage page.
@@ -15,11 +16,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SobrePage {
 
+  sobres = [];
+  ref = firebase.database().ref('sobre/');
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.ref.on('value', resp => {
+    this.sobres = [];
+    this.sobres = snapshotToArray(resp);
+    console.log(this.sobres);
+    })
+  }
+    ionViewDidLoad() {
+      console.log('ionViewDidLoad FormInfoPage');
+    }
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SobrePage');
-  }
+  export const snapshotToArray = snapshot => {
+    let returnArr = [];
 
-}
+    snapshot.forEach(childSnapshot => {
+        let item = childSnapshot.val();
+        item.codigo = childSnapshot.codigo;
+        returnArr.push(item);
+    });
+    return returnArr;
+  }
