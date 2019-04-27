@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as firebase from 'Firebase';
 import {Servico} from '../../models/Servico'
+import { CadastroServicoPage } from '../cadastro-servico/cadastro-servico';
 
 
 @IonicPage()
@@ -20,6 +21,9 @@ export class ListaServicoPage {
       this.servicos = snapshotToArray(resp);
       console.log(this.servicos); 
     })
+  }
+  novoServico() {
+    this.navCtrl.push('CadastroServicoPage');
   }
 }
 
