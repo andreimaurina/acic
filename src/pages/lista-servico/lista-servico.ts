@@ -19,8 +19,7 @@ export class ListaServicoPage {
     this.ref.on('value',resp => {
       this.servicos = [];
       this.servicos = snapshotToArray(resp);
-      console.log(this.servicos); 
-    })
+    });
   }
   novoServico() {
     this.navCtrl.push('CadastroServicoPage');

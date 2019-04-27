@@ -23,21 +23,16 @@ export class SobrePage {
     this.ref.on('value', resp => {
     this.sobres = [];
     this.sobres = snapshotToArray(resp);
-    console.log(this.sobres);
-    })
-  }
-    ionViewDidLoad() {
-      console.log('ionViewDidLoad FormInfoPage');
-    }
-  }
-
-  export const snapshotToArray = snapshot => {
-    let returnArr = [];
-
-    snapshot.forEach(childSnapshot => {
-        let item = childSnapshot.val();
-        item.codigo = childSnapshot.codigo;
-        returnArr.push(item);
     });
-    return returnArr;
   }
+}
+
+export const snapshotToArray = snapshot => {
+  let returnArr = [];
+  snapshot.forEach(childSnapshot => {
+      let item = childSnapshot.val();
+      item.codigo = childSnapshot.codigo;
+      returnArr.push(item);
+  });
+  return returnArr;
+}

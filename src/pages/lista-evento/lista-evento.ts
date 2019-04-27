@@ -18,8 +18,7 @@ export class ListaEventoPage {
     this.ref.on('value', resp => {
     this.eventos = [];
     this.eventos = snapshotToArray(resp);
-    console.log(this.eventos);
-    })
+    });
   }
   novoServico() {
     this.navCtrl.push('CadastroEventoPage');

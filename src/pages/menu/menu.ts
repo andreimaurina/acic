@@ -30,7 +30,6 @@ export class MenuPage {
   }
 
   direciona(local){
-    console.log(local)
     switch(local){
       case(local = "A"):
         this.navCtrl.push(ListaAssociadoPage);
