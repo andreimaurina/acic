@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as firebase from 'Firebase';
 import { Evento } from '../../models/Evento';
+import { CadastroEventoPage } from '../cadastro-evento/cadastro-evento';
 
 @IonicPage()
 @Component({
@@ -20,18 +21,17 @@ export class ListaEventoPage {
     console.log(this.eventos);
     })
   }
-    ionViewDidLoad() {
-      console.log('ionViewDidLoad FormInfoPage');
-    }
+  novoServico() {
+    this.navCtrl.push('CadastroEventoPage');
   }
+}
 
-  export const snapshotToArray = snapshot => {
-    let returnArr = [];
-
-    snapshot.forEach(childSnapshot => {
-        let item = childSnapshot.val();
-        item.codigo = childSnapshot.codigo;
-        returnArr.push(item);
-    });
-    return returnArr;
-  }
+export const snapshotToArray = snapshot => {
+  let returnArr = [];
+  snapshot.forEach(childSnapshot => {
+      let item = childSnapshot.val();
+      item.codigo = childSnapshot.codigo;
+      returnArr.push(item);
+  });
+  return returnArr;
+}
