@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import * as firebase from 'Firebase';
 
-/**
- * Generated class for the ListaVagaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +10,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ListaVagaPage {
 
+  vagas = [];
+  ref = firebase.database().ref('vaga/');
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.ref.on('value',resp => {
+      this.vagas = [];
+      this.vagas = snapshotToArray(resp);
+      console.log(this.vagas);
+    });
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ListaVagaPage');
+  novoVaga() {
+    this.navCtrl.push('CadastroVagaPage');
   }
-
 }
+  export const snapshotToArray = snapshot => {
+    let returnArr = [];
+    snapshot.forEach(childSnapshot => {
+        let item = childSnapshot.val();
+        item.codigo = childSnapshot.codigo;
+        returnArr.push(item);
+    });
+    return returnArr;
+  }
