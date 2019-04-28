@@ -25,10 +25,10 @@ import { SobrePage } from '../pages/sobre/sobre';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    TabsPage,
     FeedNoticiaPage,
     MenuPage,
+    HomePage,
+    TabsPage,
     ListaEventoPage,
     ListaAssociadoPage,  
     ListaBeneficioPage,
@@ -47,10 +47,10 @@ import { SobrePage } from '../pages/sobre/sobre';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    TabsPage,
     FeedNoticiaPage,
     MenuPage,
+    HomePage,
+    TabsPage,
     ListaEventoPage,
     ListaAssociadoPage,  
     ListaBeneficioPage,

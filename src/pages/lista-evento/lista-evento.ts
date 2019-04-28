@@ -20,7 +20,7 @@ export class ListaEventoPage {
     this.eventos = snapshotToArray(resp);
     });
   }
-  novoServico() {
+  novoEvento() {
     this.navCtrl.push('CadastroEventoPage');
   }
 }
