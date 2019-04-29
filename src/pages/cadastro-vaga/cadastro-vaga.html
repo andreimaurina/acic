@@ -6,10 +6,29 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>cadastro-vaga</ion-title>
+    <ion-title>Cadastrar Nova Vaga</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <form>
+    Preencha os dados da Vaga:
+    <ion-item>
+        <ion-label color="primary" floating>Nome</ion-label>
+        <ion-input name="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary" floating>Profissão</ion-label>
+        <ion-input name="profissao"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary" floating>Descrição</ion-label>
+        <ion-textarea name="descricao"></ion-textarea>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary" floating>Visibilidade</ion-label>
+        <ion-input name="visibilidade"></ion-input>
+    </ion-item>
+    <br>
+  </form>
 </ion-content>

@@ -35,7 +35,6 @@ import { SobrePage } from '../pages/sobre/sobre';
     CadastroBeneficioPage,
     ListaServicoPage,   
     ListaVagaPage,
-    CadastroVagaPage,
     SobrePage
     
     
@@ -57,7 +56,6 @@ import { SobrePage } from '../pages/sobre/sobre';
     CadastroBeneficioPage,
     ListaServicoPage,   
     ListaVagaPage,
-    CadastroVagaPage,
     SobrePage
     
   ],
