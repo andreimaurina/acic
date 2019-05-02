@@ -6,41 +6,38 @@
 
 <ion-content padding>
   <form>
-    Informações do evento:
+    <label>Informações do evento:</label>
     <ion-item>
         <ion-label color="primary" floating>Nome</ion-label>
-        <ion-input name="nome"></ion-input>
+        <ion-input name="nome" [(ngModel)]="evento.nome"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label color="primary" floating>Data</ion-label>
-        <ion-input name="data"></ion-input>
+        <ion-input name="data" [(ngModel)]="evento.data"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label color="primary" floating>Hora</ion-label>
-        <ion-input name="hora"></ion-input>
+        <ion-input name="hora" [(ngModel)]="evento.hora"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label color="primary" floating>Local</ion-label>
-        <ion-input name="local"></ion-input>
+        <ion-input name="local" [(ngModel)]="evento.local"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label color="primary" floating>Descrição</ion-label>
-        <ion-textarea name="descricao"></ion-textarea>
+        <ion-textarea name="descricao" [(ngModel)]="evento.descricao"></ion-textarea>
     </ion-item>
     <br>
-    Valores:
+    <label>Valores:</label>
     <ion-item>
         <ion-label color="primary" floating>Valor para Associado</ion-label>
-        <ion-input name="valorAssociado"></ion-input>
+        <ion-input name="valorAssociado" [(ngModel)]="evento.valorAssociado"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label color="primary" floating>Valor para não Associado</ion-label>
-        <ion-input name="valorNaoAssociado"></ion-input>
+        <ion-input name="valorNaoAssociado" [(ngModel)]="evento.valorNaoAssociado"></ion-input>
     </ion-item>
+    <br>
+    <button type="submit" ion-button shape="round" color="primary" expand="block" (click)="gravar()">Gravar</button>
   </form>
-  <br>
-  <button ion-button shape="round" color="primary" expand="block" (click)="gravar()">Gravar</button>
 </ion-content>
-
-
-<!-- [(ngModel)]="usuario.telefone" -->

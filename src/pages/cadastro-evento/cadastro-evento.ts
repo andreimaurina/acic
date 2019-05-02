@@ -10,20 +10,23 @@ import { Evento } from '../../models/Evento';
 })
 export class CadastroEventoPage {
 
-  id = null;
   evento: Evento;
-
+  id = null;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.id = this.navParams.data.id;
+    if (!this.id) {
+      this.evento = new Evento();
+    } 
   }
 
   gravar(){
     if (!this.id) {
+      console.log(this.evento);
       let newEvento = firebase.database().ref('evento/').push();
       newEvento.set(this.evento);
-    } else {
-      let newEvento = firebase.database().ref(`evento/${this.id}`);
-      newEvento.update(this.evento);
     }
-    this.navCtrl.pop();
+    this.navCtrl.pop(); 
   }
+
 }
