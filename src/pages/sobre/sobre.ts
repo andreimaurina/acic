@@ -26,10 +26,8 @@ export class SobrePage {
     console.log(this.sobres);
     })
   }
-    ionViewDidLoad() {
-      console.log('ionViewDidLoad FormInfoPage');
-    }
-  }
+    
+}
 
   export const snapshotToArray = snapshot => {
     let returnArr = [];
