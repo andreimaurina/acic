@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the CadastroVagaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Vaga } from '../../models/Vaga';
+import * as firebase from 'Firebase';
 
 @IonicPage()
 @Component({
@@ -14,12 +9,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'cadastro-vaga.html',
 })
 export class CadastroVagaPage {
+  
+  vaga: Vaga;
+  id = null;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.id = this.navParams.data.id;
+    if (!this.id) {
+      this.vaga = new Vaga();
+    } 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CadastroVagaPage');
+  gravar(){
+    if (!this.id) {
+      console.log(this.vaga);
+      let newVaga = firebase.database().ref('vaga/').push();
+      newVaga.set(this.vaga);
+    }
+    this.navCtrl.pop(); 
   }
 
 }

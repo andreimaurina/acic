@@ -1,9 +1,3 @@
-<!--
-  Generated template for the ListaVagaPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
     <ion-title>Lista de Vagas de Emprego</ion-title>
@@ -14,28 +8,15 @@
   <ion-searchbar></ion-searchbar>
   <ion-content>
     <ion-list>
-      <ion-item>
-          <ion-avatar item-start>
-              <img src="https://docs.google.com/uc?id=1wSrLdYqdayZ42Bh0y0FhOzRDl2WHqVTk">
-            </ion-avatar>
-            <h2>Vaga de Operador de máquina</h2>
-            <p>Operador de máquina nível 02</p>
+      <ion-item *ngFor="let vaga of vagas">
+        <ion-avatar item-start>
+          <img src={{vaga.imagem}}>
+        </ion-avatar>
+        <h2>Nome do Vaga: {{vaga.nome}}</h2>
+        <h3>Profissão: {{vaga.profissao}}</h3>
+        <h4>Descrição: {{vaga.descricao}}</h4>
       </ion-item>
-      <ion-item>
-          <ion-avatar item-start>
-              <img src="https://docs.google.com/uc?id=1d87tP5ZetgMDC2SexFKK-2HBQZLFeXvm">
-            </ion-avatar>
-            <h2>Vaga de contador</h2>
-            <p>Assitente de contabilização de patrimônios</p>
-      </ion-item>
-      <ion-item>
-          <ion-avatar item-start>
-              <img src="https://docs.google.com/uc?id=1s5UvfY17_NsDmCtKqw5ECuDexlvfGnsw">
-            </ion-avatar>
-            <h2> Vaga de Administrador de Redes </h2>
-            <p>Gerenciamento do AD Microsoft</p>
-      </ion-item>  
-    
     </ion-list>
+    <button ion-button color="primary" (click)="novoEvento()">Nova Vaga</button>
   </ion-content>
 </ion-content>

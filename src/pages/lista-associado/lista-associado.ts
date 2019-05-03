@@ -16,22 +16,20 @@ export class ListaAssociadoPage {
     this.ref.on('value', resp => {
     this.associados = [];
     this.associados = snapshotToArray(resp);
-    console.log(this.associados);
-    })
+    });
   }  
   novoAssociado() {
     this.navCtrl.push('CadastrarAssociadoPage');
   }
 }
 
-  export const snapshotToArray = snapshot => {
-    let returnArr = [];
-
-    snapshot.forEach(childSnapshot => {
-        let item = childSnapshot.val();
-        item.codigo = childSnapshot.codigo;
-        returnArr.push(item);
-    });
-    return returnArr;
-  }
+export const snapshotToArray = snapshot => {
+  let returnArr = [];
+  snapshot.forEach(childSnapshot => {
+      let item = childSnapshot.val();
+      item.codigo = childSnapshot.codigo;
+      returnArr.push(item);
+  });
+  return returnArr;
+}
 

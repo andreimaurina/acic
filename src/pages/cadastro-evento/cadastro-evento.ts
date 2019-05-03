@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the CadastroEventoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import * as firebase from 'Firebase';
+import { Evento } from '../../models/Evento';
 
 @IonicPage()
 @Component({
@@ -15,11 +10,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CadastroEventoPage {
 
+  evento: Evento;
+  id = null;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.id = this.navParams.data.id;
+    if (!this.id) {
+      this.evento = new Evento();
+    } 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CadastroEventoPage');
+  gravar(){
+    if (!this.id) {
+      console.log(this.evento);
+      let newEvento = firebase.database().ref('evento/').push();
+      newEvento.set(this.evento);
+    }
+    this.navCtrl.pop(); 
   }
 
 }
