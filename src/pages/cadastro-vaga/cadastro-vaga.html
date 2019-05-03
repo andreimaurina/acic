@@ -1,9 +1,3 @@
-<!--
-  Generated template for the CadastroVagaPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
     <ion-title>Cadastrar Nova Vaga</ion-title>
@@ -15,20 +9,21 @@
     Preencha os dados da Vaga:
     <ion-item>
         <ion-label color="primary" floating>Nome</ion-label>
-        <ion-input name="nome"></ion-input>
+        <ion-input name="nome" [(ngModel)]="vaga.nome"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label color="primary" floating>Profissão</ion-label>
-        <ion-input name="profissao"></ion-input>
+        <ion-input name="profissao"[(ngModel)]="vaga.profissao"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label color="primary" floating>Descrição</ion-label>
-        <ion-textarea name="descricao"></ion-textarea>
+        <ion-textarea name="descricao" [(ngModel)]="vaga.descricao"></ion-textarea>
     </ion-item>
     <ion-item>
         <ion-label color="primary" floating>Visibilidade</ion-label>
-        <ion-input name="visibilidade"></ion-input>
+        <ion-input name="visibilidade"[(ngModel)]="vaga.visibilidade"></ion-input>
     </ion-item>
     <br>
+    <button type="submit" ion-button shape="round" color="primary" expand="block" (click)="gravar()">Salvar</button>
   </form>
 </ion-content>
