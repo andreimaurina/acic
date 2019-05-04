@@ -21,6 +21,7 @@ import { ListaServicoPage } from '../pages/lista-servico/lista-servico';
 import { ListaVagaPage } from '../pages/lista-vaga/lista-vaga';
 import { CadastroVagaPage } from '../pages/cadastro-vaga/cadastro-vaga';
 import { SobrePage } from '../pages/sobre/sobre';
+import { m } from '@angular/core/src/render3';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { SobrePage } from '../pages/sobre/sobre';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     FeedNoticiaProvider,
     EventoProvider
+
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

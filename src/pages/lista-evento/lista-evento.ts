@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as firebase from 'Firebase';
 import { Evento } from '../../models/Evento';
 import { CadastroEventoPage } from '../cadastro-evento/cadastro-evento';
+import { EventoProvider } from '../../providers/evento/evento';
 
 @IonicPage()
 @Component({
@@ -11,14 +12,15 @@ import { CadastroEventoPage } from '../cadastro-evento/cadastro-evento';
 })
 export class ListaEventoPage {
   
-  eventos = [];
-  ref = firebase.database().ref('evento/');
+  // eventos = [];
+  // ref = firebase.database().ref('evento/');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.ref.on('value', resp => {
-    this.eventos = [];
-    this.eventos = snapshotToArray(resp);
-    });
+  constructor(public navCtrl: NavController, public navParams: NavParams, public EventoProvider: EventoProvider) {
+    // this.ref.on('value', resp => {
+    // this.eventos = [];
+    // this.eventos = snapshotToArray(resp);
+    // });
+    EventoProvider.gravar();
   }
   
   novoEvento() {
@@ -26,12 +28,12 @@ export class ListaEventoPage {
   }
 }
 
-export const snapshotToArray = snapshot => {
-  let returnArr = [];
-  snapshot.forEach(childSnapshot => {
-      let item = childSnapshot.val();
-      item.codigo = childSnapshot.codigo;
-      returnArr.push(item);
-  });
-  return returnArr;
-}
+// export const snapshotToArray = snapshot => {
+//   let returnArr = [];
+//   snapshot.forEach(childSnapshot => {
+//       let item = childSnapshot.val();
+//       item.codigo = childSnapshot.codigo;
+//       returnArr.push(item);
+//   });
+//   return returnArr;
+// }

@@ -22,7 +22,6 @@ export class CadastroEventoPage {
 
   gravar(){
     if (!this.id) {
-      console.log(this.evento);
       let newEvento = firebase.database().ref('evento/').push();
       newEvento.set(this.evento);
     }
