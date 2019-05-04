@@ -32,7 +32,6 @@ import { SobrePage } from '../pages/sobre/sobre';
     ListaEventoPage,
     ListaAssociadoPage,  
     ListaBeneficioPage,
-    CadastroBeneficioPage,
     ListaServicoPage,   
     ListaVagaPage,
     SobrePage
@@ -53,7 +52,6 @@ import { SobrePage } from '../pages/sobre/sobre';
     ListaEventoPage,
     ListaAssociadoPage,  
     ListaBeneficioPage,
-    CadastroBeneficioPage,
     ListaServicoPage,   
     ListaVagaPage,
     SobrePage

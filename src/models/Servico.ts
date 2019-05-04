@@ -1,5 +1,5 @@
 export class Servico {
-    cod: number;
+    /*cod: number;*/
     nome: string;
     descricao: string;
     link: string;
