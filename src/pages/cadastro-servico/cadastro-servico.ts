@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the CadastroServicoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
+import * as firebase from 'Firebase';
+import {Servico} from '../../models/Servico';
+ 
 @IonicPage()
 @Component({
   selector: 'page-cadastro-servico',
@@ -15,11 +10,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CadastroServicoPage {
 
+  servico: Servico;
+  id = null;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.id = this.navParams.data.id;
+    if (!this.id) {
+      this.servico = new Servico();
+    }
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CadastroServicoPage');
+  gravar() {
+    if (!this.id) {
+      let newServico = firebase.database().ref('servico/').push();
+      newServico.set(this.servico); 
+    }
+    this.navCtrl.pop();
   }
 
 }

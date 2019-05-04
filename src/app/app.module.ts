@@ -33,7 +33,6 @@ import { m } from '@angular/core/src/render3';
     ListaEventoPage,
     ListaAssociadoPage,  
     ListaBeneficioPage,
-    CadastroBeneficioPage,
     ListaServicoPage,   
     ListaVagaPage,
     SobrePage
@@ -54,7 +53,6 @@ import { m } from '@angular/core/src/render3';
     ListaEventoPage,
     ListaAssociadoPage,  
     ListaBeneficioPage,
-    CadastroBeneficioPage,
     ListaServicoPage,   
     ListaVagaPage,
     SobrePage

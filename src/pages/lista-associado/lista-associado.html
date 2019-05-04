@@ -6,7 +6,9 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-list>
+    <ion-searchbar></ion-searchbar>
+    <ion-content>
+      <ion-list>
         <ion-item *ngFor="let associado of associados">
           <h2>Nome: {{associado.nome}}</h2>
           <h3>Email: {{associado.email}}</h3>
