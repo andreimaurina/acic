@@ -8,20 +8,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FeedNoticiaProvider } from '../providers/feed-noticia/feed-noticia';
 import { FeedNoticiaPage } from '../pages/feed-noticia/feed-noticia';
-import { CadastrarAssociadoPage } from '../pages/cadastrar-associado/cadastrar-associado';
 import { MenuPage } from '../pages/menu/menu';
 import { EventoProvider } from '../providers/evento/evento';
-import { CadastroEventoPage } from '../pages/cadastro-evento/cadastro-evento';
 import { ListaEventoPage } from '../pages/lista-evento/lista-evento';
 import { ListaAssociadoPage } from '../pages/lista-associado/lista-associado';
 import { ListaBeneficioPage } from '../pages/lista-beneficio/lista-beneficio';
-import { CadastroBeneficioPage } from '../pages/cadastro-beneficio/cadastro-beneficio';
-import { CadastroServicoPage } from '../pages/cadastro-servico/cadastro-servico';
 import { ListaServicoPage } from '../pages/lista-servico/lista-servico';
 import { ListaVagaPage } from '../pages/lista-vaga/lista-vaga';
-import { CadastroVagaPage } from '../pages/cadastro-vaga/cadastro-vaga';
 import { SobrePage } from '../pages/sobre/sobre';
-import { m } from '@angular/core/src/render3';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,7 +36,9 @@ import { m } from '@angular/core/src/render3';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule,
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [

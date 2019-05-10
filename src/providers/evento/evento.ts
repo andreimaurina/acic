@@ -1,12 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import * as firebase from 'Firebase';
-/*
-  Generated class for the EventoProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class EventoProvider {
 
@@ -16,11 +11,17 @@ export class EventoProvider {
   constructor(public http: HttpClient) {
   }
 
-  gravar(){
-    this.ref.on('value', resp => {
+  listar(){
+    return this.ref.on('value', resp => {
     this.eventos = [];
     this.eventos = snapshotToArray(resp);
     });
+    // .then(
+    //   data=>{
+    //     this.usuario = data;
+    //     return data;
+    //   }
+    // );  
   }
 
 }
