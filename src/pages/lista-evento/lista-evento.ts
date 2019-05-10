@@ -22,7 +22,6 @@ export class ListaEventoPage {
     .then(
       data => this.eventos = data
     );
-   
   }
 
   novoEvento() {
