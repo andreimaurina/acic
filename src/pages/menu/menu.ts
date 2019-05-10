@@ -20,6 +20,7 @@ import { ListaAssociadoPage } from '../lista-associado/lista-associado';
   selector: 'page-menu',
   templateUrl: 'menu.html',
 })
+
 export class MenuPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -50,7 +51,8 @@ export class MenuPage {
         this.navCtrl.push(SobrePage);
       break;
     }
-
   }
-
+  IrParaLogin() {
+    this.navCtrl.push('LoginPage')
+  }
 }
