@@ -6,7 +6,7 @@
 
 
 <ion-content padding>
-    <ion-searchbar></ion-searchbar>
+  <ion-searchbar placeholder="Buscar..."  (ionInput)="filtrarItens($event)" clearInput></ion-searchbar>
     <ion-content>
       <ion-list>
       <ion-item *ngFor="let servico of servicos">
