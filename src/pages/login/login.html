@@ -6,28 +6,28 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Acesso Administrador</ion-title>
+    <ion-title>Acesso Administração ACIC</ion-title>
   </ion-navbar>
 </ion-header>
+
 <ion-content>
   <div *ngIf="autenticacao" padding>
     <h3>Você está conectado!</h3>
   </div>
   <ion-list>
     <ion-item>
-      <ion-label fixed>E-mail</ion-label>
+      <ion-label>E-mail:</ion-label>
       <ion-input type="text" [(ngModel)]="email"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label fixed>Senha</ion-label>
+      <ion-label>Senha:</ion-label>
       <ion-input type="password" [(ngModel)]="senha"></ion-input>
     </ion-item>
   </ion-list>
   <div padding>
-    <!--<button ion-button *ngIf="!autenticacao" (click)="cadastrar()">Cadastrar</button>-->
-    <button ion-button *ngIf="!autenticacao" (click)="login()"> Entrar</button>
-    <button ion-button *ngIf="!autenticacao" (click)="logout()"> Sair</button>
-
+    <!--<button ion-button *ngIf="!autenticacao" (click)="cadastrar()"> Cadastrar</button>-->
+    <button ion-button *ngIf="!autenticacao" (click)="login()">Entrar</button>
+    <button ion-button *ngIf="!autenticacao" (click)="logout()">Sair</button>
     <!-- /Comentário David: foi adicionado o ponto de exclamação
       no início da palavra autenticação na linha do botão 'Sair'
       (somente para aparecer/testes, após isso retirar exclamação para funcionar
