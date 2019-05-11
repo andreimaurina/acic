@@ -6,14 +6,40 @@
 </ion-header>
 
 <ion-content padding>
-    <form>
-        <ion-item>
-          <ion-label position="floating">Nome</ion-label>
-          <ion-input type="text" name="info_title" ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">CPF</ion-label>
-          <ion-input type="text"  name="info_description"></ion-input>
-        </ion-item>
-      </form>
+  <form>
+    <label>Cadastro de Pessoa Física: </label>
+
+    <ion-item>
+      <ion-label color="primary" floating>cpf</ion-label>
+      <ion-input name="cpf" [(ngModel)]="associado.cpf"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>sexo</ion-label>
+      <ion-input name="sexo" [(ngModel)]="associado.sexo"></ion-input>
+    </ion-item>
+     <ion-item>
+      <ion-label color="primary" floating>nome</ion-label>
+      <ion-input name="nome" [(ngModel)]="associado.nome"></ion-input>
+    </ion-item>
+  <!-- <ion-item>
+      <ion-label color="primary" floating>dataNasc</ion-label>
+      <ion-input name="dataNasc" [(ngModel)]="associado.dataNasc"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>facebook</ion-label>
+      <ion-input name="facebook" [(ngModel)]="associado.facebook  "></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>instagram</ion-label>
+      <ion-input name="instagram" [(ngModel)]="associado.instagram"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>twitter</ion-label>
+      <ion-input twitter="instagram" [(ngModel)]="associado.twitter"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>linkedin</ion-label>
+      <ion-input linkedin="instagram" [(ngModel)]="associado.linkedin"></ion-input>
+    </ion-item>  -->
+  </form>
 </ion-content>
