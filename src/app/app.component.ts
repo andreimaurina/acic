@@ -16,13 +16,15 @@ firebase.initializeApp(config);
 import { TabsPage } from '../pages/tabs/tabs';
 import { CadastroVagaPage } from '../pages/cadastro-vaga/cadastro-vaga';
 import { HomePage } from '../pages/home/home';
+import { CadastroServicoPage } from '../pages/cadastro-servico/cadastro-servico';
+import { ListaServicoPage } from '../pages/lista-servico/lista-servico';
 
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TabsPage;
+  rootPage:any = ListaServicoPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

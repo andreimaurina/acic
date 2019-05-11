@@ -12,16 +12,10 @@ export class EventoProvider {
   }
 
   listar(){
-    return this.ref.on('value', resp => {
-    this.eventos = [];
-    this.eventos = snapshotToArray(resp);
-    });
-    // .then(
-    //   data=>{
-    //     this.usuario = data;
-    //     return data;
-    //   }
-    // );  
+    return this.ref.once('value')
+      .then(
+        resp => snapshotToArray(resp)
+        );
   }
 
 }
