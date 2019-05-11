@@ -17,6 +17,7 @@ import { ListaServicoPage } from '../pages/lista-servico/lista-servico';
 import { ListaVagaPage } from '../pages/lista-vaga/lista-vaga';
 import { SobrePage } from '../pages/sobre/sobre';
 import { HttpClientModule } from '@angular/common/http';
+import { CadastrarAssociadoPage } from '../pages/cadastrar-associado/cadastrar-associado';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage,
     TabsPage,
     ListaEventoPage,
-    ListaAssociadoPage,  
+    ListaAssociadoPage,
     ListaBeneficioPage,
     ListaServicoPage,   
     ListaVagaPage,
