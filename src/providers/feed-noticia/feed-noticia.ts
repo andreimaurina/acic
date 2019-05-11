@@ -1,17 +1,30 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import * as firebase from 'Firebase';
 
-/*
-  Generated class for the FeedNoticiaProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class FeedNoticiaProvider {
 
+  noticias = [];
+  ref = firebase.database().ref('noticias/');
+
   constructor(public http: HttpClient) {
-    console.log('Hello FeedNoticiaProvider Provider');
   }
 
+  listar(){
+    return this.ref.once('value')
+      .then(
+        resp => snapshotToArray(resp)
+        );
+  }
+
+}
+export const snapshotToArray = snapshot => {
+  let returnArr = [];
+  snapshot.forEach(childSnapshot => {
+      let item = childSnapshot.val();
+      item.guid = childSnapshot.guid;
+      returnArr.push(item);
+  });
+  return returnArr;
 }
