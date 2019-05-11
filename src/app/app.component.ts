@@ -24,7 +24,7 @@ import { ListaServicoPage } from '../pages/lista-servico/lista-servico';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = ListaServicoPage;
+  rootPage:any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
