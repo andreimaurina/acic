@@ -13,9 +13,9 @@
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let noticia of noticias">
-      <h3>Titulo: {{noticia.titulo}}</h3>
-      <h4>Data: {{noticia.pubDate}}</h4>
-      <p>{{noticia.descricao}}</p>
+      <h3>Título: {{noticia.titulo}}</h3>
+      <h4>Data de publicação: {{noticia.pubDate}}</h4>
+      <div [innerHTML]="noticia.descricao"></div>
     </ion-item>  
   </ion-list>
 </ion-content>

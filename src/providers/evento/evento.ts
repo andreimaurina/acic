@@ -15,7 +15,7 @@ export class EventoProvider {
     return this.ref.once('value')
       .then(
         resp => snapshotToArray(resp)
-        );
+      );
   }
 
 }

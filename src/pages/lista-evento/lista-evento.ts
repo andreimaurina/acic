@@ -22,4 +22,8 @@ export class ListaEventoPage {
   novoEvento() {
     this.navCtrl.push('CadastroEventoPage');
   }
+
+  mostrar(id){
+    console.log(id);
+  }
 }

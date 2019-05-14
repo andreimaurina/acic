@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'; 
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as firebase from 'Firebase';
 import { Evento } from '../../models/Evento';
@@ -21,7 +21,6 @@ export class CadastroEventoPage {
   }
 
   gravar(){
-    console.log("chegou"); 
     if (!this.id) {
       let newEvento = firebase.database().ref('evento/').push();
       newEvento.set(this.evento);
