@@ -11,9 +11,19 @@ export class ListaEventoPage {
   
   eventos = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public provedor: EventoProvider) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public provedor: EventoProvider
+    ) {
+  }
 
-  provedor.listar()
+  ionViewDidLoad(){
+    this.chamaListar();
+  }
+
+  chamaListar(){
+    this.provedor.listar()
     .then(
       data => this.eventos = data
     );
@@ -25,5 +35,7 @@ export class ListaEventoPage {
 
   mostrar(id){
     console.log(id);
+    this.navCtrl.push('CadastroEventoPage', {id: id});
   }
+
 }
