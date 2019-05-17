@@ -12,7 +12,7 @@ export class EventoProvider {
   constructor(public http: HttpClient) {
   }
 
-  listar(){
+  servicos(){
     return this.ref.once('value')
       .then(
         resp => snapshotToArray(resp)
