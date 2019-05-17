@@ -26,15 +26,8 @@ export class CadastroEventoPage {
   }
 
   chamaGravar(id){
-    this.provedor.gravar(id);
+    this.provedor.gravar(this.evento,id);
     this.navCtrl.pop();
   }
-  // gravar(){
-  //   if (!this.id) {
-  //     let newEvento = firebase.database().ref('evento/').push();
-  //     newEvento.set(this.evento);
-  //   }
-  //   this.navCtrl.pop(); 
-  // }
 
 }

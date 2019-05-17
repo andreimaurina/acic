@@ -18,7 +18,7 @@ export class ListaEventoPage {
     ) {
   }
 
-  ionViewDidLoad(){
+  ionViewWillEnter(){
     this.chamaListar();
   }
 
@@ -33,9 +33,9 @@ export class ListaEventoPage {
     this.navCtrl.push('CadastroEventoPage');
   }
 
-  mostrar(id){
-    console.log(id);
-    this.navCtrl.push('CadastroEventoPage', {id: id});
-  }
+  // editar(id){
+  //   console.log(id);
+  //   this.navCtrl.push('CadastroEventoPage', {id: id});
+  // }
 
 }
