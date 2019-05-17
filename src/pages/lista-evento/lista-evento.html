@@ -12,7 +12,7 @@
     </button>
   </ion-fab>
   <ion-list>
-    <ion-item *ngFor="let evento of eventos" (click)="mostrar(evento.key)" >
+    <ion-item *ngFor="let evento of eventos" >
           <h2>Nome do Evento: {{evento.nome}}</h2>
           <h3>Local: {{evento.local}}</h3>
           <h4>Data: {{evento.data}}</h4>
@@ -21,3 +21,4 @@
     </ion-item>  
   </ion-list>
 </ion-content>
+<!-- (click)="editar(evento.key)" -->

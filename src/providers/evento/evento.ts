@@ -1,11 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import * as firebase from 'Firebase';
-import { Evento } from '../../models/Evento';
 
 @Injectable()
 export class EventoProvider {
-  evento: Evento;
+
   eventos = [];
   ref = firebase.database().ref('evento/');
 
@@ -19,13 +18,13 @@ export class EventoProvider {
       );
   }
 
-  gravar(id){
+  gravar(evento, id = null){
     if (!id) {
       let newEvento = firebase.database().ref('evento/').push();
-      newEvento.set(this.evento);
+      newEvento.set(evento);
     }else {
       let newEvento = firebase.database().ref(`evento/${id}`);
-      newEvento.update(this.evento);
+      newEvento.update(evento);
     }
   }
 
