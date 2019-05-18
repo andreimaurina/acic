@@ -1,17 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import * as firebase from 'firebase';
-import {Beneficio} from '../../models/Beneficio';
-import { v } from '@angular/core/src/render3';
-
-
-
+import * as firebase from 'Firebase';
 
 @Injectable()
 export class BeneficioProvider {
-  beneficio : Beneficio;
-  beneficios = [];
-  // listaBeneficio = [];
+
+  eventos = [];
   ref = firebase.database().ref('beneficio/');
 
   constructor(public http: HttpClient) {
@@ -24,23 +18,21 @@ export class BeneficioProvider {
       );
   }
 
-  // filtrarItens(searchbar) {
-  //   this.servicos = this.listaServico;
-  //   var q = searchbar.srcElement.value;
-  //   if(!q) {
-  //     return;
-  //   }
-  //   this.servicos = this.servicos.filter((v) => {
-  //     if(v.nome && q) {
-  //       if (v.nome.toLowerCase().indexOf(q.toLowerCase()) > -1){
-  //         return true;
-  //       }
-  //       return false;
-  //     }
-  //   });
-  // }
-}
+  gravar(beneficio, id = null){
+    if (!id) {
+      let newBeneficio = firebase.database().ref('beneficio/').push();
+      newBeneficio.set(beneficio);
+    }else {
+      let newBeneficio = firebase.database().ref(`beneficio/${id}`);
+      newBeneficio.update(beneficio);
+    }
+  }
 
+  excluir(id){
+    firebase.database().ref('beneficio/'+id).remove();
+  }
+
+}
 export const snapshotToArray = snapshot => {
   let returnArr = [];
   snapshot.forEach(childSnapshot => {
@@ -50,5 +42,3 @@ export const snapshotToArray = snapshot => {
   });
   return returnArr;
 }
-
-

@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { BeneficioProvider } from '../../providers/beneficio/beneficio';
-
-/**
- * Generated class for the ListaBeneficioPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,18 +8,17 @@ import { BeneficioProvider } from '../../providers/beneficio/beneficio';
   templateUrl: 'lista-beneficio.html',
 })
 export class ListaBeneficioPage {
-
-
+  
   beneficios = [];
-
 
   constructor(
     public navCtrl: NavController, 
-    public navParams: NavParams,
-    public provedor : BeneficioProvider
+    public navParams: NavParams, 
+    public provedor: BeneficioProvider,
+    public alerCtrl: AlertController
     ) {
   }
-  
+
   ionViewWillEnter(){
     this.chamaListar();
   }
@@ -38,8 +30,28 @@ export class ListaBeneficioPage {
     );
   }
 
-  novoServico() {
+  novoEvento() {
     this.navCtrl.push('CadastroBeneficioPage');
   }
-}
 
+  excluir(id) {
+    let alert = this.alerCtrl.create();
+    alert.setTitle('Tem certeza que deseja excluir?');
+    alert.addButton('Cancelar');
+    alert.addButton({
+      text: 'Ok',
+      handler: data => {
+        this.provedor.excluir(id);
+        this.chamaListar();
+      }
+    });
+    alert.present().then(() => {
+    });
+  }
+
+  // editar(id){
+  //   console.log(id);
+  //   this.navCtrl.push('CadastroEventoPage', {id: id});
+  // }
+
+}

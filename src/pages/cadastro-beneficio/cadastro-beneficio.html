@@ -6,15 +6,16 @@
 
 <ion-content padding>
   <form>
-      <label>Informações do Beneficio:</label>
-      <ion-item>
+    <label>Informações do Benefício:</label>
+    <ion-item>
         <ion-label color="primary" floating>Nome</ion-label>
         <ion-input name="nome" [(ngModel)]="beneficio.codigo"></ion-input>
-      </ion-item>
-      <ion-item>
+    </ion-item>
+    <ion-item>
         <ion-label color="primary" floating>Valor</ion-label>
-        <ion-textarea name="valor" [(ngModel)]="beneficio.valor"></ion-textarea>
-      </ion-item>
-      <button type="submit" ion-button shape="round" color="primary" expand="block" (click)="gravar()">Gravar</button>
-    </form>
+        <ion-input name="data" [(ngModel)]="beneficio.valor"></ion-input>
+    </ion-item>
+    <br>
+    <button type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="chamaGravar()">Gravar</button>
+  </form>
 </ion-content>
