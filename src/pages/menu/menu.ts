@@ -26,10 +26,6 @@ export class MenuPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MenuPage');
-  }
-
   direciona(local){
     switch(local){
       case(local = "A"):

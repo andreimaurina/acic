@@ -20,7 +20,7 @@ export class ListaVagaPage {
     });
   }
 
-  novoEvento() {
+  novaVaga() {
     this.navCtrl.push('CadastroVagaPage');
   }
 }

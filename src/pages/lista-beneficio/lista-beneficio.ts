@@ -30,7 +30,7 @@ export class ListaBeneficioPage {
     );
   }
 
-  novoEvento() {
+  novoBeneficio() {
     this.navCtrl.push('CadastroBeneficioPage');
   }
 
@@ -48,10 +48,5 @@ export class ListaBeneficioPage {
     alert.present().then(() => {
     });
   }
-
-  // editar(id){
-  //   console.log(id);
-  //   this.navCtrl.push('CadastroEventoPage', {id: id});
-  // }
 
 }

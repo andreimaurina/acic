@@ -18,6 +18,13 @@ export class EventoProvider {
       );
   }
 
+  listarPorId(id){
+    return firebase.database().ref(`evento/${id}`).once('value')
+      .then(
+        resp => snapshotToObject(resp)
+      );
+  }
+
   gravar(evento, id = null){
     if (!id) {
       let newEvento = firebase.database().ref('evento/').push();
@@ -41,4 +48,10 @@ export const snapshotToArray = snapshot => {
       returnArr.push(item);
   });
   return returnArr;
+}
+
+export const snapshotToObject = snapshot => {
+  let item = snapshot.val();
+  item.key = snapshot.key;
+  return item;
 }

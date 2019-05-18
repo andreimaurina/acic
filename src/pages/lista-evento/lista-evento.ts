@@ -34,6 +34,10 @@ export class ListaEventoPage {
     this.navCtrl.push('CadastroEventoPage');
   }
 
+  editar(id){
+    this.navCtrl.push('CadastroEventoPage', {id: id});
+  }
+
   excluir(id) {
     let alert = this.alerCtrl.create();
     alert.setTitle('Tem certeza que deseja excluir?');
@@ -48,10 +52,5 @@ export class ListaEventoPage {
     alert.present().then(() => {
     });
   }
-
-  // editar(id){
-  //   console.log(id);
-  //   this.navCtrl.push('CadastroEventoPage', {id: id});
-  // }
 
 }

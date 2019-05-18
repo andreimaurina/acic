@@ -21,7 +21,17 @@ export class CadastroEventoPage {
     this.id = this.navParams.data.id;
     if (!this.id) {
       this.evento = new Evento();
-    } 
+    } else {
+      this.chamaPorId(this.id);
+      console.log(this.evento)
+    }
+  }
+
+  chamaPorId(id){
+    this.provedor.listarPorId(id)
+      .then(
+      data => this.evento = data
+    );
   }
 
   chamaGravar(id){

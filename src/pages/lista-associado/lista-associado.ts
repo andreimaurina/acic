@@ -60,7 +60,7 @@ export class ListaAssociadoPage {
       value: 'PJ'
     });
 
-    alert.addButton('Cancel');
+    alert.addButton('Cancelar');
     alert.addButton({
       text: 'Ok',
       handler: data => {
