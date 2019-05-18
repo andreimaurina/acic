@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Searchbar } from 'ionic-angular';
-import * as firebase from 'Firebase';
-import {Servico} from '../../models/Servico'
-import { CadastroServicoPage } from '../cadastro-servico/cadastro-servico';
-import { v } from '@angular/core/src/render3';
 import { ServicoProvider } from '../../providers/servico/servico';
 
 
@@ -14,7 +10,7 @@ import { ServicoProvider } from '../../providers/servico/servico';
 })
 export class ListaServicoPage {
 
-
+  listaServico = [];
   servicos = [];
 
 
@@ -35,9 +31,25 @@ export class ListaServicoPage {
       data => this.servicos = data
     );
   }
+  filtrarItens(searchbar) {
+    this.servicos = this.listaServico;
+    var q = searchbar.srcElement.value;
+    if(!q) {
+      return;
+    }
+    this.servicos = this.servicos.filter((v) => {
+      if(v.nome && q) {
+        if (v.nome.toLowerCase().indexOf(q.toLowerCase()) > -1){
+          return true;
+        }
+        return false;
+      }
+    });
+  }
 
   novoServico() {
     this.navCtrl.push('CadastroServicoPage');
   }
+
 }
 

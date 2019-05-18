@@ -1,17 +1,32 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import * as firebase from 'Firebase';
+import { Associado } from '../../models/Associado';
 
-/*
-  Generated class for the AssociadoProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class AssociadoProvider {
+  ref = firebase.database().ref('Associados/');
+  associados = [];
+  associado : Associado;
 
   constructor(public http: HttpClient) {
-    console.log('Hello AssociadoProvider Provider');
   }
 
+  listar(){
+    return this.ref.once('value') 
+      .then(
+      resp => snapshotToArray(resp)
+      );
+  }
+
+}
+export const snapshotToArray = snapshot => {
+  let returnArr = [];
+  snapshot.forEach(childSnapshot => {
+      let item = childSnapshot.val();
+      item.key = childSnapshot.key;
+      returnArr.push(item);
+  });
+  return returnArr;
 }

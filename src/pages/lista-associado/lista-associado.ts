@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import * as firebase from 'Firebase';
 import { AlertController } from 'ionic-angular';
+import * as firebase from 'Firebase';
 import {Associado} from '../../models/Associado';
+import { snapshotToArray } from '../lista-vaga/lista-vaga';
+import { AssociadoProvider } from '../../providers/associado/associado';
 
 @IonicPage()
 @Component({
@@ -13,14 +15,26 @@ export class ListaAssociadoPage {
   id = null;
   associado: Associado;
   associados = [];
-  ref = firebase.database().ref('Associados/');
+ 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public alerCtrl: AlertController) {
-    this.ref.on('value', resp => {
-    this.associados = [];
-    this.associados = snapshotToArray(resp);
-    });
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public alerCtrl: AlertController,
+    public provedor : AssociadoProvider
+    ) { 
   }  
+
+  ionViewWillEnter(){
+    this.chamaListar();
+  }
+
+  chamaListar(){
+    this.provedor.listar()
+    .then(
+      data => this.associados = data
+    );
+  }
 
   gravar() {
     if (!this.id) {
@@ -62,13 +76,5 @@ export class ListaAssociadoPage {
     });
   }
 }
-export const snapshotToArray = snapshot => {
-  let returnArr = [];
-  snapshot.forEach(childSnapshot => {
-      let item = childSnapshot.val();
-      item.key = childSnapshot.key;
-      returnArr.push(item);
-  });
-  return returnArr;
-}
+
   
