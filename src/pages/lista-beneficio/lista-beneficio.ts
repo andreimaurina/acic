@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { BeneficioProvider } from '../../providers/beneficio/beneficio';
 
 /**
  * Generated class for the ListaBeneficioPage page.
@@ -15,11 +16,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ListaBeneficioPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  beneficios = [];
+
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public provedor : BeneficioProvider
+    ) {
+  }
+  
+  ionViewWillEnter(){
+    this.chamaListar();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ListaBeneficioPage');
+  chamaListar(){
+    this.provedor.listar()
+    .then(
+      data => this.beneficios = data
+    );
   }
 
+  novoServico() {
+    this.navCtrl.push('CadastroBeneficioPage');
+  }
 }
+

@@ -69,7 +69,8 @@ import { AssociadoProvider } from '../providers/associado/associado';
     ServicoProvider,
     VagaProvider,
     BeneficioProvider,
-    AssociadoProvider
+    AssociadoProvider,
+    BeneficioProvider
 
   ],
   schemas: [
