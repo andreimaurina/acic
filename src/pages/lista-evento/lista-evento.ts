@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { EventoProvider } from '../../providers/evento/evento';
 
 @IonicPage()
@@ -14,7 +14,8 @@ export class ListaEventoPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
-    public provedor: EventoProvider
+    public provedor: EventoProvider,
+    public alerCtrl: AlertController
     ) {
   }
 
@@ -31,6 +32,21 @@ export class ListaEventoPage {
 
   novoEvento() {
     this.navCtrl.push('CadastroEventoPage');
+  }
+
+  excluir(id) {
+    let alert = this.alerCtrl.create();
+    alert.setTitle('Tem certeza que deseja excluir?');
+    alert.addButton('Cancelar');
+    alert.addButton({
+      text: 'Ok',
+      handler: data => {
+        this.provedor.excluir(id);
+        this.chamaListar();
+      }
+    });
+    alert.present().then(() => {
+    });
   }
 
   // editar(id){

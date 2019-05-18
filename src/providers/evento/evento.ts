@@ -11,7 +11,7 @@ export class EventoProvider {
   constructor(public http: HttpClient) {
   }
 
-  servicos(){
+  listar(){
     return this.ref.once('value')
       .then(
         resp => snapshotToArray(resp)
@@ -26,6 +26,10 @@ export class EventoProvider {
       let newEvento = firebase.database().ref(`evento/${id}`);
       newEvento.update(evento);
     }
+  }
+
+  excluir(id){
+    firebase.database().ref('evento/'+id).remove();
   }
 
 }
