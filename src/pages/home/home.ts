@@ -8,7 +8,7 @@ import * as firebase from 'Firebase';
 })
 export class HomePage {
   infos = [];
-  ref = firebase.database().ref('infos/');
+  ref = firebase.database().ref('Info/');
 
   constructor(public navCtrl: NavController
     ) {
@@ -28,7 +28,7 @@ export class HomePage {
   }
 
   async delete(key) {
-    firebase.database().ref('infos/'+key).remove();
+    firebase.database().ref('Info/'+key).remove();
   }
 
 }

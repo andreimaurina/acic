@@ -17,7 +17,7 @@ export class FormInfoPage {
     if (!this.id) {
       this.info = new Info();
     } else {
-      firebase.database().ref(`infos/${this.id}`).on('value', resp => {
+      firebase.database().ref(`Info/${this.id}`).on('value', resp => {
         this.info = snapshotToObject(resp);
       });
     }
@@ -29,10 +29,10 @@ export class FormInfoPage {
 
   gravar() {
     if (!this.id) {
-      let newInfo = firebase.database().ref('infos/').push();
+      let newInfo = firebase.database().ref('Info/').push();
       newInfo.set(this.info);
     } else {
-      let newInfo = firebase.database().ref(`infos/${this.id}`);
+      let newInfo = firebase.database().ref(`Info/${this.id}`);
       newInfo.update(this.info);
     }
     this.navCtrl.pop();
