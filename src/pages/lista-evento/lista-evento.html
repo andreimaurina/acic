@@ -13,12 +13,13 @@
   </ion-fab>
   <ion-list>
     <ion-item *ngFor="let evento of eventos"  >
-      <div (click)="editar(evento.key)">
+      <div>
         <h2>Nome do Evento: {{evento.nome}}</h2>
         <h3>Local: {{evento.local}}</h3>
         <h4>Data: {{evento.data}}</h4>
       </div>
       <button ion-button color="primary" (click)="excluir(evento.key)">Excluir</button>
+      <button ion-button color="primary" (click)="editar(evento.key)">Editar</button>
     </ion-item>  
   </ion-list>
 </ion-content>

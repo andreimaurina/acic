@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-  <form ngIf = "evento">
+  <form *ngIf = "evento">
     <label>Informações do evento:</label>
     <ion-item>
         <ion-label color="primary" floating>Nome</ion-label>
@@ -38,6 +38,6 @@
         <ion-input name="valorNaoAssociado" [(ngModel)]="evento.valorNaoAssociado"></ion-input>
     </ion-item>
     <br>
-    <button type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="chamaGravar()">Gravar</button>
+    <button type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="chamaGravar(evento.key)">Gravar</button>
   </form>
 </ion-content>
