@@ -23,7 +23,6 @@ export class CadastroEventoPage {
       this.evento = new Evento();
     } else {
       this.chamaPorId(this.id);
-      console.log(this.evento)
     }
   }
 

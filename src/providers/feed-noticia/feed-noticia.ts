@@ -6,7 +6,7 @@ import * as firebase from 'Firebase';
 export class FeedNoticiaProvider {
 
   noticias = [];
-  ref = firebase.database().ref('noticias/');
+  ref = firebase.database().ref('Noticias/');
 
   constructor(public http: HttpClient) {
   }

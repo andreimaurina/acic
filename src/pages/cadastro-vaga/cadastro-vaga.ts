@@ -23,7 +23,7 @@ export class CadastroVagaPage {
   gravar(){
     if (!this.id) {
       console.log(this.vaga);
-      let newVaga = firebase.database().ref('vaga/').push();
+      let newVaga = firebase.database().ref('Vagas/').push();
       newVaga.set(this.vaga);
     }
     this.navCtrl.pop(); 

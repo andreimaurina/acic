@@ -6,7 +6,7 @@ import * as firebase from 'Firebase';
 export class EventoProvider {
 
   eventos = [];
-  ref = firebase.database().ref('evento/');
+  ref = firebase.database().ref('Eventos/');
 
   constructor(public http: HttpClient) {
   }
@@ -19,7 +19,7 @@ export class EventoProvider {
   }
 
   listarPorId(id){
-    return firebase.database().ref(`evento/${id}`).once('value')
+    return firebase.database().ref(`Eventos/${id}`).once('value')
       .then(
         resp => snapshotToObject(resp)
       );
@@ -27,16 +27,16 @@ export class EventoProvider {
 
   gravar(evento, id = null){
     if (!id) {
-      let newEvento = firebase.database().ref('evento/').push();
+      let newEvento = this.ref.push();
       newEvento.set(evento);
     }else {
-      let newEvento = firebase.database().ref(`evento/${id}`);
+      let newEvento = firebase.database().ref(`Eventos/${id}`);
       newEvento.update(evento);
     }
   }
 
   excluir(id){
-    firebase.database().ref('evento/'+id).remove();
+    firebase.database().ref('Eventos/'+id).remove();
   }
 
 }

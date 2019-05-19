@@ -17,7 +17,7 @@ import firebase from 'Firebase';
 export class SobrePage {
 
   sobres = [];
-  ref = firebase.database().ref('sobre/');
+  ref = firebase.database().ref('Sobre/');
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.ref.on('value', resp => {

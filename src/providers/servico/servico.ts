@@ -12,7 +12,7 @@ export class ServicoProvider {
   servico : Servico;
   servicos = [];
   
-  ref = firebase.database().ref('servico/');
+  ref = firebase.database().ref('Servicos/');
 
   constructor(public http: HttpClient) {
   }

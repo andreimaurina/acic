@@ -22,7 +22,7 @@ export class CadastroServicoPage {
 
   gravar() {
     if (!this.id) {
-      let newServico = firebase.database().ref('servico/').push();
+      let newServico = firebase.database().ref('Servicos/').push();
       newServico.set(this.servico); 
     }
     this.navCtrl.pop();

@@ -11,7 +11,7 @@ import * as firebase from 'Firebase';
 export class ListaVagaPage {
 
   vagas = [];
-  ref = firebase.database().ref('vaga/');
+  ref = firebase.database().ref('Vagas/');
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.ref.on('value',resp => {

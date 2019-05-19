@@ -6,7 +6,7 @@ import * as firebase from 'Firebase';
 export class BeneficioProvider {
 
   eventos = [];
-  ref = firebase.database().ref('beneficio/');
+  ref = firebase.database().ref('Beneficios/');
 
   constructor(public http: HttpClient) {
   }
@@ -20,16 +20,16 @@ export class BeneficioProvider {
 
   gravar(beneficio, id = null){
     if (!id) {
-      let newBeneficio = firebase.database().ref('beneficio/').push();
+      let newBeneficio = this.ref.push();
       newBeneficio.set(beneficio);
     }else {
-      let newBeneficio = firebase.database().ref(`beneficio/${id}`);
+      let newBeneficio = firebase.database().ref(`Beneficios/${id}`);
       newBeneficio.update(beneficio);
     }
   }
 
   excluir(id){
-    firebase.database().ref('beneficio/'+id).remove();
+    firebase.database().ref('Beneficios/'+id).remove();
   }
 
 }
