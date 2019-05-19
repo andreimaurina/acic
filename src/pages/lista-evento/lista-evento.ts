@@ -30,12 +30,16 @@ export class ListaEventoPage {
     );
   }
 
+  mostrarDados(id){
+    this.navCtrl.push('MostraEventoPage',{id : id});
+  }
+
   novoEvento() {
     this.navCtrl.push('CadastroEventoPage');
   }
 
   editar(id){
-    this.navCtrl.push('CadastroEventoPage', {id: id});
+    this.navCtrl.push('CadastroEventoPage',{id: id});
   }
 
   excluir(id) {

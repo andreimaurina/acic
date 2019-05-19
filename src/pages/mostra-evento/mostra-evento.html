@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar *ngIf = "evento">
+    <ion-title>{{evento.nome}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf = "evento">
+    SASDFAS
+    <h2>Local: {{evento.local}}</h2>
+    <h3>Data: {{evento.data}}</h3>
+  </div>
+</ion-content>

@@ -22,6 +22,7 @@ import { ServicoProvider } from '../providers/servico/servico';
 import { VagaProvider } from '../providers/vaga/vaga';
 import { BeneficioProvider } from '../providers/beneficio/beneficio';
 import { AssociadoProvider } from '../providers/associado/associado';
+import { MostraEventoPage } from '../pages/mostra-evento/mostra-evento';
 
 @NgModule({
   declarations: [
