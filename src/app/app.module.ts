@@ -24,6 +24,13 @@ import { BeneficioProvider } from '../providers/beneficio/beneficio';
 import { AssociadoProvider } from '../providers/associado/associado';
 import { MostraEventoPage } from '../pages/mostra-evento/mostra-evento';
 
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+
+import { config } from './app.component';
+
+import { AuthProvider } from '../providers/auth/auth';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -44,6 +51,7 @@ import { MostraEventoPage } from '../pages/mostra-evento/mostra-evento';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
+    AngularFireModule.initializeApp(config)
 
   ],
   bootstrap: [IonicApp],
@@ -54,9 +62,9 @@ import { MostraEventoPage } from '../pages/mostra-evento/mostra-evento';
     HomePage,
     TabsPage,
     ListaEventoPage,
-    ListaAssociadoPage,  
+    ListaAssociadoPage,
     ListaBeneficioPage,
-    ListaServicoPage,   
+    ListaServicoPage, 
     ListaVagaPage,
     SobrePage
     
@@ -71,7 +79,9 @@ import { MostraEventoPage } from '../pages/mostra-evento/mostra-evento';
     VagaProvider,
     BeneficioProvider,
     AssociadoProvider,
-    BeneficioProvider
+    BeneficioProvider,
+    AuthProvider,
+    AngularFireAuth
 
   ],
   schemas: [

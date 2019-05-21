@@ -7,6 +7,7 @@ import { ListaBeneficioPage } from '../lista-beneficio/lista-beneficio';
 import { ListaVagaPage } from '../lista-vaga/lista-vaga';
 import { SobrePage } from '../sobre/sobre';
 import { ListaAssociadoPage } from '../lista-associado/lista-associado';
+import {LoginPage } from '../login/login';
 
 /**
  * Generated class for the MenuPage page.

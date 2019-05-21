@@ -3,7 +3,7 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import * as firebase from 'Firebase';
-const config = {
+export const config = {
   apiKey: "AIzaSyBnv2FDzNmV3Auz8FlHkkApsgujK6ASTXk",
   authDomain: "teste-c17e4.firebaseapp.com",
   databaseURL: "https://teste-c17e4.firebaseio.com",
