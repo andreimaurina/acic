@@ -1,13 +1,22 @@
 <ion-header>
-  <ion-navbar *ngIf = "evento">
-    <ion-title>{{evento.nome}}</ion-title>
+  <ion-navbar>
+    <ion-title *ngIf = "evento">{{evento.nome}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <div *ngIf = "evento">
-    SASDFAS
-    <h2>Local: {{evento.local}}</h2>
-    <h3>Data: {{evento.data}}</h3>
+    <h5>Local: {{evento.local}}</h5>
+    <h6>
+      Data: {{evento.data}}
+      Hora: {{evento.hora}}<br>
+      <br>
+      Descrição: {{evento.descricao}}<br>
+      <br>
+      Valor associado: R$ {{evento.valorAssociado}}<br>
+      <br>
+      Valor não associado: R$ {{evento.valorNaoAssociado}}<br>
+    </h6>
+    <button type="submit" ion-button float-right shape="round" color="primary" expand="block">Inscrever-se</button>
   </div>
 </ion-content>

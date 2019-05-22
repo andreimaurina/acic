@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Evento } from '../../models/Evento';
 import { EventoProvider } from '../../providers/evento/evento';
+import { Evento } from '../../models/Evento';
 
 @IonicPage()
 @Component({
@@ -9,7 +9,7 @@ import { EventoProvider } from '../../providers/evento/evento';
   templateUrl: 'mostra-evento.html',
 })
 export class MostraEventoPage {
-
+  
   evento: Evento;
   id = null;
 
@@ -31,4 +31,5 @@ export class MostraEventoPage {
       data => this.evento = data
     );
   }
+
 }
