@@ -10,6 +10,7 @@ import { EventoProvider } from '../../providers/evento/evento';
 export class ListaEventoPage {
   
   eventos = [];
+  
 
   constructor(
     public navCtrl: NavController, 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import * as firebase from 'Firebase';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { VagaProvider } from '../../providers/vaga/vaga';
 
 
 @IonicPage()
@@ -11,26 +11,51 @@ import * as firebase from 'Firebase';
 export class ListaVagaPage {
 
   vagas = [];
-  ref = firebase.database().ref('Vagas/');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.ref.on('value',resp => {
-      this.vagas = [];
-      this.vagas = snapshotToArray(resp);
-    });
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public provedor: VagaProvider,
+    public alerCtrl: AlertController
+    ) {
+  }
+  
+  ionViewWillEnter(){
+    this.chamaListar();
+  }
+
+  chamaListar(){
+    this.provedor.listar()
+    .then(
+      data => this.vagas = data
+    );
+  }
+
+  mostrarDados(id){
+    this.navCtrl.push('MostraVagaPage',{id : id});
   }
 
   novaVaga() {
     this.navCtrl.push('CadastroVagaPage');
   }
-}
 
-export const snapshotToArray = snapshot => {
-  let returnArr = [];
-  snapshot.forEach(childSnapshot => {
-      let item = childSnapshot.val();
-      item.key = childSnapshot.key;
-      returnArr.push(item);
-  });
-  return returnArr;
+  editar(id){
+    this.navCtrl.push('CadastroVagaPage',{id: id});
+  }
+
+  excluir(id) {
+    let alert = this.alerCtrl.create();
+    alert.setTitle('Tem certeza que deseja excluir?');
+    alert.addButton('Cancelar');
+    alert.addButton({
+      text: 'Ok',
+      handler: data => {
+        this.provedor.excluir(id);
+        this.chamaListar();
+      }
+    });
+    alert.present().then(() => {
+    });
+  }
+
 }
