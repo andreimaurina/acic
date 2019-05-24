@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import * as firebase from 'Firebase';
 import {Associado} from '../../models/Associado';
-import { snapshotToArray } from '../lista-vaga/lista-vaga';
 import { AssociadoProvider } from '../../providers/associado/associado';
 
 @IonicPage()
