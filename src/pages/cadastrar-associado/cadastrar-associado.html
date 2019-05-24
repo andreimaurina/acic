@@ -6,6 +6,7 @@
 </ion-header>
 
 <ion-content padding>
+  <div *ngIf = "associado">
     <ion-item>
       <ion-label color="primary" floating>cpf</ion-label>
       <ion-input name="cpf" [(ngModel)]="associado.cpf"></ion-input>
@@ -38,4 +39,6 @@
       <ion-label color="primary" floating>linkedin</ion-label>
       <ion-input linkedin="linkedin" [(ngModel)]="associado.linkedin"></ion-input>
     </ion-item> 
+    <button type="submit" ion-button shape="round" color="primary" expand="block" (click)="gravar(associado.key)">Salvar</button>
+  </div>
 </ion-content>

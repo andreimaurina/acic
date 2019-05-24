@@ -42,6 +42,7 @@ export class ListaAssociadoPage {
     }
     this.navCtrl.pop();
   }
+
   novoAssociado() {
     let alert = this.alerCtrl.create();
     alert.setTitle('Selecione o tipo');
@@ -68,12 +69,34 @@ export class ListaAssociadoPage {
         }else{
           this.navCtrl.push('CadastroPessoaJuridicaPage');
         }
-        console.log('Radio data:', data);
       }
     });
     alert.present().then(() => {
     });
   }
+
+  excluir(id) {
+    let alert = this.alerCtrl.create();
+    alert.setTitle('Tem certeza que deseja excluir?');
+    alert.addButton('Cancelar');
+    alert.addButton({
+      text: 'Ok',
+      handler: data => {
+        this.provedor.excluir(id);
+        this.chamaListar();
+      }
+    });
+    alert.present().then(() => {
+    });
+  }
+
+  editar(id,tipo){
+    console.log(id);
+    if (tipo == 'pessoaFisica'){
+      this.navCtrl.push('CadastrarAssociadoPage',{id: id});
+    }else{
+      this.navCtrl.push('CadastroPessoaJuridicaPage',{id: id});
+    }
+  }
 }
 
-  

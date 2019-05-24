@@ -31,7 +31,7 @@ export class PessoaJuridica extends Associado {
     razaoSocial: string;
     nomeFantasia: string;
     site: string;
-    // constructor() {
-    //     super('pessoaJuridica')
-    // }
+     constructor() {
+         super('pessoaJuridica')
+    }
 }
