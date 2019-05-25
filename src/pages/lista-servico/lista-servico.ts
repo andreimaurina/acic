@@ -52,6 +52,10 @@ export class ListaServicoPage {
     this.navCtrl.push('CadastroServicoPage');
   }
 
+  mostraDados(id){
+    this.navCtrl.push('MostraServicoPage',{id : id});
+  }
+
   editar(id){
     this.navCtrl.push('CadastroServicoPage', {id : id});
   }
