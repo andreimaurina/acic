@@ -6,9 +6,7 @@
 </ion-header>
 
 <ion-content padding>
-  <form>
-    <label>Cadastro de Pessoa Física: </label>
-
+  <div *ngIf = "associado">
     <ion-item>
       <ion-label color="primary" floating>cpf</ion-label>
       <ion-input name="cpf" [(ngModel)]="associado.cpf"></ion-input>
@@ -21,7 +19,7 @@
       <ion-label color="primary" floating>nome</ion-label>
       <ion-input name="nome" [(ngModel)]="associado.nome"></ion-input>
     </ion-item>
-  <!-- <ion-item>
+    <ion-item>
       <ion-label color="primary" floating>dataNasc</ion-label>
       <ion-input name="dataNasc" [(ngModel)]="associado.dataNasc"></ion-input>
     </ion-item>
@@ -35,11 +33,12 @@
     </ion-item>
     <ion-item>
       <ion-label color="primary" floating>twitter</ion-label>
-      <ion-input twitter="instagram" [(ngModel)]="associado.twitter"></ion-input>
+      <ion-input twitter="twitter" [(ngModel)]="associado.twitter"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary" floating>linkedin</ion-label>
-      <ion-input linkedin="instagram" [(ngModel)]="associado.linkedin"></ion-input>
-    </ion-item>  -->
-  </form>
+      <ion-input linkedin="linkedin" [(ngModel)]="associado.linkedin"></ion-input>
+    </ion-item> 
+    <button type="submit" ion-button shape="round" color="primary" expand="block" (click)="gravar(associado.key)">Salvar</button>
+  </div>
 </ion-content>

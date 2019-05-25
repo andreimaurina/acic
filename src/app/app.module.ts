@@ -23,10 +23,9 @@ import { BeneficioProvider } from '../providers/beneficio/beneficio';
 import { AssociadoProvider } from '../providers/associado/associado';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
-
 import { config } from './app.component';
-
 import { AuthProvider } from '../providers/auth/auth';
+import { CadastrarAssociadoPage } from '../pages/cadastrar-associado/cadastrar-associado';
 
 @NgModule({
   declarations: [

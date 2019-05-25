@@ -7,23 +7,23 @@ export class Associado {
     rua: string;
     numEndereco: number;
     bairro: string;
-    // constructor(tipo: string) {
-    //     this.tipo = tipo;
-    //   }
+    constructor(tipo: string) {
+        this.tipo = tipo;
+      }
 }
   
 export class PessoaFisica extends Associado {
     cpf: string;
     sexo: string;
     nome: string;
-    dataNasc: Date;
+    dataNasc: number;
     facebook: string;
     instagram: string;
     twitter: string;
     linkedin: string;
-    // constructor() {
-    //     super('pessoaFisica');
-    // }
+    constructor() {
+        super('pessoaFisica');
+    }
 }
 
 export class PessoaJuridica extends Associado {
@@ -31,7 +31,7 @@ export class PessoaJuridica extends Associado {
     razaoSocial: string;
     nomeFantasia: string;
     site: string;
-    // constructor() {
-    //     super('pessoaJuridica')
-    // }
+     constructor() {
+         super('pessoaJuridica')
+    }
 }

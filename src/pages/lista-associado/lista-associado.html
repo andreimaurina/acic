@@ -16,9 +16,9 @@
       <ion-item *ngFor="let associado of associados">
         <div>
           <h2>Nome: {{associado.nome}}</h2>
-          <h3>Email: {{associado.email}}</h3>
         </div>  
-        <button ion-button color="primary">Excluir</button>
+        <button ion-button color="primary" (click)="excluir(associado.key)">Excluir</button>
+        <button ion-button color="primary" (click)="editar(associado.key,associado.tipo)">Editar</button>
       </ion-item>  
     </ion-list>
 </ion-content>
