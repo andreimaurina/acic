@@ -17,13 +17,10 @@ import { ListaServicoPage } from '../pages/lista-servico/lista-servico';
 import { ListaVagaPage } from '../pages/lista-vaga/lista-vaga';
 import { SobrePage } from '../pages/sobre/sobre';
 import { HttpClientModule } from '@angular/common/http';
-import { CadastrarAssociadoPage } from '../pages/cadastrar-associado/cadastrar-associado';
 import { ServicoProvider } from '../providers/servico/servico';
 import { VagaProvider } from '../providers/vaga/vaga';
 import { BeneficioProvider } from '../providers/beneficio/beneficio';
 import { AssociadoProvider } from '../providers/associado/associado';
-import { MostraEventoPage } from '../pages/mostra-evento/mostra-evento';
-
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 
