@@ -21,7 +21,16 @@ export class CadastroBeneficioPage {
     this.id = this.navParams.data.id;
     if (!this.id) {
       this.beneficio = new Beneficio();
-    } 
+    } else {
+      this.chamaPorId(this.id);
+    }
+  }
+
+  chamaPorId(id){
+    this.provedor.listarPorId(id)
+      .then(
+      data => this.beneficio = data
+    );
   }
 
   chamaGravar(id){
