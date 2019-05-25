@@ -6,7 +6,6 @@ import { v } from '@angular/core/src/render3';
 
 
 
-
 @Injectable()
 export class ServicoProvider {
   servico : Servico;
@@ -23,7 +22,19 @@ export class ServicoProvider {
         resp => snapshotToArray(resp)
       );
   }
+
+  listarPorId(id){
+    return firebase.database().ref(`Servicos/${id}`).once('value')
+      .then(
+        resp => snapshotToObject(resp)
+      );
+  }
+
+  excluir(id){
+    firebase.database().ref('Servicos/'+id).remove();
+  } 
 }
+
 
 export const snapshotToArray = snapshot => {
   let returnArr = [];
@@ -34,5 +45,13 @@ export const snapshotToArray = snapshot => {
   });
   return returnArr;
 }
+export const snapshotToObject = snapshot => {
+  let item = snapshot.val();
+  item.key = snapshot.key;
+  return item;
+}
+
+
+
 
 

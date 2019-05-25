@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Searchbar } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Searchbar, AlertController } from 'ionic-angular';
 import { ServicoProvider } from '../../providers/servico/servico';
 
 
@@ -10,14 +10,15 @@ import { ServicoProvider } from '../../providers/servico/servico';
 })
 export class ListaServicoPage {
 
-  listaServico = [];
+  listaServico = []
   servicos = [];
 
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public provedor : ServicoProvider
+    public provedor : ServicoProvider,
+    public alertCtrl : AlertController
     ) {
   }
   
@@ -51,5 +52,23 @@ export class ListaServicoPage {
     this.navCtrl.push('CadastroServicoPage');
   }
 
+  editar(id){
+    this.navCtrl.push('CadastroServicoPage', {id : id});
+  }
+
+  excluir(id) {
+    let alert = this.alertCtrl.create();
+    alert.setTitle('Tem certeza que deseja excluir?');
+    alert.addButton('Cancelar');
+    alert.addButton({
+      text: 'Ok',
+      handler: data => {
+        this.provedor.excluir(id);
+        this.chamaListar();
+      }
+    });
+    alert.present().then(() => {
+    });
+  }
 }
 

@@ -10,6 +10,7 @@ import { BeneficioProvider } from '../../providers/beneficio/beneficio';
 export class ListaBeneficioPage {
   
   beneficios = [];
+  
 
   constructor(
     public navCtrl: NavController, 
@@ -30,8 +31,16 @@ export class ListaBeneficioPage {
     );
   }
 
+  mostrarDados(id){
+    this.navCtrl.push('MostraBeneficioPage',{id : id});
+  }
+
   novoBeneficio() {
     this.navCtrl.push('CadastroBeneficioPage');
+  }
+
+  editar(id){
+    this.navCtrl.push('CadastroBeneficioPage',{id: id});
   }
 
   excluir(id) {

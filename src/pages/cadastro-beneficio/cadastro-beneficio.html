@@ -1,21 +1,22 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Cadastro de Benefícios</ion-title>
+    <ion-title>Cadastro de Beneficios</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <form>
-    <label>Informações do Benefício:</label>
+  <form *ngIf = "beneficio">
+    <label>Informações do benefício:</label>
     <ion-item>
-        <ion-label color="primary" floating>Nome</ion-label>
-        <ion-input name="nome" [(ngModel)]="beneficio.codigo"></ion-input>
+        <ion-label color="primary" floating>Beneficio</ion-label>
+        <ion-input name="beneficio" [(ngModel)]="beneficio.codigo"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label color="primary" floating>Valor</ion-label>
-        <ion-input name="data" [(ngModel)]="beneficio.valor"></ion-input>
+        <ion-input name="valor" [(ngModel)]="beneficio.valor"></ion-input>
     </ion-item>
     <br>
-    <button type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="chamaGravar()">Gravar</button>
+    <label>Valores:</label>
+    <button type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="chamaGravar(beneficio.key)">Gravar</button>
   </form>
 </ion-content>

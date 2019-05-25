@@ -12,10 +12,14 @@
     </button>
   </ion-fab>
   <ion-list>
-    <ion-item *ngFor="let beneficio of beneficios" >
-      <h2>Nome do Benefício: {{beneficio.codigo}}</h2>
-      <h3>Valor: {{beneficio.valor}}</h3>
+    <ion-item *ngFor="let beneficio of beneficios"  >
+      <div (click)="mostrarDados(beneficio.key)">
+        <h2>Benefício: {{beneficio.codigo}}</h2>
+        <h3>Valor: {{beneficio.valor}}</h3>
+      </div>
       <button ion-button color="primary" (click)="excluir(beneficio.key)">Excluir</button>
+      <button ion-button color="primary" (click)="editar(beneficio.key)">Editar</button>
     </ion-item>  
   </ion-list>
 </ion-content>
+ 
