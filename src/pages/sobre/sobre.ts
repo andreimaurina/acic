@@ -17,6 +17,7 @@ import firebase from 'Firebase';
 export class SobrePage {
 
   sobres = [];
+  editando = false;
   ref = firebase.database().ref('Sobre/');
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -24,6 +25,14 @@ export class SobrePage {
     this.sobres = [];
     this.sobres = snapshotToArray(resp);
     });
+  }
+  editar(status){
+this.editando = status;
+  }
+  gravar(){
+
+    let newEvento = firebase.database().ref(`Sobre/${this.sobres[0].key}`);
+    newEvento.update(this.sobres[0]);
   }
 }
 

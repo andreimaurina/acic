@@ -26,6 +26,7 @@ import { AngularFireModule } from 'angularfire2';
 import { config } from './app.component';
 import { AuthProvider } from '../providers/auth/auth';
 import { CadastrarAssociadoPage } from '../pages/cadastrar-associado/cadastrar-associado';
+import { SobreProvider } from '../providers/sobre/sobre';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { CadastrarAssociadoPage } from '../pages/cadastrar-associado/cadastrar-a
     AssociadoProvider,
     BeneficioProvider,
     AuthProvider,
-    AngularFireAuth
+    AngularFireAuth,
+    SobreProvider
 
   ],
   schemas: [
