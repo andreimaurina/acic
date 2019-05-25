@@ -14,10 +14,11 @@
   <ion-list>
     <ion-item *ngFor="let vaga of vagas">
         <div (click)="mostrarDados(vaga.key)">
-          <!--<ion-avatar item-start>
+        <!--</div>
+          <ion-avatar item-start>
             <img src={{vaga.imagem}}>
           </ion-avatar>
-        <div>-->
+        </div>-->
           <h2>Nome do Vaga: {{vaga.nome}}</h2>
           <h3>Profissão: {{vaga.profissao}}</h3>
           <h4>Descrição: {{vaga.descricao}}</h4>
