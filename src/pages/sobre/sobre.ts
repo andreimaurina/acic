@@ -2,13 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import firebase from 'Firebase';
 
-/**
- * Generated class for the SobrePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-sobre',
@@ -17,6 +10,7 @@ import firebase from 'Firebase';
 export class SobrePage {
 
   sobres = [];
+  editando = false;
   ref = firebase.database().ref('Sobre/');
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -24,6 +18,14 @@ export class SobrePage {
     this.sobres = [];
     this.sobres = snapshotToArray(resp);
     });
+  }
+  editar(status){
+this.editando = status;
+  }
+  gravar(){
+
+    let newEvento = firebase.database().ref(`Sobre/${this.sobres[0].key}`);
+    newEvento.update(this.sobres[0]);
   }
 }
 
