@@ -28,7 +28,7 @@ export class CadastroServicoPage {
   }
 
   chamaPorId(id){
-    this.provedor.listaPorId(id)
+    this.provedor.listarPorId(id)
     .then(
       data => this.servico = data
     );
