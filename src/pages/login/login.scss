@@ -1,5 +1,5 @@
 page-login {
-    .background {
+    /*.background {
         background-image: url('<yoururlhere>');
     }
     .scroll-content {
@@ -61,6 +61,10 @@ page-login {
     
     .input-cover {
     position: static;
+    }*/
+    #passwordreset{
+        justify-content: center;
+        text-align: center;
+        padding-right: 10px;
     }
-    
     }
