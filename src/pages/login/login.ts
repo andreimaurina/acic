@@ -21,7 +21,7 @@ export class LoginPage {
   signIn() {
     this.authservice.login(this.credentials).then((res: any) => {
       if (!res.code)
-        this.navCtrl.setRoot('TabsPage');
+        this.navCtrl.pop();
       else
         alert(res);
     })

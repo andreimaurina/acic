@@ -3,14 +3,10 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { usercreds } from '../../models/interfaces/usercreds';
 
-/*
-  Generated class for the AuthProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class AuthProvider {
+
+  usuario = null;
 
   constructor(public afireauth: AngularFireAuth) {
     
@@ -21,14 +17,21 @@ export class AuthProvider {
       this.afireauth.auth.signInWithEmailAndPassword(credentials.email, credentials.password).then(() => {
         resolve(true);
         alert("Você logou no sistema!");
+        this.usuario = 1
       }).catch((err) => {
         alert("Não logado!");
         reject(err);
+        this.usuario = null
        })
     })
- 
     return promise;
-    
   }
 
+  logado(){
+    if (this.usuario == null){
+      return false;
+    }else{
+      return true;
+    }
+  }
 }
