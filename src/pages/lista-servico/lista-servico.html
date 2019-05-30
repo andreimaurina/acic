@@ -7,11 +7,13 @@
 
 <ion-content padding>
   <ion-searchbar placeholder="Buscar..."  (ionInput)="filtrarItens($event)" clearInput></ion-searchbar>
-  <ion-fab right bottom>
-    <button ion-fab color="primary" (click)="novoServico()">
-      <ion-icon name="add"></ion-icon>
-    </button>
-  </ion-fab>
+  <div *ngIf="admin">
+    <ion-fab right bottom>
+      <button ion-fab color="primary" (click)="novoServico()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-fab>
+  </div>
   <ion-list>
       <ion-item *ngFor="let servico of servicos">
         <div (click)="mostraDados(servico.key)"> 
@@ -19,8 +21,10 @@
           <h3>Descrição: {{servico.descricao}}</h3>
           <h4>Link: {{servico.link}}</h4>
         </div>
-        <button ion-button color="primary" (click)="excluir(servico.key)">Excluir</button>
-        <button ion-button color="primary" (click)="editar(servico.key)">Editar</button>
+        <div *ngIf="admin">
+          <button ion-button color="primary" (click)="excluir(servico.key)">Excluir</button>
+          <button ion-button color="primary" (click)="editar(servico.key)">Editar</button>
+        </div>
       </ion-item>  
   </ion-list>
 </ion-content>

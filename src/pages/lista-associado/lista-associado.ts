@@ -4,6 +4,7 @@ import { AlertController } from 'ionic-angular';
 import * as firebase from 'Firebase';
 import {Associado} from '../../models/Associado';
 import { AssociadoProvider } from '../../providers/associado/associado';
+import { AuthProvider } from '../../providers/auth/auth';
 
 @IonicPage()
 @Component({
@@ -11,20 +12,23 @@ import { AssociadoProvider } from '../../providers/associado/associado';
   templateUrl: 'lista-associado.html',
 })
 export class ListaAssociadoPage {
+  
   id = null;
   associado: Associado;
   associados = [];
+  admin = false;
  
-
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public alerCtrl: AlertController,
-    public provedor : AssociadoProvider
+    public provedor : AssociadoProvider,
+    public auth: AuthProvider
     ) { 
   }  
 
   ionViewWillEnter(){
+    this.admin = this.auth.logado();
     this.chamaListar();
   }
 

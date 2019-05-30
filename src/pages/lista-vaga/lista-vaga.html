@@ -6,25 +6,29 @@
 
 <ion-content padding>
   <ion-searchbar></ion-searchbar>
-  <ion-fab right bottom>
-    <button ion-fab color="primary" (click)="novaVaga()">
-      <ion-icon name="add"></ion-icon>
-    </button>
-  </ion-fab>
+  <div *ngIf="admin">
+    <ion-fab right bottom>
+      <button ion-fab color="primary" (click)="novaVaga()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-fab>
+  </div>
   <ion-list>
     <ion-item *ngFor="let vaga of vagas">
-        <div (click)="mostrarDados(vaga.key)">
-        <!--</div>
-          <ion-avatar item-start>
-            <img src={{vaga.imagem}}>
-          </ion-avatar>
-        </div>-->
-          <h2>Nome do Vaga: {{vaga.nome}}</h2>
-          <h3>Profissão: {{vaga.profissao}}</h3>
-          <h4>Descrição: {{vaga.descricao}}</h4>
-        </div>
-      <button ion-button color="primary" (click)="excluir(vaga.key)">Excluir</button>
-      <button ion-button color="primary" (click)="editar(vaga.key)">Editar</button>
+      <div (click)="mostrarDados(vaga.key)">
+      <!--</div>
+        <ion-avatar item-start>
+          <img src={{vaga.imagem}}>
+        </ion-avatar>
+      </div>-->
+        <h2>Nome do Vaga: {{vaga.nome}}</h2>
+        <h3>Profissão: {{vaga.profissao}}</h3>
+        <h4>Descrição: {{vaga.descricao}}</h4>
+      </div>
+      <div *ngIf="admin">
+        <button ion-button color="primary" (click)="excluir(vaga.key)">Excluir</button>
+        <button ion-button color="primary" (click)="editar(vaga.key)">Editar</button>
+      </div>
     </ion-item>
   </ion-list>
 </ion-content>

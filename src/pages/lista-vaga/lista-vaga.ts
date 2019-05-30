@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { VagaProvider } from '../../providers/vaga/vaga';
+import { AuthProvider } from '../../providers/auth/auth';
 
 
 @IonicPage()
@@ -11,16 +12,19 @@ import { VagaProvider } from '../../providers/vaga/vaga';
 export class ListaVagaPage {
 
   vagas = [];
+  admin = false;
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public provedor: VagaProvider,
-    public alerCtrl: AlertController
+    public alerCtrl: AlertController,
+    public auth: AuthProvider
     ) {
   }
   
   ionViewWillEnter(){
+    this.admin = this.auth.logado();
     this.chamaListar();
   }
 

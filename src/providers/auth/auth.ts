@@ -29,8 +29,8 @@ export class AuthProvider {
 
   logado(){
     if (this.usuario == null){
-      return false;
-    }else{
+    //   return false;
+    // }else{
       return true;
     }
   }

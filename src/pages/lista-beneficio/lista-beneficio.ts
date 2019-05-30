@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { BeneficioProvider } from '../../providers/beneficio/beneficio';
+import { AuthProvider } from '../../providers/auth/auth';
 
 @IonicPage()
 @Component({
@@ -10,17 +11,19 @@ import { BeneficioProvider } from '../../providers/beneficio/beneficio';
 export class ListaBeneficioPage {
   
   beneficios = [];
-  
+  admin = false;
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
     public provedor: BeneficioProvider,
-    public alerCtrl: AlertController
+    public alerCtrl: AlertController,
+    public auth: AuthProvider
     ) {
   }
 
   ionViewWillEnter(){
+    this.admin = this.auth.logado();
     this.chamaListar();
   }
 
