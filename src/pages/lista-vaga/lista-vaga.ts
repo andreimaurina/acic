@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { VagaProvider } from '../../providers/vaga/vaga';
 import { AuthProvider } from '../../providers/auth/auth';
 
-
 @IonicPage()
 @Component({
   selector: 'page-lista-vaga',

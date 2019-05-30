@@ -1,10 +1,11 @@
 import { Associado } from "./Associado";
 
 export class Vaga {
-    cod: number;
+    //cod: number;
+    nome: String;
     profissao: string;
-    visibilidade: string;
     descricao: string;
+    visibilidade: string;
     empregador: Associado;
     emailEmpregador: Associado;
 }
