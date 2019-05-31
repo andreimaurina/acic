@@ -25,7 +25,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { config } from './app.component';
 import { AuthProvider } from '../providers/auth/auth';
-import { CadastrarAssociadoPage } from '../pages/cadastrar-associado/cadastrar-associado';
 import { SobreProvider } from '../providers/sobre/sobre';
 
 @NgModule({

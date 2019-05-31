@@ -9,7 +9,7 @@ import { EventoProvider } from '../../providers/evento/evento';
   templateUrl: 'cadastro-evento.html',
 })
 export class CadastroEventoPage {
-
+  
   evento: Evento;
   id = null;
   
@@ -25,7 +25,7 @@ export class CadastroEventoPage {
       this.chamaPorId(this.id);
     }
   }
-
+  
   chamaPorId(id){
     this.provedor.listarPorId(id)
       .then(
