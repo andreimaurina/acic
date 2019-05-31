@@ -19,8 +19,9 @@ export class AuthProvider {
         alert("Você logou no sistema!");
         this.usuario = 1
       }).catch((err) => {
-        alert("Não logado!");
-        reject(err);
+        alert("Não logado! "  + "\n" + "Verifique suas credenciais...");
+        //resolve(true);
+        //reject(err);
         this.usuario = null
        })
     })
