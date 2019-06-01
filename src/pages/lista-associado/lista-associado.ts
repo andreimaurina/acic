@@ -16,6 +16,7 @@ export class ListaAssociadoPage {
   id = null;
   associado: Associado;
   associados = [];
+  todosAssociados=[];
   admin = false;
  
   constructor(
@@ -35,8 +36,13 @@ export class ListaAssociadoPage {
   chamaListar(){
     this.provedor.listar()
     .then(
-      data => this.associados = data
+      data => {
+        this.associados = data;
+        this.todosAssociados = data;
+
+      }
     );
+    
   }
 
   gravar() {
@@ -45,6 +51,18 @@ export class ListaAssociadoPage {
       newAssociado.set(this.associado); 
     }
     this.navCtrl.pop();
+  }
+
+  mudarFiltro(tipo){
+    console.log(tipo);
+    this.associados = this.todosAssociados;
+    this.associados = this.associados.filter((elemento) => {
+      if (elemento.tipo==tipo){
+        return true;
+      }
+      return false;
+
+    });
   }
 
   novoAssociado() {

@@ -17,15 +17,17 @@ export class SobrePage {
     this.ref.on('value', resp => {
     this.sobres = [];
     this.sobres = snapshotToArray(resp);
+    
     });
   }
   editar(status){
-this.editando = status;
+    this.editando = status;
   }
-  gravar(){
-
-    let newEvento = firebase.database().ref(`Sobre/${this.sobres[0].key}`);
+  gravar(id){
+    console.log(id);
+    let newEvento = firebase.database().ref(`Sobre/${id}`);
     newEvento.update(this.sobres[0]);
+    this.editando = false ; 
   }
 }
 
@@ -33,7 +35,7 @@ export const snapshotToArray = snapshot => {
   let returnArr = [];
   snapshot.forEach(childSnapshot => {
       let item = childSnapshot.val();
-      item.codigo = childSnapshot.codigo;
+      item.key = childSnapshot.key;
       returnArr.push(item);
   });
   return returnArr;

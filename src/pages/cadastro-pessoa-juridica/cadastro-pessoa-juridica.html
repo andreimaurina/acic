@@ -8,25 +8,45 @@
 <ion-content padding>
   <div *ngIf = "associado">
     <ion-item>
-      <ion-label color="primary" floating>cnpj</ion-label>
+      <ion-label color="primary" floating>CNPJ</ion-label>
       <ion-input name="cnpj" [(ngModel)]="associado.cnpj"></ion-input>
    </ion-item>
-   <ion-item>
-      <ion-label color="primary" floating>nome</ion-label>
-      <ion-input name="nome" [(ngModel)]="associado.nome"></ion-input>
-    </ion-item>
     <ion-item>
-      <ion-label color="primary" floating>razaoSocial</ion-label>
+      <ion-label color="primary" floating>Razão Social</ion-label>
       <ion-input name="razaoSocial" [(ngModel)]="associado.razaoSocial"></ion-input>
     </ion-item>
      <ion-item>
-      <ion-label color="primary" floating>nomeFantasia</ion-label>
+      <ion-label color="primary" floating>Nome Fantasia</ion-label>
       <ion-input name="nomeFantasia" [(ngModel)]="associado.nomeFantasia"></ion-input>
     </ion-item>
      <ion-item>
       <ion-label color="primary" floating>site</ion-label>
       <ion-input name="site" [(ngModel)]="associado.site"></ion-input>
     </ion-item>
+  <ion-item> 
+    <ion-label color="primary" floating>Telefone</ion-label>
+    <ion-input linkedin="telefone" [(ngModel)]="associado.telefone"></ion-input>
+  </ion-item> 
+  <ion-item>
+    <ion-label color="primary" floating>CEP</ion-label>
+    <ion-input linkedin="cep" [(ngModel)]="associado.cep"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>Cidade</ion-label>
+    <ion-input linkedin="cidade" [(ngModel)]="associado.cidade"></ion-input>
+  </ion-item>  
+  <ion-item>
+    <ion-label color="primary" floating>Rua</ion-label>
+    <ion-input linkedin="rua" [(ngModel)]="associado.rua"></ion-input>
+  </ion-item> 
+  <ion-item>
+    <ion-label color="primary" floating>Numero </ion-label>
+    <ion-input linkedin="numEndereco" [(ngModel)]="associado.numEndereco"></ion-input>
+  </ion-item> 
+  <ion-item>
+    <ion-label color="primary" floating>Bairro</ion-label>
+    <ion-input linkedin="bairro" [(ngModel)]="associado.bairro"></ion-input>
+  </ion-item>   
     <button type="submit" ion-button shape="round" color="primary" expand="block" (click)="gravar(associado.key)">Salvar</button>
   </div>
 </ion-content> 
