@@ -5,47 +5,45 @@
 </ion-header>
 
 <ion-content padding>
-  <form *ngIf = "evento">
+  <form *ngIf = "evento" #formulario="ngForm">
     <ion-item>
-        <ion-label color="primary" floating>Nome</ion-label>
-        <ion-input name="nome" [(ngModel)]="evento.nome" required=true></ion-input>
+      <ion-label color="primary" floating>* Nome</ion-label>
+      <ion-input name="nome" [(ngModel)]="evento.nome" required></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label color="primary" floating>Data</ion-label>
-        <ion-datetime displayFormat="DD de MMMM de YYYY" name="data" [(ngModel)]="evento.data"
-          monthNames = "Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro"
-          doneText = "Ok"
-          cancelText = "Cancelar">
-        </ion-datetime>
-        <!-- <ion-input name="data" [(ngModel)]="evento.data"></ion-input> -->
+      <ion-label color="primary" floating>* Data</ion-label>
+      <ion-datetime displayFormat="DD de MMMM de YYYY" name="data" [(ngModel)]="evento.data" required
+        monthNames = "Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro"
+        doneText = "Ok"
+        cancelText = "Cancelar">
+      </ion-datetime>
     </ion-item>
     <ion-item>
-        <ion-label color="primary" floating>Hora</ion-label>
-        <ion-datetime displayFormat="HH:mm" name="hora" [(ngModel)]="evento.hora"
-          doneText = "Ok"
-          cancelText = "Cancelar">
-        </ion-datetime>
-        <!-- <ion-input name="hora" [(ngModel)]="evento.hora"></ion-input> -->
+      <ion-label color="primary" floating>* Hora</ion-label>
+      <ion-datetime displayFormat="HH:mm" name="hora" [(ngModel)]="evento.hora"required
+        doneText = "Ok"
+        cancelText = "Cancelar">
+      </ion-datetime>
     </ion-item>
     <ion-item>
-        <ion-label color="primary" floating>Local</ion-label>
-        <ion-input name="local" [(ngModel)]="evento.local"></ion-input>
+      <ion-label color="primary" floating>* Local</ion-label>
+      <ion-input name="local" [(ngModel)]="evento.local" required></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label color="primary" floating>Descrição</ion-label>
-        <ion-textarea name="descricao" [(ngModel)]="evento.descricao"></ion-textarea>
+      <ion-label color="primary" floating>* Descrição</ion-label>
+      <ion-textarea name="descricao" [(ngModel)]="evento.descricao" required></ion-textarea>
     </ion-item>
     <br>
     <label>Valores:</label>
     <ion-item>
-        <ion-label color="primary" floating>Valor para Associado</ion-label>
-        <ion-input name="valorAssociado" [(ngModel)]="evento.valorAssociado" type="number"></ion-input>
+      <ion-label color="primary" floating>* Valor para Associado</ion-label>
+      <ion-input name="valorAssociado" [(ngModel)]="evento.valorAssociado" type="number" required></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label color="primary" floating>Valor para não Associado</ion-label>
-        <ion-input name="valorNaoAssociado" [(ngModel)]="evento.valorNaoAssociado" type="number"></ion-input>
+        <ion-label color="primary" floating>* Valor para não Associado</ion-label>
+        <ion-input name="valorNaoAssociado" [(ngModel)]="evento.valorNaoAssociado" type="number" required></ion-input>
     </ion-item>
     <br>
-    <button type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="chamaGravar(evento.key)">Gravar</button>
+    <button [disabled]="!formulario.form.valid" type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="chamaGravar(evento.key)">Gravar</button>
   </form>
 </ion-content>

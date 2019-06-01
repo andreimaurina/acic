@@ -26,6 +26,9 @@ import { AngularFireModule } from 'angularfire2';
 import { config } from './app.component';
 import { AuthProvider } from '../providers/auth/auth';
 import { SobreProvider } from '../providers/sobre/sobre';
+//import { CurrencyPipe } from '@angular/common';
+import { MomentModule } from 'ngx-moment';
+import 'moment/locale/pt-br';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,8 @@ import { SobreProvider } from '../providers/sobre/sobre';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-    AngularFireModule.initializeApp(config)
+    AngularFireModule.initializeApp(config),
+    MomentModule.forRoot()
 
   ],
   bootstrap: [IonicApp],

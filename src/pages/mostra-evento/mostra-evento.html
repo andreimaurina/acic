@@ -8,7 +8,7 @@
   <div *ngIf = "evento">
     <h5>Local: {{evento.local}}</h5>
     <h6>
-      Data: {{evento.data}}
+      Data: {{evento.data | amDateFormat:'LL'}}
       Hora: {{evento.hora}}<br>
       <br>
       Descrição: {{evento.descricao}}<br>
