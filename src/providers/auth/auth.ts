@@ -17,10 +17,9 @@ export class AuthProvider {
       this.afireauth.auth.signInWithEmailAndPassword(credentials.email, credentials.password).then(() => {
         resolve(true);
         alert("Você logou no sistema!");
-        this.usuario = 1
+        //this.usuario = 1
       }).catch((err) => {
         alert("Não logado! "  + "\n" + "Verifique suas credenciais...");
-        //resolve(true);
         //reject(err);
         this.usuario = null
        })
