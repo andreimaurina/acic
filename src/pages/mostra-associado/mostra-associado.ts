@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Associado } from '../../models/Associado';
-
-/**
- * Generated class for the MostraAssociadoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { AssociadoProvider } from '../../providers/associado/associado';
 
 @IonicPage()
 @Component({
@@ -23,6 +17,7 @@ export class MostraAssociadoPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
+    public provedor: AssociadoProvider
     ) {
       this.id = this.navParams.data.id;
   }

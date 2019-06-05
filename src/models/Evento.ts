@@ -6,6 +6,7 @@ export class Evento {
     hora: string;
     local:string;
     descricao: string;
+    link: string;
     valorAssociado: number;
     valorNaoAssociado: number;
     organizador: Associado;

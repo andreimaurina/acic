@@ -8,7 +8,7 @@
   <div *ngIf = "evento">
     <h5>Local: {{evento.local}}</h5>
     <h6>
-      Data: {{evento.data | amDateFormat:'LL'}}
+      Data: {{evento.data | amDateFormat:'L'}}
       Hora: {{evento.hora}}<br>
       <br>
       Descrição: {{evento.descricao}}<br>
@@ -17,6 +17,6 @@
       <br>
       Valor não associado: R$ {{evento.valorNaoAssociado}}<br>
     </h6>
-    <button type="submit" ion-button float-right shape="round" color="primary" expand="block">Inscrever-se</button>
+    <button type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="redirecionar(evento.link)">Inscrever-se</button>
   </div>
 </ion-content>

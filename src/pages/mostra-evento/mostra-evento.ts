@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EventoProvider } from '../../providers/evento/evento';
 import { Evento } from '../../models/Evento';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @IonicPage()
 @Component({
@@ -16,7 +17,8 @@ export class MostraEventoPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public provedor: EventoProvider
+    public provedor: EventoProvider,
+    public iab: InAppBrowser
     ) {
       this.id = this.navParams.data.id;
   }
@@ -30,6 +32,10 @@ export class MostraEventoPage {
       .then(
       data => this.evento = data
     );
+  }
+
+  redirecionar(link){
+    this.iab.create(link);
   }
 
 }

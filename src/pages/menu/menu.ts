@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CadastrarAssociadoPage } from '../cadastrar-associado/cadastrar-associado';
 import { ListaEventoPage } from '../lista-evento/lista-evento';
 import { ListaServicoPage } from '../lista-servico/lista-servico';
 import { ListaBeneficioPage } from '../lista-beneficio/lista-beneficio';
 import { ListaVagaPage } from '../lista-vaga/lista-vaga';
 import { SobrePage } from '../sobre/sobre';
 import { ListaAssociadoPage } from '../lista-associado/lista-associado';
-import {LoginPage } from '../login/login';
 
 @IonicPage()
 @Component({

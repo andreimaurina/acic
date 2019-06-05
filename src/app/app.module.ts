@@ -26,7 +26,7 @@ import { AngularFireModule } from 'angularfire2';
 import { config } from './app.component';
 import { AuthProvider } from '../providers/auth/auth';
 import { SobreProvider } from '../providers/sobre/sobre';
-//import { CurrencyPipe } from '@angular/common';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { MomentModule } from 'ngx-moment';
 import 'moment/locale/pt-br';
 
@@ -82,7 +82,8 @@ import 'moment/locale/pt-br';
     BeneficioProvider,
     AuthProvider,
     AngularFireAuth,
-    SobreProvider
+    SobreProvider,
+    InAppBrowser
 
   ],
   schemas: [
