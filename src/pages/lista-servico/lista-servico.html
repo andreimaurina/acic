@@ -7,13 +7,6 @@
 
 <ion-content padding>
   <ion-searchbar placeholder="Buscar..."  (ionInput)="filtrarItens($event)" clearInput></ion-searchbar>
-  <div *ngIf="admin">
-    <ion-fab right bottom>
-      <button ion-fab color="primary" (click)="novoServico()">
-        <ion-icon name="add"></ion-icon>
-      </button>
-    </ion-fab>
-  </div>
   <ion-list>
       <ion-item *ngFor="let servico of servicos">
         <div (click)="mostraDados(servico.key)"> 
@@ -28,3 +21,11 @@
       </ion-item>  
   </ion-list>
 </ion-content>
+
+<div *ngIf="admin">
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="novoServico()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</div>

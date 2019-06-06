@@ -6,24 +6,24 @@
 
 <ion-content padding>
   Preencha os dados da Vaga:
-  <form *ngIf = "vaga">
+  <form *ngIf = "vaga" #formulario="ngForm">
     <ion-item>
-        <ion-label color="primary" floating>Nome</ion-label>
-        <ion-input name="nome" [(ngModel)]="vaga.nome"></ion-input>
+        <ion-label color="primary" floating>* Nome</ion-label>
+        <ion-input name="nome" [(ngModel)]="vaga.nome" required></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label color="primary" floating>Profissão</ion-label>
-        <ion-input name="profissao"[(ngModel)]="vaga.profissao"></ion-input>
+        <ion-label color="primary" floating>* Profissão</ion-label>
+        <ion-input name="profissao"[(ngModel)]="vaga.profissao" required></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label color="primary" floating>Descrição</ion-label>
-        <ion-textarea name="descricao" [(ngModel)]="vaga.descricao"></ion-textarea>
+        <ion-label color="primary" floating>* Descrição</ion-label>
+        <ion-textarea name="descricao" [(ngModel)]="vaga.descricao" required></ion-textarea>
     </ion-item>
     <!--<ion-item>
         <ion-label color="primary" floating>Visibilidade</ion-label>
         <ion-input name="visibilidade"[(ngModel)]="vaga.visibilidade"></ion-input>
     </ion-item>-->
     <br>
-    <button type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="gravar()">Salvar</button>
+    <button [disabled]="!formulario.form.valid" type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="gravar()">Salvar</button>
   </form>
 </ion-content>

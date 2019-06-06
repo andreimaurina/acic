@@ -51,7 +51,7 @@ import 'moment/locale/pt-br';
     IonicModule.forRoot(MyApp),
     HttpClientModule,
     AngularFireModule.initializeApp(config),
-    MomentModule.forRoot()
+    MomentModule.forRoot(),
 
   ],
   bootstrap: [IonicApp],

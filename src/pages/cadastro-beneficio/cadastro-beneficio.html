@@ -5,18 +5,17 @@
 </ion-header>
 
 <ion-content padding>
-  <form *ngIf = "beneficio">
+  <form *ngIf = "beneficio" #formulario="ngForm">
     <label>Informações do benefício:</label>
     <ion-item>
-        <ion-label color="primary" floating>Beneficio</ion-label>
-        <ion-input name="beneficio" [(ngModel)]="beneficio.codigo"></ion-input>
+        <ion-label color="primary" floating>* Beneficio</ion-label>
+        <ion-input name="beneficio" [(ngModel)]="beneficio.codigo" required></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label color="primary" floating>Valor</ion-label>
-        <ion-input name="valor" [(ngModel)]="beneficio.valor"></ion-input>
+        <ion-label color="primary" floating>* Valor</ion-label>
+        <ion-input name="valor" [(ngModel)]="beneficio.valor" required></ion-input>
     </ion-item>
     <br>
-    <label>Valores:</label>
-    <button type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="chamaGravar(beneficio.key)">Gravar</button>
+    <button [disabled]="!formulario.form.valid" type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="chamaGravar(beneficio.key)">Gravar</button>
   </form>
 </ion-content>

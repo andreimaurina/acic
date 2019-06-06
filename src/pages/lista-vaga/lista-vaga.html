@@ -6,13 +6,6 @@
 
 <ion-content padding>
   <ion-searchbar></ion-searchbar>
-  <div *ngIf="admin">
-    <ion-fab right bottom>
-      <button ion-fab color="primary" (click)="novaVaga()">
-        <ion-icon name="add"></ion-icon>
-      </button>
-    </ion-fab>
-  </div>
   <ion-list>
     <ion-item *ngFor="let vaga of vagas">
       <div (click)="mostrarDados(vaga.key)">
@@ -32,3 +25,11 @@
     </ion-item>
   </ion-list>
 </ion-content>
+
+<div *ngIf="admin">
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="novaVaga()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</div>

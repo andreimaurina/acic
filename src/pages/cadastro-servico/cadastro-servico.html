@@ -5,20 +5,20 @@
 </ion-header>
 
 <ion-content padding>
-  <form *ngIf = "servico">
+  <form *ngIf = "servico" #formulario="ngForm">
       <label>Informações do Servicos:</label>
       <ion-item>
-        <ion-label color="primary" floating>Nome</ion-label>
-        <ion-input name="nome" [(ngModel)]="servico.nome"></ion-input>
+        <ion-label color="primary" floating>* Nome</ion-label>
+        <ion-input name="nome" [(ngModel)]="servico.nome" required></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label color="primary" floating>Descrição</ion-label>
-        <ion-textarea name="descricao" [(ngModel)]="servico.descricao"></ion-textarea>
+        <ion-label color="primary" floating>* Descrição</ion-label>
+        <ion-textarea name="descricao" [(ngModel)]="servico.descricao" required></ion-textarea>
       </ion-item>
       <ion-item>
-        <ion-label color="primary" floating>Link</ion-label>
-        <ion-input name="link" [(ngModel)]="servico.link"></ion-input>
+        <ion-label color="primary" floating>* Link</ion-label>
+        <ion-input name="link" [(ngModel)]="servico.link" required></ion-input>
       </ion-item>
-      <button type="submit" ion-button shape="round" color="primary" expand="block" (click)="gravar()">Gravar</button>
+      <button [disabled]="!formulario.form.valid" type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="gravar()">Gravar</button>
     </form>
 </ion-content>

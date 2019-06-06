@@ -40,6 +40,7 @@ export class MenuPage {
       break;
     }
   }
+  
   IrParaLogin() {
     this.navCtrl.push('LoginPage')
   }
