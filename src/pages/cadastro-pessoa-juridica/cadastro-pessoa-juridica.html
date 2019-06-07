@@ -9,7 +9,7 @@
   <form *ngIf = "associado" #formulario="ngForm">
     <ion-item>
       <ion-label color="primary" floating>* CNPJ</ion-label>
-      <ion-input name="cnpj" [(ngModel)]="associado.cnpj" required></ion-input>
+      <ion-input name="cnpj" [(ngModel)]="associado.cnpj" type="number" required></ion-input>
    </ion-item>
     <ion-item>
       <ion-label color="primary" floating>* Razão Social</ion-label>
@@ -25,11 +25,11 @@
     </ion-item>
   <ion-item> 
     <ion-label color="primary" floating>* Telefone</ion-label>
-    <ion-input name="telefone" [(ngModel)]="associado.telefone" required></ion-input>
+    <ion-input name="telefone" [(ngModel)]="associado.telefone" type="number" required></ion-input>
   </ion-item> 
   <ion-item>
     <ion-label color="primary" floating>* CEP</ion-label>
-    <ion-input name="cep" [(ngModel)]="associado.cep" required></ion-input>
+    <ion-input name="cep" [(ngModel)]="associado.cep" type="number" required></ion-input>
   </ion-item>
   <ion-item>
     <ion-label color="primary" floating>* Cidade</ion-label>
@@ -41,7 +41,7 @@
   </ion-item> 
   <ion-item>
     <ion-label color="primary" floating>* Número </ion-label>
-    <ion-input name="numEndereco" [(ngModel)]="associado.numEndereco" required></ion-input>
+    <ion-input name="numEndereco" [(ngModel)]="associado.numEndereco" type="number" required></ion-input>
   </ion-item> 
   <ion-item>
     <ion-label color="primary" floating>* Bairro</ion-label>

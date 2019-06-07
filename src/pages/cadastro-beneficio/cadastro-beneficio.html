@@ -13,7 +13,7 @@
     </ion-item>
     <ion-item>
         <ion-label color="primary" floating>* Valor</ion-label>
-        <ion-input name="valor" [(ngModel)]="beneficio.valor" required></ion-input>
+        <ion-input name="valor" [(ngModel)]="beneficio.valor" type="number" required></ion-input>
     </ion-item>
     <br>
     <button [disabled]="!formulario.form.valid" type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="chamaGravar(beneficio.key)">Gravar</button>
