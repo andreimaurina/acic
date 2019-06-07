@@ -2,13 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Servico } from '../../models/Servico';
 import { ServicoProvider } from '../../providers/servico/servico';
-
-/**
- * Generated class for the MostraServicoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @IonicPage()
 @Component({
@@ -23,7 +17,8 @@ export class MostraServicoPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public provedor: ServicoProvider
+    public provedor: ServicoProvider,
+    public iab : InAppBrowser
     ) {
       this.id = this.navParams.data.id;
   }
@@ -37,6 +32,9 @@ export class MostraServicoPage {
       .then(
       data => this.servico = data
     );
+  }
+  redirecionar(link){
+    this.iab.create(link);
   }
 
 }

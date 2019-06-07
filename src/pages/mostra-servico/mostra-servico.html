@@ -8,6 +8,6 @@
 <ion-content padding>
   <div *ngIf = "servico">
     <h5>Local: {{servico.descricao}}</h5>
-    <button type="submit" ion-button float-right shape="round" color="primary" expand="block">Inscrever-se</button>
+    <button type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="redirecionar(servico.link)">Inscrever-se</button>
   </div>
 </ion-content>

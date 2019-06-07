@@ -16,9 +16,11 @@
         <ion-textarea name="descricao" [(ngModel)]="servico.descricao" required></ion-textarea>
       </ion-item>
       <ion-item>
-        <ion-label color="primary" floating>* Link</ion-label>
-        <ion-input name="link" [(ngModel)]="servico.link" required></ion-input>
+        <ion-label color="primary" floating>* Link Completo</ion-label>
+        <ion-input name="link" [(ngModel)]="servico.link" required ></ion-input>
+
       </ion-item>
-      <button [disabled]="!formulario.form.valid" type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="gravar()">Gravar</button>
+      <p id="https">Ex: http://portalacic.com.br/</p>
+      <button [disabled]="!formulario.form.valid" type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="chamaGravar(servico.key)">Gravar</button>
     </form>
 </ion-content>

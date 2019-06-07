@@ -33,13 +33,9 @@ export class CadastroServicoPage {
       data => this.servico = data
     );
   }
-
-  gravar() {
-    if (!this.id) {
-      let newServico = firebase.database().ref('Servicos/').push();
-      newServico.set(this.servico); 
-    }
+  
+  chamaGravar(id){
+    this.provedor.gravar(this.servico,id);
     this.navCtrl.pop();
   }
-
 }

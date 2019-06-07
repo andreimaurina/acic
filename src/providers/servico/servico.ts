@@ -8,7 +8,6 @@ import { v } from '@angular/core/src/render3';
 
 @Injectable()
 export class ServicoProvider {
-  servico : Servico;
   servicos = [];
   
   ref = firebase.database().ref('Servicos/');
@@ -28,6 +27,16 @@ export class ServicoProvider {
       .then(
         resp => snapshotToObject(resp)
       );
+  }
+
+  gravar(servico, id = null){
+    if (!id) {
+      let newServico = this.ref.push();
+      newServico.set(servico);
+    }else {
+      let newServico = firebase.database().ref(`Servicos/${id}`);
+      newServico.update(servico);
+    }
   }
 
   excluir(id){

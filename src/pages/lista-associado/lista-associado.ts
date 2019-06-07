@@ -45,14 +45,6 @@ export class ListaAssociadoPage {
     
   }
 
-  gravar() {
-    if (!this.id) {
-      let newAssociado = firebase.database().ref('Associados/').push();
-      newAssociado.set(this.associado); 
-    }
-    this.navCtrl.pop();
-  }
-
   mudarFiltro(tipo){
     console.log(tipo);
     this.associados = this.todosAssociados;
