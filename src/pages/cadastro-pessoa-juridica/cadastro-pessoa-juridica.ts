@@ -33,9 +33,4 @@ export class CadastroPessoaJuridicaPage {
     this.navCtrl.pop();
   }
 
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CadastroPessoaJuridicaPage');
-  }
-
 }

@@ -22,7 +22,7 @@ export class CadastroVagaPage {
     if (!this.id) {
       this.vaga = new Vaga();
     } else {
-    this.chamaPorId(this.id);
+      this.chamaPorId(this.id);
     }
   }
 
