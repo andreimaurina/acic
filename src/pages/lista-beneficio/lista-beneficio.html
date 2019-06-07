@@ -11,6 +11,7 @@
       <div (click)="mostrarDados(beneficio.key)">
         <h2>Benefício: {{beneficio.codigo}}</h2>
         <h3>Valor: {{beneficio.valor}}</h3>
+        <h4>Data: {{beneficio.data | amDateFormat:'L'}}</h4>
       </div>
       <div *ngIf="admin">
         <button ion-button color="primary" (click)="excluir(beneficio.key)">Excluir</button>

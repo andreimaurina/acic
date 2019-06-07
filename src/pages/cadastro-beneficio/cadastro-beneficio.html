@@ -16,6 +16,22 @@
         <ion-input name="valor" [(ngModel)]="beneficio.valor" required></ion-input>
     </ion-item>
     <br>
+    <ion-item>
+      <ion-label color="primary" floating>* Data</ion-label>
+      <ion-datetime displayFormat="DD de MMMM de YYYY" name="data" [(ngModel)]="beneficio.data" required
+        monthNames = "Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro"
+        doneText = "Ok"
+        cancelText = "Cancelar">
+      </ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>* Hora</ion-label>
+      <ion-datetime displayFormat="HH:mm" name="hora" [(ngModel)]="beneficio.hora"required
+        doneText = "Ok"
+        cancelText = "Cancelar">
+      </ion-datetime>
+    </ion-item>
+    <br>
     <button [disabled]="!formulario.form.valid" type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="chamaGravar(beneficio.key)">Gravar</button>
   </form>
 </ion-content>
