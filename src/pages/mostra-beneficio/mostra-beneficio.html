@@ -1,0 +1,14 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title *ngIf = "beneficio">{{beneficio.nome}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf = "beneficio">
+    <h5>Beneficio: {{beneficio.codigo}}</h5>
+    <h5>Valor: {{beneficio.valor}}</h5>
+    <button type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="redirecionar(beneficio.link)">Mostrar</button>
+  </div>
+</ion-content>

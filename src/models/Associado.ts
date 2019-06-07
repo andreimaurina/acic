@@ -2,6 +2,7 @@ export class Associado {
     tipo: string;
     email: string;
     telefone: string;
+    dataNasc: string;
     cep: string;
     cidade: string;
     rua: string;
@@ -16,7 +17,6 @@ export class PessoaFisica extends Associado {
     cpf: string;
     sexo: string;
     nome: string;
-    dataNasc: number;
     facebook: string;
     instagram: string;
     twitter: string;
