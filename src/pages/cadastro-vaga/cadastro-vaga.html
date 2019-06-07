@@ -24,6 +24,6 @@
         <ion-input name="visibilidade"[(ngModel)]="vaga.visibilidade"></ion-input>
     </ion-item>-->
     <br>
-    <button [disabled]="!formulario.form.valid" type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="gravar()">Salvar</button>
+    <button [disabled]="!formulario.form.valid" type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="gravar(vaga.key)">Salvar</button>
   </form>
 </ion-content>

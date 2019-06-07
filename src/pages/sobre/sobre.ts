@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import firebase from 'Firebase';
+import { SobreProvider } from '../../providers/sobre/sobre';
+import { AuthProvider } from '../../providers/auth/auth';
 
 @IonicPage()
 @Component({
@@ -10,33 +11,37 @@ import firebase from 'Firebase';
 export class SobrePage {
 
   sobres = [];
+  admin = false;
   editando = false;
-  ref = firebase.database().ref('Sobre/');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.ref.on('value', resp => {
-    this.sobres = [];
-    this.sobres = snapshotToArray(resp);
-    
-    });
+  constructor(
+    public navCtrl: NavController,
+     public navParams: NavParams,
+     public provedor: SobreProvider,
+     public auth: AuthProvider
+    ) {
   }
+
+  ionViewWillEnter(){
+    this.admin = this.auth.logado();
+    this.chamaListar();
+  }
+
+  chamaListar(){
+    this.provedor.listar()
+    .then(
+      data => this.sobres = data
+    );
+  }
+
   editar(status){
     this.editando = status;
   }
+
   gravar(id){
-    console.log(id);
-    let newEvento = firebase.database().ref(`Sobre/${id}`);
-    newEvento.update(this.sobres[0]);
+    this.provedor.gravar(this.sobres[0],id);
     this.editando = false ; 
   }
+  
 }
 
-export const snapshotToArray = snapshot => {
-  let returnArr = [];
-  snapshot.forEach(childSnapshot => {
-      let item = childSnapshot.val();
-      item.key = childSnapshot.key;
-      returnArr.push(item);
-  });
-  return returnArr;
-}
