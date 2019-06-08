@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { usercreds } from '../../models/interfaces/usercreds';
@@ -20,7 +19,7 @@ export class AuthProvider {
     var promise = new Promise((resolve, reject) => {
       this.afireauth.auth.signInWithEmailAndPassword(credentials.email, credentials.password).then(() => {
         resolve(true);
-        //this.usuario = 1
+        this.usuario = 1
       }).catch((err) => {
         //alert("Não logado! "  + "\n" + "Verifique suas credenciais...");
         let alert = this.alerCtrl.create();
@@ -37,8 +36,8 @@ export class AuthProvider {
 
   logado(){
     if (this.usuario == null){
-    //   return false;
-    // }else{
+       return false;
+    } else {
       return true;
     }
   }

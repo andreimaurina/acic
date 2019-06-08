@@ -6,6 +6,7 @@ import { ListaBeneficioPage } from '../lista-beneficio/lista-beneficio';
 import { ListaVagaPage } from '../lista-vaga/lista-vaga';
 import { SobrePage } from '../sobre/sobre';
 import { ListaAssociadoPage } from '../lista-associado/lista-associado';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @IonicPage()
 @Component({
@@ -15,7 +16,11 @@ import { ListaAssociadoPage } from '../lista-associado/lista-associado';
 
 export class MenuPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public afAuth: AngularFireAuth
+    ) {
   }
 
   direciona(local){
