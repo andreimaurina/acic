@@ -1,15 +1,23 @@
-<!--
-  Generated template for the MostraAssociadoPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
-    <ion-title>mostraAssociadoPage</ion-title>
+    <ion-title *ngIf = "associado">{{associado.nome}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <div *ngIf = "associado">
+    <h5>Bairro: {{associado.bairro}} <br>
+      Cep: {{associado.cep}} <br>
+      cidade: {{associado.cidade}}<br>
+      Endereco: {{associado.numEndereco}}<br>
+      Rua: {{associado.rua}}<br>
+      Data Nasc: {{associado.dataNasc}}<br>
+      Facebook: {{associado.Facebook}}<br>
+      Twitter: {{associado.twitter}}<br>
+      Instagram: {{associado.instagram}}<br>
+      Linkedin: {{associado.linkedin}}
+      Sexo: {{associado.sexo}}<br>
+      Telefone: {{associado.telefone}}<br>
+    </h5>
+  </div>
 </ion-content>

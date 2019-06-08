@@ -89,6 +89,15 @@ export class ListaAssociadoPage {
     });
   }
 
+  mostrarDados(id,tipo){
+    if(tipo = "pessoaFisica"){
+      this.navCtrl.push('MostraAssociadoPage',{id : id});
+    }else{
+      
+    }
+    
+  }
+
   excluir(id) {
     let alert = this.alerCtrl.create();
     alert.setTitle('Tem certeza que deseja excluir?');

@@ -1,0 +1,25 @@
+
+
+</ion-content>
+
+<ion-header>
+    <ion-navbar>
+      <ion-title *ngIf = "associadoJuridico">{{associado.nomeFantasia}}</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <div *ngIf = "associado">
+
+      <h5>Razão Social: {{associado.razaoSocial}}<br>
+        Bairro: {{associado.bairro}} <br>
+        Cep: {{associado.cep}} <br>
+        cidade: {{associado.cidade}}<br>
+        Endereco: {{associado.numEndereco}}<br>
+        Rua:  {{associado.rua}}<br>
+        CNPJ: {{associado.cnpj}}<br>
+        Site: {associado.site}}<br>
+        Telefone: {{associado.telefone}}
+      </h5>
+    </div>
+  </ion-content>                                  
