@@ -18,7 +18,10 @@
     <ion-list>
       <ion-item *ngFor="let associado of associados">
         <div>
-          <h2>{{associado.nome}}{{associado.nomeFantasia}}</h2>
+          <h2>
+            {{associado.nome}}{{associado.nomeFantasia}}<br>
+            {{associado.facebook}}{{associado.site}}
+          </h2>
         </div> 
         <div *ngIf="admin">
           <button ion-button color="primary" (click)="excluir(associado.key)">Excluir</button>
