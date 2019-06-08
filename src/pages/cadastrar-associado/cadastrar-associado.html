@@ -8,6 +8,10 @@
 <ion-content padding>
   <form *ngIf = "associado"  #formulario="ngForm">
     <ion-item>
+      <ion-label color="primary" floating>* Nome Completo</ion-label>
+      <ion-input name="nome" [(ngModel)]="associado.nome" required></ion-input>
+    </ion-item>
+    <ion-item>
       <ion-label color="primary" floating>* CPF</ion-label>
       <ion-input name="cpf" [(ngModel)]="associado.cpf" type="number" required></ion-input>
     </ion-item>
@@ -18,10 +22,6 @@
         <ion-option value="m">Masculino</ion-option>
         <ion-option value="i">Indefinido</ion-option>
       </ion-select>
-    </ion-item>
-     <ion-item>
-      <ion-label color="primary" floating>* Nome Completo</ion-label>
-      <ion-input name="nome" [(ngModel)]="associado.nome" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary" floating>* Data de Nascimento</ion-label>

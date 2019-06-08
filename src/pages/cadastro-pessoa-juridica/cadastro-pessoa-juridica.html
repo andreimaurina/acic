@@ -8,6 +8,10 @@
 <ion-content padding>
   <form *ngIf = "associado" #formulario="ngForm">
     <ion-item>
+       <ion-label color="primary" floating>* Nome Fantasia</ion-label>
+      <ion-input name="nomeFantasia" [(ngModel)]="associado.nomeFantasia" required></ion-input>
+    </ion-item>
+    <ion-item>
       <ion-label color="primary" floating>* CNPJ</ion-label>
       <ion-input name="cnpj" [(ngModel)]="associado.cnpj" type="number" required></ion-input>
    </ion-item>
@@ -16,11 +20,7 @@
       <ion-input name="razaoSocial" [(ngModel)]="associado.razaoSocial" required></ion-input>
     </ion-item>
      <ion-item>
-      <ion-label color="primary" floating>* Nome Fantasia</ion-label>
-      <ion-input name="nomeFantasia" [(ngModel)]="associado.nomeFantasia" required></ion-input>
-    </ion-item>
-     <ion-item>
-      <ion-label color="primary" floating>site</ion-label>
+      <ion-label color="primary" floating>Site</ion-label>
       <ion-input name="site" [(ngModel)]="associado.site"></ion-input>
     </ion-item>
   <ion-item> 
