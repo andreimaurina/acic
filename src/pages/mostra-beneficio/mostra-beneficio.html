@@ -7,8 +7,14 @@
 
 <ion-content padding>
   <div *ngIf = "beneficio">
-    <h5>Beneficio: {{beneficio.codigo}}</h5>
-    <h5>Valor: {{beneficio.valor}}</h5>
-    <button type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="redirecionar(beneficio.link)">Mostrar</button>
+    <h5>Beneficio: {{beneficio.nome}}</h5>
+    <h6>
+      Descrição: {{beneficio.descricao}}<br>
+      <br>
+      Valor associado: R$ {{beneficio.valorAssociado}}<br>
+      <br>
+      Valor não associado: R$ {{beneficio.valorNaoAssociado}}<br>
+    </h6>
+    <button type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="redirecionar(beneficio.link)">Adquirir</button>
   </div>
 </ion-content>
