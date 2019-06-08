@@ -1,0 +1,19 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title *ngIf = "beneficio">{{beneficio.nome}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf = "beneficio">
+    <h5>Beneficio: {{beneficio.nome}}</h5>
+    <h6>
+      Descrição: {{beneficio.descricao}}<br>
+      <br>
+      Valor associado: R$ {{beneficio.valorAssociado}}<br>
+      <br>
+      Valor não associado: R$ {{beneficio.valorNaoAssociado}}<br>
+    </h6>
+  </div>
+</ion-content>

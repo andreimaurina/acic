@@ -83,7 +83,8 @@ import 'moment/locale/pt-br';
     AuthProvider,
     AngularFireAuth,
     SobreProvider,
-    InAppBrowser
+    InAppBrowser,
+    SobreProvider
 
   ],
   schemas: [

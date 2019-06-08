@@ -8,20 +8,28 @@
 <ion-content padding>
   <form *ngIf = "associado"  #formulario="ngForm">
     <ion-item>
-      <ion-label color="primary" floating>* CPF</ion-label>
-      <ion-input name="cpf" [(ngModel)]="associado.cpf" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label color="primary" floating>* Sexo</ion-label>
-      <ion-input name="sexo" [(ngModel)]="associado.sexo" required></ion-input>
-    </ion-item>
-     <ion-item>
       <ion-label color="primary" floating>* Nome Completo</ion-label>
       <ion-input name="nome" [(ngModel)]="associado.nome" required></ion-input>
     </ion-item>
     <ion-item>
+      <ion-label color="primary" floating>* CPF</ion-label>
+      <ion-input name="cpf" [(ngModel)]="associado.cpf" type="number" required></ion-input>
+    </ion-item>
+    <ion-item>
+       <ion-label color="primary" floating>* Sexo</ion-label>
+       <ion-select name="sexo" [(ngModel)]="associado.sexo" required>
+        <ion-option value="f">Feminino</ion-option>
+        <ion-option value="m">Masculino</ion-option>
+        <ion-option value="i">Indefinido</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
       <ion-label color="primary" floating>* Data de Nascimento</ion-label>
-      <ion-input name="dataNasc" [(ngModel)]="associado.dataNasc" required></ion-input>
+      <ion-datetime displayFormat="DD de MMMM de YYYY" name="dataNasc" [(ngModel)]="associado.dataNasc" required
+      monthNames = "Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro"
+      doneText = "Ok"
+      cancelText = "Cancelar">
+    </ion-datetime>   
     </ion-item>
     <ion-item>
       <ion-label color="primary" floating>Facebook</ion-label>
@@ -41,11 +49,11 @@
     </ion-item> 
     <ion-item>
       <ion-label color="primary" floating>* Telefone</ion-label>
-      <ion-input name="telefone" [(ngModel)]="associado.telefone" required></ion-input>
+      <ion-input name="telefone" [(ngModel)]="associado.telefone"type="number"  required></ion-input>
     </ion-item> 
     <ion-item>
       <ion-label color="primary" floating>* CEP</ion-label>
-      <ion-input name="cep" [(ngModel)]="associado.cep" required></ion-input>
+      <ion-input name="cep" [(ngModel)]="associado.cep" type="number" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary" floating>* Cidade</ion-label>
@@ -57,7 +65,7 @@
     </ion-item> 
     <ion-item>
       <ion-label color="primary" floating>* Número </ion-label>
-      <ion-input name="numEndereco" [(ngModel)]="associado.numEndereco" required></ion-input>
+      <ion-input name="numEndereco" [(ngModel)]="associado.numEndereco" type="number" equired></ion-input>
     </ion-item> 
     <ion-item>
       <ion-label color="primary" floating>* Bairro</ion-label>
