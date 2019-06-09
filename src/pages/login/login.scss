@@ -62,9 +62,10 @@ page-login {
     .input-cover {
     position: static;
     }*/
+    #botaoLogin{
+        background-color: #ccf5ff;
+    }
     #passwordreset{
-        justify-content: center;
         text-align: center;
-        padding-right: 10px;
     }
-    }
+}

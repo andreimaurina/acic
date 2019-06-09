@@ -2,7 +2,7 @@
   <ion-navbar>
   <ion-title id="titleMenu">Menu</ion-title>
   <button id="botaoAdmin" ion-button (click)="IrParaLogin()"> <ion-icon name="lock"> Admin </ion-icon> </button>
-  <button id="botaoLogout" *ngIf="afAuth.auth.currentUser" ion-button (click)="fazerLogout()"> <ion-icon name="lock"> Logout </ion-icon> </button>
+  <button id="botaoLogout" *ngIf="afAuth.auth.currentUser" ion-button (click)="fazerLogout()"> <ion-icon name="unlock"> Logout </ion-icon> </button>
   <h4 id="nomeUsuarioLogado" *ngIf="afAuth.auth.currentUser">
     Bem-vindo, {{afAuth.auth.currentUser.displayName}}!
   </h4>

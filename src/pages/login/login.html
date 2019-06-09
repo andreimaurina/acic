@@ -14,9 +14,11 @@
         <ion-input type="password" [(ngModel)]="credentials.password"></ion-input>
         </ion-item>
         <br>
-        <button ion-button block round outline (click)="signIn()">Login</button>
+        <div>
+        <button id="botaoLogin" ion-button block round outline (click)="signIn()">Login</button>
         <br>
+      </div>
         <div id="passwordreset">
-        <a (click)="passwordreset()">Esqueceu detalhes do seu login? Obter suporte. </a>
+          <button ion-button block round outline (click)="passwordreset()">Redefinir minha senha</button>
         </div>
 </ion-content>

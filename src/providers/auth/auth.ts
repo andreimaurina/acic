@@ -46,4 +46,7 @@ export class AuthProvider {
     this.afireauth.auth.signOut();
     this.usuario=null;
   }
+  passwordreset(){
+    this.afireauth.auth.sendPasswordResetEmail;
+  }
 }

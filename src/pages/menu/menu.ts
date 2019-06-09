@@ -7,7 +7,6 @@ import { ListaVagaPage } from '../lista-vaga/lista-vaga';
 import { SobrePage } from '../sobre/sobre';
 import { ListaAssociadoPage } from '../lista-associado/lista-associado';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { auth } from 'Firebase';
 import { AuthProvider } from '../../providers/auth/auth';
 
 @IonicPage()
