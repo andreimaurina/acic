@@ -44,5 +44,6 @@ export class AuthProvider {
 
   logout(){
     this.afireauth.auth.signOut();
+    this.usuario=null;
   }
 }
