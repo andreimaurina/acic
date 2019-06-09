@@ -41,4 +41,8 @@ export class AuthProvider {
       return true;
     }
   }
+
+  logout(){
+    this.afireauth.auth.signOut();
+  }
 }

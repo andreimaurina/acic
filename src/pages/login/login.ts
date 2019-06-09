@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
 import { usercreds } from '../../models/interfaces/usercreds';
 import { AuthProvider } from '../../providers/auth/auth';
 
@@ -11,7 +10,12 @@ import { AuthProvider } from '../../providers/auth/auth';
 })
 export class LoginPage {
   credentials = {} as usercreds;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public authservice: AuthProvider) {
+  
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public authservice: AuthProvider
+    ) {
   }
 
   ionViewDidLoad() {
