@@ -17,17 +17,11 @@
     <ion-searchbar></ion-searchbar>
     <ion-list>
       <ion-item *ngFor="let associado of associados">
-<<<<<<< HEAD
-        <!--<div (click)="mostrarDados(associado.key,associado.tipo)">
-
-          <h2>{{associado.nome}}{{associado.nomeFantasia}}</h2>-->
-=======
         <div>
           <h2>
             {{associado.nome}}{{associado.nomeFantasia}}<br>
             {{associado.facebook}}{{associado.site}}
           </h2>
->>>>>>> 47465a8443806f377b5ebbd20f4e428e6da9853a
         </div> 
         <div *ngIf="admin">
           <button ion-button color="primary" (click)="excluir(associado.key)">Excluir</button>
