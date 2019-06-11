@@ -10,7 +10,7 @@ export class AuthProvider {
 
   constructor(
     public afireauth: AngularFireAuth,
-    public alerCtrl: AlertController
+    public alertCtrl: AlertController
     ) {
     
   }
@@ -19,10 +19,12 @@ export class AuthProvider {
     var promise = new Promise((resolve, reject) => {
       this.afireauth.auth.signInWithEmailAndPassword(credentials.email, credentials.password).then(() => {
         resolve(true);
+        let alert = this.alertCtrl.create();
+        alert.setTitle('Logado! :)');
         this.usuario = 1
       }).catch((err) => {
         //alert("Não logado! "  + "\n" + "Verifique suas credenciais...");
-        let alert = this.alerCtrl.create();
+        let alert = this.alertCtrl.create();
         alert.setTitle('Não logado! <br> Verifique suas credenciais...');
         alert.addButton('Ok');
         alert.present().then(() => {
@@ -46,7 +48,26 @@ export class AuthProvider {
     this.afireauth.auth.signOut();
     this.usuario=null;
   }
-  passwordreset(){
-    this.afireauth.auth.sendPasswordResetEmail;
+  
+  resetPassword(email) {
+    var promise = new Promise((resolve, reject) => {
+      this.afireauth.auth.sendPasswordResetEmail(email).then(() => {
+        resolve(true);
+        let alert = this.alertCtrl.create();
+        alert.setTitle('Enviado um e-mail para a redefinição de senha!');
+        alert.addButton('Ok');
+        alert.present().then(() => {
+        });
+      }).catch((err) => {
+        let alert = this.alertCtrl.create();
+        alert.setTitle('Houve um erro no processo de redefinição de senha :/');
+        alert.addButton('Ok');
+        alert.present().then(() => {
+        });
+        //reject(err);
+      })
+    })
+    return promise;
   }
+
 }

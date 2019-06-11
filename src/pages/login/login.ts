@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { usercreds } from '../../models/interfaces/usercreds';
 import { AuthProvider } from '../../providers/auth/auth';
-import { ResetPasswordPage } from '../reset-password/reset-password';
-import { CadastroVagaPage } from '../cadastro-vaga/cadastro-vaga';
 
 @IonicPage()
 @Component({
@@ -31,9 +29,10 @@ export class LoginPage {
       else
         alert(res);
     })
+
   }
 
-  passwordreset(){
+  resetPassword(){
     this.navCtrl.push('ResetPasswordPage');
   }
 }
