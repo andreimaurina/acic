@@ -11,6 +11,7 @@ import { AuthProvider } from '../../providers/auth/auth';
 export class ListaEventoPage {
   
   eventos = [];
+  listaPadrao = [];
   admin = false;
 
   constructor(
@@ -58,6 +59,23 @@ export class ListaEventoPage {
       }
     });
     alert.present().then(() => {
+    });
+  }
+
+  filtrarItens(event) {
+    var pesquisado = event.target.value;
+    this.provedor.listar()
+    .then(
+      data => this.listaPadrao = data
+    );
+    this.eventos = this.listaPadrao.filter((v) => {
+      if(v.nome && pesquisado) {
+        if (v.nome.toLowerCase().indexOf(pesquisado.toLowerCase()) > -1){
+          return true;
+        }
+      }else{
+        return this.eventos;
+      }
     });
   }
 

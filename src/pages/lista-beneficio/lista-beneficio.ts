@@ -11,6 +11,7 @@ import { AuthProvider } from '../../providers/auth/auth';
 export class ListaBeneficioPage {
   
   beneficios = [];
+  listaPadrao = [];
   admin = false;
 
   constructor(
@@ -58,6 +59,23 @@ export class ListaBeneficioPage {
       }
     });
     alert.present().then(() => {
+    });
+  }
+
+  filtrarItens(event) {
+    var pesquisado = event.target.value;
+    this.provedor.listar()
+    .then(
+      data => this.listaPadrao = data
+    );
+    this.beneficios = this.listaPadrao.filter((v) => {
+      if(v.nome && pesquisado) {
+        if (v.nome.toLowerCase().indexOf(pesquisado.toLowerCase()) > -1){
+          return true;
+        }
+      }else{
+        return this.beneficios;
+      }
     });
   }
 

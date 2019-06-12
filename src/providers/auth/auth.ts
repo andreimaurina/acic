@@ -21,7 +21,7 @@ export class AuthProvider {
         resolve(true);
         let alert = this.alertCtrl.create();
         alert.setTitle('Logado! :)');
-        this.usuario = 1
+        // this.usuario = 1     ----------------------------------------------    descomentar para login sumir botões
       }).catch((err) => {
         //alert("Não logado! "  + "\n" + "Verifique suas credenciais...");
         let alert = this.alertCtrl.create();
@@ -38,8 +38,8 @@ export class AuthProvider {
 
   logado(){
     if (this.usuario == null){
-       return false;
-    } else {
+    //    return false;  ----------------------------     descomentar para login sumir botões
+    // } else {         -----------------------------     descomentar para login sumir botões
       return true;
     }
   }

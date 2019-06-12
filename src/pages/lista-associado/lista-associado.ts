@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Segment } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-import * as firebase from 'Firebase';
 import {Associado} from '../../models/Associado';
 import { AssociadoProvider } from '../../providers/associado/associado';
 import { AuthProvider } from '../../providers/auth/auth';
@@ -13,11 +12,15 @@ import { AuthProvider } from '../../providers/auth/auth';
 })
 export class ListaAssociadoPage {
   
+  @ViewChild(Segment) segment: Segment;
+
   id = null;
   associado: Associado;
   associados = [];
+  listaBase = [];
   todosAssociados=[];
   admin = false;
+  tipo = "";
  
   constructor(
     public navCtrl: NavController, 
@@ -30,6 +33,7 @@ export class ListaAssociadoPage {
 
   ionViewWillEnter(){
     this.admin = this.auth.logado();
+    this.segment.value = "pessoaJuridica";
     this.chamaListar();
   }
 
@@ -39,7 +43,6 @@ export class ListaAssociadoPage {
       data => {
         this.associados = data;
         this.todosAssociados = data;
-
       }
     );
     
@@ -47,14 +50,40 @@ export class ListaAssociadoPage {
 
   mudarFiltro(tipo){
     console.log(tipo);
+    this.tipo = tipo;
     this.associados = this.todosAssociados;
-    this.associados = this.associados.filter((elemento) => {
+    this.associados = this.associados.filter((elemento) => {              //----------alguma alteração para iniciar filtrado p/ juridico
       if (elemento.tipo==tipo){
         return true;
       }
       return false;
-
     });
+    this.listaBase = this.associados;
+  }
+
+  filtrarItens(event) {
+    var pesquisado = event.target.value;
+    if (this.tipo == "pessoaFisica"){
+      this.associados = this.listaBase.filter((v) => {
+        if(v.nome && pesquisado) {
+          if (v.nome.toLowerCase().indexOf(pesquisado.toLowerCase()) > -1){
+            return true;
+          }
+        }else{
+          return this.associados;
+        }
+      });
+    }else if (this.tipo == "pessoaJuridica"){
+      this.associados = this.listaBase.filter((v) => {
+        if(v.nomeFantasia && pesquisado) {
+          if (v.nomeFantasia.toLowerCase().indexOf(pesquisado.toLowerCase()) > -1){
+            return true;
+          }
+        }else{
+          return this.associados;
+        }
+      });
+    }
   }
 
   novoAssociado() {

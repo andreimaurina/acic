@@ -6,29 +6,29 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-segment (ionChange)="mudarFiltro($event.value)">
-        <ion-segment-button value="pessoaJuridica">
-          <ion-label>Pessoa Jurídica</ion-label>
-        </ion-segment-button>
-        <ion-segment-button value="pessoaFisica">
-          <ion-label>Pessoa Física</ion-label>
-        </ion-segment-button>
-      </ion-segment>
-    <ion-searchbar></ion-searchbar>
-    <ion-list>
-      <ion-item *ngFor="let associado of associados">
-        <div>
-          <h2>
-            {{associado.nome}}{{associado.nomeFantasia}}<br>
-            {{associado.facebook}}{{associado.site}}
-          </h2>
-        </div> 
-        <div *ngIf="admin">
-          <button ion-button color="primary" (click)="excluir(associado.key)">Excluir</button>
-          <button ion-button color="primary" (click)="editar(associado.key,associado.tipo)">Editar</button>
-        </div> 
-      </ion-item>  
-    </ion-list>
+  <ion-searchbar placeholder="Buscar..."  (ionInput)="filtrarItens($event)" showCancelButton clearInput></ion-searchbar>
+  <ion-segment (ionChange)="mudarFiltro($event.value)">
+    <ion-segment-button value="pessoaJuridica">
+      <ion-label>Pessoa Jurídica</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="pessoaFisica">
+      <ion-label>Pessoa Física</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-list>
+    <ion-item *ngFor="let associado of associados">
+      <div>
+        <h2>
+          {{associado.nome}}{{associado.nomeFantasia}}<br>
+          {{associado.facebook}}{{associado.site}}
+        </h2>
+      </div> 
+      <div *ngIf="admin">
+        <button ion-button color="primary" (click)="excluir(associado.key)">Excluir</button>
+        <button ion-button color="primary" (click)="editar(associado.key,associado.tipo)">Editar</button>
+      </div> 
+    </ion-item>  
+  </ion-list>
 </ion-content>
 
 <div *ngIf="admin">

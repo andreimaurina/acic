@@ -14,6 +14,7 @@ export class ListaServicoPage {
   listaServico = []
   servicos = [];
   admin = false;
+  listaPadrao = [];
 
   constructor(
     public navCtrl: NavController, 
@@ -35,18 +36,20 @@ export class ListaServicoPage {
       data => this.servicos = data
     );
   }
-  filtrarItens(searchbar) {
-    this.servicos = this.listaServico;
-    var q = searchbar.srcElement.value;
-    if(!q) {
-      return;
-    }
-    this.servicos = this.servicos.filter((v) => {
-      if(v.nome && q) {
-        if (v.nome.toLowerCase().indexOf(q.toLowerCase()) > -1){
+
+  filtrarItens(event) {
+    var pesquisado = event.target.value;
+    this.provedor.listar()
+    .then(
+      data => this.listaPadrao = data
+    );
+    this.servicos = this.listaPadrao.filter((v) => {
+      if(v.nome && pesquisado) {
+        if (v.nome.toLowerCase().indexOf(pesquisado.toLowerCase()) > -1){
           return true;
         }
-        return false;
+      }else{
+        return this.servicos;
       }
     });
   }
