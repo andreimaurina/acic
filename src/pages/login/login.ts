@@ -10,12 +10,24 @@ import { AuthProvider } from '../../providers/auth/auth';
 })
 export class LoginPage {
   credentials = {} as usercreds;
+  passwordType: string = 'password';
+  passwordShown: boolean = false;
   
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public authservice: AuthProvider
     ) {
+  }
+
+  public togglePassword(){
+    if(this.passwordShown){
+      this.passwordShown = false;
+      this.passwordType = 'password';
+    } else {
+      this.passwordShown = true;
+      this.passwordType = 'password';
+    }
   }
 
   ionViewDidLoad() {
