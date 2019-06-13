@@ -2,10 +2,10 @@ page-menu {
     #titleMenu{
         
     }
-    #nomeUsuarioLogado{
-        background-color: aquamarine;
+    // #nomeUsuarioLogado{
+    //     background-color: aquamarine;
         
-    }
+    // }
     #botaoAdmin{
         float: right;
         width: 20%;
@@ -16,5 +16,13 @@ page-menu {
         float: right;
         width: 20%;
         mask-position: 10%;
+    }
+
+    img{
+        width: 200px;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

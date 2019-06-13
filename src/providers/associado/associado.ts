@@ -19,8 +19,8 @@ export class AssociadoProvider {
       .then(
       resp => snapshotToArray(resp)
       );
-
   }
+  
   gravar(associado, id = null){
     if (!id) {
       let newAssociado = this.ref.push();

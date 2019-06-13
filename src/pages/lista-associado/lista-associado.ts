@@ -20,7 +20,7 @@ export class ListaAssociadoPage {
   listaBase = [];
   todosAssociados=[];
   admin = false;
-  tipo = "";
+  tipo = "pessoaJuridica";
  
   constructor(
     public navCtrl: NavController, 
@@ -33,7 +33,7 @@ export class ListaAssociadoPage {
 
   ionViewWillEnter(){
     this.admin = this.auth.logado();
-    this.segment.value = "pessoaJuridica";
+    this.segment.value = this.tipo;
     this.chamaListar();
   }
 
@@ -41,19 +41,24 @@ export class ListaAssociadoPage {
     this.provedor.listar()
     .then(
       data => {
-        this.associados = data;
         this.todosAssociados = data;
+        this.associados = data.filter((elemento) => {              
+          if (elemento.tipo==this.tipo){
+            this.listaBase = this.associados;
+            return true;
+          }
+          return false;
+        });
       }
     );
-    
   }
 
   mudarFiltro(tipo){
-    console.log(tipo);
     this.tipo = tipo;
     this.associados = this.todosAssociados;
-    this.associados = this.associados.filter((elemento) => {              //----------alguma alteração para iniciar filtrado p/ juridico
+    this.associados = this.associados.filter((elemento) => {
       if (elemento.tipo==tipo){
+        this.listaBase = this.associados;
         return true;
       }
       return false;
@@ -62,6 +67,7 @@ export class ListaAssociadoPage {
   }
 
   filtrarItens(event) {
+    this.mudarFiltro(this.tipo);
     var pesquisado = event.target.value;
     if (this.tipo == "pessoaFisica"){
       this.associados = this.listaBase.filter((v) => {
@@ -122,7 +128,7 @@ export class ListaAssociadoPage {
     if(tipo = "pessoaFisica"){
       this.navCtrl.push('MostraAssociadoPage',{id : id});
     }else{
-      
+      this.navCtrl.push('MostraAssociadoJuridicoPage',{id : id});
     }
     
   }

@@ -17,7 +17,7 @@
   </ion-segment>
   <ion-list>
     <ion-item *ngFor="let associado of associados">
-      <div>
+      <div (click)="mostrarDados(associado.key,associado.tipo)">
         <h2>
           {{associado.nome}}{{associado.nomeFantasia}}<br>
           {{associado.facebook}}{{associado.site}}
