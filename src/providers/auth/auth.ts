@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { usercreds } from '../../models/interfaces/usercreds';
-import { AlertController } from 'ionic-angular';
+import { AlertController, UrlSerializer } from 'ionic-angular';
 
 @Injectable()
 export class AuthProvider {
