@@ -5,20 +5,24 @@
 </ion-header>
 
 <ion-content padding>
+  <img src="../../assets/imgs/logoAcic.png"/>
   <ion-list>
-    <ion-item *ngFor="let sobre of sobres"  >
-      <ion-item *ngIf="!editando">
-        <h4 >Sobre: {{sobre.texto}}</h4>
-      </ion-item>
-      <ion-item *ngIf="editando">
-        <ion-textarea [(ngModel)]="sobre.texto" name="texto">
-        </ion-textarea>
-      </ion-item>
-      <div *ngIf="admin">
-        <button ion-button color="primary" (click)="editar(true)">Editar</button>
-        <button ion-button color="secondary" (click)="editar(false)">Cancelar</button>
-        <button ion-button color="secondary" (click)="gravar(sobres.key)">Salvar</button>
+    <div *ngFor="let sobre of sobres"  >
+      <div id="texto" *ngIf="!editando">
+        {{sobre.texto}}
       </div>
-    </ion-item>  
+      <div *ngIf="editando">
+        <ion-textarea [(ngModel)]="sobre.texto" name="texto"></ion-textarea>
+      </div>
+      <div id="botoes" *ngIf="admin">
+        <span *ngIf="!editando">
+          <button ion-button float-right color="primary" (click)="editar(true)">Editar</button>
+        </span>  
+        <span *ngIf="editando">
+          <button ion-button float-right color="danger" (click)="editar(false)">Cancelar</button>
+          <button ion-button float-right color="secondary" (click)="gravar(sobres.key)">Salvar</button>
+        </span>   
+      </div>
+    </div>  
   </ion-list>
 </ion-content> 

@@ -1,3 +1,18 @@
 page-sobre {
+    #texto{
+        text-align: justify;
+        text-indent: 40px;
+    }
 
+    img{
+        width: 180px;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #botoes{
+        padding-top: 10px;
+    }
 }

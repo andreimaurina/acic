@@ -8,13 +8,13 @@
   <ion-searchbar placeholder="Buscar..."  (ionInput)="filtrarItens($event)" showCancelButton clearInput></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let evento of eventos"  >
-      <div (click)="mostrarDados(evento.key)">
-        <h2>Nome do Evento: {{evento.nome}}</h2>
-        <h3>Local: {{evento.local}}</h3>
-        <h4>Data: {{evento.data | amDateFormat:'L'}}</h4>
+      <div id="divDados" (click)="mostrarDados(evento.key)">
+        <ion-icon name="paper" color="primary"></ion-icon><span class="negrito"> Nome do Evento: </span>{{evento.nome}}<br>
+        <ion-icon name="globe" color="primary"></ion-icon><span class="negrito"> Local: </span>{{evento.local}}<br>
+        <ion-icon name="calendar" color="primary"></ion-icon><span class="negrito"> Data: </span>{{evento.data | amDateFormat:'L'}}<br>
       </div>
       <div *ngIf="admin">
-        <button ion-button color="primary" (click)="excluir(evento.key)">Excluir</button>
+        <button ion-button color="danger" (click)="excluir(evento.key)">Excluir</button>
         <button ion-button color="primary" (click)="editar(evento.key)">Editar</button>
       </div>
     </ion-item>  
