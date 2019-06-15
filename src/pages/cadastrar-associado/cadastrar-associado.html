@@ -1,7 +1,7 @@
 
 <ion-header>
   <ion-navbar>
-    <ion-title>Associados</ion-title>
+    <ion-title>Cadastro de Associado</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -50,7 +50,9 @@
     <ion-item>
       <ion-label color="primary" floating>* Telefone</ion-label>
       <ion-input name="telefone" [(ngModel)]="associado.telefone"type="number"  required></ion-input>
-    </ion-item> 
+    </ion-item>
+    <br>
+    <label>Endereço:</label> 
     <ion-item>
       <ion-label color="primary" floating>* CEP</ion-label>
       <ion-input name="cep" [(ngModel)]="associado.cep" type="number" required></ion-input>
@@ -71,6 +73,7 @@
       <ion-label color="primary" floating>* Bairro</ion-label>
       <ion-input name="bairro" [(ngModel)]="associado.bairro" required></ion-input>
     </ion-item> 
+    <button ion-button float-right color="danger" (click)="navCtrl.pop()">Cancelar</button>
     <button [disabled]="!formulario.form.valid" type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="gravar(associado.key)">Salvar</button>
   </form>
 </ion-content>

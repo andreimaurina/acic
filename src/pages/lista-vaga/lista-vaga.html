@@ -8,15 +8,14 @@
   <ion-searchbar placeholder="Buscar..."  (ionInput)="filtrarItens($event)" showCancelButton clearInput></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let vaga of vagas">
-      <div (click)="mostrarDados(vaga.key)">
+      <div id="divDados"(click)="mostrarDados(vaga.key)">
         <!--<div>
           ion-avatar item-start>
             <img src={{vaga.imagem}}>
           </ion-avatar>
         </div>-->
-        <h2>Nome do Vaga: {{vaga.nome}}</h2>
-        <h3>Profissão: {{vaga.profissao}}</h3>
-        <h4>Descrição: {{vaga.descricao}}</h4>
+        <ion-icon name="megaphone" color="primary"></ion-icon><span class="negrito"> Nome da Vaga: </span>{{vaga.nome}}<br>
+        <ion-icon name="hammer" color="primary"></ion-icon><span class="negrito"> Profissão: </span>{{vaga.profissao}}<br>
       </div>
       <div *ngIf="admin">
         <button ion-button color="primary" (click)="excluir(vaga.key)">Excluir</button>

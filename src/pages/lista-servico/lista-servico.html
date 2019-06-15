@@ -8,10 +8,9 @@
   <ion-searchbar placeholder="Buscar..."  (ionInput)="filtrarItens($event)" showCancelButton clearInput></ion-searchbar>
   <ion-list>
       <ion-item *ngFor="let servico of servicos">
-        <div (click)="mostraDados(servico.key)"> 
-          <h2>Nome do Serviço: {{servico.nome}}</h2>
-          <h3>Descrição: {{servico.descricao}}</h3>
-          <h4>Link: {{servico.link}}</h4>
+        <div id="divDados"(click)="mostraDados(servico.key)"> 
+          <ion-icon name="build" color="primary"></ion-icon><span class="negrito"> Nome do serviço: </span>{{servico.nome}}<br>
+          <ion-icon name="globe" color="primary"></ion-icon><span class="negrito"> Link: </span>{{servico.link}}<br>
         </div>
         <div *ngIf="admin">
           <button ion-button color="primary" (click)="excluir(servico.key)">Excluir</button>

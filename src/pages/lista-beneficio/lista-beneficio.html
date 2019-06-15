@@ -8,8 +8,11 @@
   <ion-searchbar placeholder="Buscar..."  (ionInput)="filtrarItens($event)" showCancelButton clearInput></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let beneficio of beneficios"  >
-      <div (click)="mostrarDados(beneficio.key)">
-        <h2>Benefício: {{beneficio.nome}}</h2>
+    
+    <div id="divDados" (click)="mostrarDados(beneficio.key)"> 
+          <ion-icon name="card" color="primary"></ion-icon><span class="negrito"> Benefício: </span> {{beneficio.nome}}<br>
+          <ion-icon name="cash" color="primary"></ion-icon><span class="negrito"> Valor Associado: </span> {{beneficio.valorAssociado}}<br>
+          <ion-icon name="cash" color="primary"></ion-icon><span class="negrito"> Valor não Associado: </span> {{beneficio.valorNaoAssociado}}
       </div>
       <div *ngIf="admin">
         <button ion-button color="primary" (click)="excluir(beneficio.key)">Excluir</button>

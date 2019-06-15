@@ -17,11 +17,9 @@
   </ion-segment>
   <ion-list>
     <ion-item *ngFor="let associado of associados">
-      <div (click)="mostrarDados(associado.key,associado.tipo)">
-        <h2>
-          {{associado.nome}}{{associado.nomeFantasia}}<br>
-          {{associado.facebook}}{{associado.site}}
-        </h2>
+      <div id="divDados"(click)="mostrarDados(associado.key,associado.tipo)">
+          <ion-icon name="home" color="primary"></ion-icon><span class="negrito"> Empresa: </span>{{associado.nome}}{{associado.nomeFantasia}}<br>
+          <ion-icon name="globe" color="primary"></ion-icon><span class="negrito"> Site: </span>{{associado.facebook}}{{associado.site}}
       </div> 
       <div *ngIf="admin">
         <button ion-button color="primary" (click)="excluir(associado.key)">Excluir</button>

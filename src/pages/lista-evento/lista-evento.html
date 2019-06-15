@@ -10,7 +10,7 @@
     <ion-item *ngFor="let evento of eventos"  >
       <div id="divDados" (click)="mostrarDados(evento.key)">
         <ion-icon name="paper" color="primary"></ion-icon><span class="negrito"> Nome do Evento: </span>{{evento.nome}}<br>
-        <ion-icon name="globe" color="primary"></ion-icon><span class="negrito"> Local: </span>{{evento.local}}<br>
+        <ion-icon name="pin" color="primary"></ion-icon><span class="negrito"> Local: </span>{{evento.local}}<br>
         <ion-icon name="calendar" color="primary"></ion-icon><span class="negrito"> Data: </span>{{evento.data | amDateFormat:'L'}}<br>
       </div>
       <div *ngIf="admin">
