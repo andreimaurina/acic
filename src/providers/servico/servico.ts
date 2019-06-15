@@ -32,10 +32,10 @@ export class ServicoProvider {
   gravar(servico, id = null){
     if (!id) {
       let newServico = this.ref.push();
-      newServico.set(servico);
+      return newServico.set(servico);
     }else {
       let newServico = firebase.database().ref(`Servicos/${id}`);
-      newServico.update(servico);
+      return newServico.update(servico);
     }
   }
 

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import * as firebase from 'Firebase';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import {Servico} from '../../models/Servico';
 import { ServicoProvider } from '../../providers/servico/servico';
  
@@ -17,7 +16,8 @@ export class CadastroServicoPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public provedor: ServicoProvider
+    public provedor: ServicoProvider,
+    public alertCtrl : AlertController
     ) {
     this.id = this.navParams.data.id;
     if (!this.id) {
@@ -35,7 +35,21 @@ export class CadastroServicoPage {
   }
   
   chamaGravar(id){
-    this.provedor.gravar(this.servico,id);
-    this.navCtrl.pop();
+    this.provedor.gravar(this.servico,id).then(
+      ()=>{
+        let alert = this.alertCtrl.create();
+        alert.setTitle('Gravado com sucesso!');
+        alert.addButton({
+          text: 'Ok',
+          handler: data => {
+            this.navCtrl.pop();
+          }
+        });
+        alert.present().then(() => {
+        });
+      }
+    )
   }
 }
+
+
