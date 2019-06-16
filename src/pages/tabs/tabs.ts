@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HomePage } from '../home/home';
 import { FeedNoticiaPage } from '../feed-noticia/feed-noticia';
 import { CadastrarAssociadoPage } from '../cadastrar-associado/cadastrar-associado';
 import { MenuPage } from '../menu/menu';
