@@ -18,8 +18,7 @@ export class MenuPage {
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams,
-    public afAuth: AngularFireAuth
+    public navParams: NavParams
     ) {
   }
 

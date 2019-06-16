@@ -22,15 +22,12 @@ export class FeedNoticiaPage {
     ) {
   }
 
-  ionViewWillEnter(){
+  ionViewDidLoad(){
     this.carregando();
     this.provedor.listar()
     .then(
       data => this.noticias = data
     );
-    // if (this.noticias != null) {
-    //   this.loading.dismiss();
-    // }
   }
 
   carregando(){

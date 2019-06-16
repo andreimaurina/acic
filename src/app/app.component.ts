@@ -14,7 +14,6 @@ export const config = {
 firebase.initializeApp(config);
 
 import { TabsPage } from '../pages/tabs/tabs';
-import { HomePage } from '../pages/home/home';
 
 @Component({
   templateUrl: 'app.html'

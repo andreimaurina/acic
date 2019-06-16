@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams, Segment } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import {Associado} from '../../models/Associado';
 import { AssociadoProvider } from '../../providers/associado/associado';
-import { AuthProvider } from '../../providers/auth/auth';
 
 @IonicPage()
 @Component({
@@ -19,20 +18,17 @@ export class ListaAssociadoPage {
   associados = [];
   listaBase = [];
   todosAssociados=[];
-  admin = false;
   tipo = "pessoaJuridica";
  
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public alerCtrl: AlertController,
-    public provedor : AssociadoProvider,
-    public auth: AuthProvider
+    public provedor : AssociadoProvider
     ) { 
   }  
 
   ionViewWillEnter(){
-    this.admin = this.auth.logado();
     this.segment.value = this.tipo;
     this.chamaListar();
   }
@@ -92,40 +88,8 @@ export class ListaAssociadoPage {
     }
   }
 
-  novoAssociado() {
-    let alert = this.alerCtrl.create();
-    alert.setTitle('Selecione o tipo');
-
-    alert.addInput({
-      type: 'radio',
-      label: 'Pessoa Física',
-      value: 'PF',
-      checked: true
-    });
-
-    alert.addInput({
-      type: 'radio',
-      label: 'Pessoa Jurídica',
-      value: 'PJ'
-    });
-
-    alert.addButton('Cancelar');
-    alert.addButton({
-      text: 'Ok',
-      handler: data => {
-        if (data == 'PF'){
-          this.navCtrl.push('CadastrarAssociadoPage');
-        }else{
-          this.navCtrl.push('CadastroPessoaJuridicaPage');
-        }
-      }
-    });
-    alert.present().then(() => {
-    });
-  }
-
   mostrarDados(id,tipo){
-    if(tipo = "pessoaFisica"){
+    if(tipo == "pessoaFisica"){
       this.navCtrl.push('MostraAssociadoPage',{id : id});
     }else{
       this.navCtrl.push('MostraAssociadoJuridicoPage',{id : id});
@@ -133,28 +97,5 @@ export class ListaAssociadoPage {
     
   }
 
-  excluir(id) {
-    let alert = this.alerCtrl.create();
-    alert.setTitle('Tem certeza que deseja excluir?');
-    alert.addButton('Cancelar');
-    alert.addButton({
-      text: 'Ok',
-      handler: data => {
-        this.provedor.excluir(id);
-        this.chamaListar();
-      }
-    });
-    alert.present().then(() => {
-    });
-  }
-
-  editar(id,tipo){
-    console.log(id);
-    if (tipo == 'pessoaFisica'){
-      this.navCtrl.push('CadastrarAssociadoPage',{id: id});
-    }else{
-      this.navCtrl.push('CadastroPessoaJuridicaPage',{id: id});
-    }
-  }
 }
 

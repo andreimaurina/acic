@@ -11,18 +11,6 @@
       <div id="texto" *ngIf="!editando">
         {{sobre.texto}}
       </div>
-      <div *ngIf="editando">
-        <ion-textarea [(ngModel)]="sobre.texto" name="texto"></ion-textarea>
-      </div>
-      <div id="botoes" *ngIf="admin">
-        <span *ngIf="!editando">
-          <button ion-button float-right color="primary" (click)="editar(true)">Editar</button>
-        </span>  
-        <span *ngIf="editando">
-          <button ion-button float-right color="danger" (click)="editar(false)">Cancelar</button>
-          <button ion-button float-right color="secundary" (click)="gravar(sobres.key)">Salvar</button>
-        </span>   
-      </div>
     </div>  
   </ion-list>
 </ion-content> 

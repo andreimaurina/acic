@@ -12,18 +12,6 @@
           <ion-icon name="build" color="primary"></ion-icon><span class="negrito"> Nome do serviço: </span>{{servico.nome}}<br>
           <ion-icon name="globe" color="primary"></ion-icon><span class="negrito"> Link: </span>{{servico.link}}<br>
         </div>
-        <div *ngIf="admin">
-          <button ion-button color="primary" (click)="excluir(servico.key)">Excluir</button>
-          <button ion-button color="primary" (click)="editar(servico.key)">Editar</button>
-        </div>
       </ion-item>  
   </ion-list>
 </ion-content>
-
-<div *ngIf="admin">
-  <ion-fab right bottom>
-    <button ion-fab color="primary" (click)="novoServico()">
-      <ion-icon name="add"></ion-icon>
-    </button>
-  </ion-fab>
-</div>

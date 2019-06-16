@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the MostraAssociadoJuridicoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Associado } from '../../models/Associado';
+import { AssociadoProvider } from '../../providers/associado/associado';
 
 @IonicPage()
 @Component({
@@ -15,11 +10,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MostraAssociadoJuridicoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  associado: Associado;
+  id = null;
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public provedor: AssociadoProvider
+    ) {
+      this.id = this.navParams.data.id;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MostraAssociadoJuridicoPage');
+    this.chamaPorId(this.id);
+  }
+
+  chamaPorId(id){
+    this.provedor.listarPorId(id)
+      .then(
+      data => this.associado = data
+    );
   }
 
 }

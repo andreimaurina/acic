@@ -2,7 +2,6 @@ import { NgModule, ErrorHandler, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,7 +23,6 @@ import { AssociadoProvider } from '../providers/associado/associado';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { config } from './app.component';
-import { AuthProvider } from '../providers/auth/auth';
 import { SobreProvider } from '../providers/sobre/sobre';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { MomentModule } from 'ngx-moment';
@@ -35,7 +33,6 @@ import 'moment/locale/pt-br';
     MyApp,
     FeedNoticiaPage,
     MenuPage,
-    HomePage,
     TabsPage,
     ListaEventoPage,
     ListaAssociadoPage,
@@ -59,7 +56,6 @@ import 'moment/locale/pt-br';
     MyApp,
     FeedNoticiaPage,
     MenuPage,
-    HomePage,
     TabsPage,
     ListaEventoPage,
     ListaAssociadoPage,
@@ -80,7 +76,6 @@ import 'moment/locale/pt-br';
     BeneficioProvider,
     AssociadoProvider,
     BeneficioProvider,
-    AuthProvider,
     AngularFireAuth,
     SobreProvider,
     InAppBrowser,

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { MostraAssociadoPage } from './mostra-associado';
+import { MomentModule } from 'ngx-moment';
 
 @NgModule({
   declarations: [
@@ -8,6 +9,7 @@ import { MostraAssociadoPage } from './mostra-associado';
   ],
   imports: [
     IonicPageModule.forChild(MostraAssociadoPage),
+    MomentModule
   ],
 })
 export class MostraAssociadoPageModule {}

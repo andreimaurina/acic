@@ -13,19 +13,8 @@
         <ion-icon name="pin" color="primary"></ion-icon><span class="negrito"> Local: </span>{{evento.local}}<br>
         <ion-icon name="calendar" color="primary"></ion-icon><span class="negrito"> Data: </span>{{evento.data | amDateFormat:'L'}}<br>
       </div>
-      <div *ngIf="admin">
-        <button ion-button color="danger" (click)="excluir(evento.key)">Excluir</button>
-        <button ion-button color="primary" (click)="editar(evento.key)">Editar</button>
-      </div>
     </ion-item>  
   </ion-list>
 </ion-content>
 
-<div *ngIf="admin">
-  <ion-fab bottom right>
-    <button ion-fab color="primary" (click)="novoEvento()">
-      <ion-icon name="add"></ion-icon>
-    </button>
-  </ion-fab>
-</div>
 
