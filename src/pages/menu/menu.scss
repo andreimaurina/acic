@@ -1,15 +1,15 @@
 page-menu {
-    #titleMenu{
-        
+    #contentMenu {
+        background-color: green;
     }
-    // #nomeUsuarioLogado{
-    //     background-color: aquamarine;
-        
-    // }
+    #titleMenu{
+        text-align: center;
+    }
+    
     #botaoAdmin{
         float: right;
         width: 20%;
-        mask-position: 30%;
+        mask-position: 29%;
     }
 
     #botaoLogout {

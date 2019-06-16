@@ -7,7 +7,6 @@ import { ListaVagaPage } from '../lista-vaga/lista-vaga';
 import { SobrePage } from '../sobre/sobre';
 import { ListaAssociadoPage } from '../lista-associado/lista-associado';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AuthProvider } from '../../providers/auth/auth';
 
 @IonicPage()
 @Component({
@@ -20,8 +19,7 @@ export class MenuPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public afAuth: AngularFireAuth,
-    public authservice: AuthProvider
+    public afAuth: AngularFireAuth
     ) {
   }
 
@@ -48,11 +46,4 @@ export class MenuPage {
     }
   }
   
-  IrParaLogin() {
-    this.navCtrl.push('LoginPage')
-  }
-
-  fazerLogout(){
-    this.authservice.logout();
-  }
 }
