@@ -1,25 +1,22 @@
 page-menu {
+    #navbarMenu {
+        opacity: 1.2;
+    }
     #contentMenu {
         background-color: green;
+        opacity: 0.8;
+        
     }
     #titleMenu{
         text-align: center;
     }
-    
-    #botaoAdmin{
-        float: right;
-        width: 20%;
-        mask-position: 29%;
-    }
 
-    #botaoLogout {
-        float: right;
-        width: 20%;
-        mask-position: 10%;
+    #listMenu {
+        background-color: green;
     }
 
     img{
-        width: 180px;
+        width: 120px;
         height: auto;
         display: block;
         margin-left: auto;
