@@ -7,11 +7,12 @@
 <ion-content padding>
   <ion-searchbar placeholder="Buscar..."  (ionInput)="filtrarItens($event)" showCancelButton clearInput></ion-searchbar>
   <ion-list>
-      <ion-item *ngFor="let servico of servicos">
+    <ion-card *ngFor="let servico of servicos"> 
+      <ion-item id="item">
         <div id="divDados"(click)="mostraDados(servico.key)"> 
-          <ion-icon name="build" color="primary"></ion-icon><span class="negrito"> Nome do serviço: </span>{{servico.nome}}<br>
-          <ion-icon name="globe" color="primary"></ion-icon><span class="negrito"> Link: </span>{{servico.link}}<br>
+          <ion-icon name="build" color="primary"></ion-icon><span class="negrito"> Serviço: </span>{{servico.nome}}<br>
         </div>
-      </ion-item>  
+      </ion-item> 
+    </ion-card>  
   </ion-list>
 </ion-content>

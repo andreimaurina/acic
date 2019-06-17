@@ -5,26 +5,15 @@
 </ion-header>
 
 <ion-content padding>
-    <div *ngIf = "vaga">
-        <ion-avatar item-start>
-            <img src={{vaga.imagem}}>
-          </ion-avatar>
-        <div>
-          <h2>Nome do Vaga: {{vaga.nome}}</h2>
-          <h3>Profissão: {{vaga.profissao}}</h3>
-          <h4>Descrição: {{vaga.descricao}}</h4>
-        </div>
-      <!--<h5>Local: {{evento.local}}</h5>
-        <h6>
-          Data: {{evento.data}}
-          Hora: {{evento.hora}}<br>
-          <br>
-          Descrição: {{evento.descricao}}<br>
-          <br>
-          Valor associado: R$ {{evento.valorAssociado}}<br>
-          <br>
-          Valor não associado: R$ {{evento.valorNaoAssociado}}<br>
-        </h6>-->
-        <button type="submit" ion-button float-right shape="round" color="primary" expand="block">Candidatar-se</button>
-      </div>
+  <div *ngIf = "vaga">
+    <ion-avatar item-start>
+      <img src={{vaga.imagem}}>
+    </ion-avatar>
+    <div>
+      Nome do Vaga: {{vaga.nome}}<br>
+      Profissão: {{vaga.profissao}}<br>
+      Descrição: {{vaga.descricao}}
+    </div>
+    <button type="submit" ion-button float-right shape="round" color="primary" expand="block">Candidatar-se</button>
+  </div>
 </ion-content>

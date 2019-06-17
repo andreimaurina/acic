@@ -7,11 +7,13 @@
 <ion-content id="contentMenu" padding>
   <ion-searchbar placeholder="Buscar..."  (ionInput)="filtrarItens($event)" showCancelButton clearInput></ion-searchbar>
   <ion-list>
-    <ion-item *ngFor="let vaga of vagas">
-      <div id="divDados"(click)="mostrarDados(vaga.key)">
-        <ion-icon name="megaphone" color="primary"></ion-icon><span class="negrito"> Nome da Vaga: </span>{{vaga.nome}}<br>
-        <ion-icon name="hammer" color="primary"></ion-icon><span class="negrito"> Profissão: </span>{{vaga.profissao}}<br>
-      </div>
-    </ion-item>
+    <ion-card *ngFor="let vaga of vagas"> 
+      <ion-item>
+        <div id="divDados"(click)="mostrarDados(vaga.key)">
+          <ion-icon name="megaphone" color="primary"></ion-icon><span class="negrito"> Nome da Vaga: </span>{{vaga.nome}}<br>
+          <ion-icon name="hammer" color="primary"></ion-icon><span class="negrito"> Profissão: </span>{{vaga.profissao}}<br>
+        </div>
+      </ion-item>
+    </ion-card> 
   </ion-list>
 </ion-content>
