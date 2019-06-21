@@ -4,13 +4,6 @@ import { Beneficio } from '../../models/Beneficio';
 import { BeneficioProvider } from '../../providers/beneficio/beneficio';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx'
 
-/**
- * Generated class for the MostraBeneficioPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-mostra-beneficio',

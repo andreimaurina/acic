@@ -6,14 +6,24 @@
 </ion-header>
 
 <ion-content padding>
-  <div *ngIf = "beneficio">
-    <h5>Beneficio: {{beneficio.nome}}</h5>
-    <h6>
-      Descrição: {{beneficio.descricao}}<br>
-      <br>
-      Valor associado: R$ {{beneficio.valorAssociado}}<br>
-      <br>
-      Valor não associado: R$ {{beneficio.valorNaoAssociado}}<br>
-    </h6>
+  <div *ngIf = "beneficio"> 
+
+    <div class="linha"><ion-icon name="card" color="primary"></ion-icon><span class="subtitulo"> Nome</span></div>
+    <div class="dados">{{beneficio.nome}}</div>
+
+    <div>
+      <div class="esquerda">
+        <div class="linha"><ion-icon name="cash" color="primary"></ion-icon><span class="subtitulo"> Valor associado</span></div>
+        <div class="dados">R$ {{beneficio.valorAssociado}}</div>
+      </div>
+      <div class="direita">
+        <div class="linha"><ion-icon name="cash" color="primary"></ion-icon><span class="subtitulo"> Valor não associado</span></div>
+        <div class="dados">R$ {{beneficio.valorNaoAssociado}}</div>
+      </div>
+    </div>
+    
+    <div class="subtituloMeio"> Descrição</div>
+    <div id="descricao">{{beneficio.descricao}}</div>
+    
   </div>
 </ion-content>

@@ -10,7 +10,6 @@ import { AssociadoProvider } from '../../providers/associado/associado';
 })
 export class MostraAssociadoPage {
 
-  
   associado: Associado;
   id = null;
 

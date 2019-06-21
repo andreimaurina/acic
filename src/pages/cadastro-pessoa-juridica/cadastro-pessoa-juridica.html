@@ -28,8 +28,12 @@
     <ion-input name="telefone" [(ngModel)]="associado.telefone" type="number" required></ion-input>
   </ion-item> 
   <ion-item>
-      <br>
-      <label>Endereço:</label> 
+    <ion-label color="primary" floating>* Email</ion-label>
+    <ion-input name="facebook" [(ngModel)]="associado.email"></ion-input>
+  </ion-item>
+  <br>
+  <label>Endereço:</label> 
+  <ion-item>
     <ion-label color="primary" floating>* CEP</ion-label>
     <ion-input name="cep" [(ngModel)]="associado.cep" type="number" required></ion-input>
   </ion-item>

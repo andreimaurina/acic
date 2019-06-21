@@ -6,18 +6,35 @@
 
 <ion-content padding>
   <div *ngIf = "evento">
-    <h5>Local: {{evento.local}}</h5>
-    <h6>
-      Data: {{evento.data | amDateFormat:'L'}}
-      Hora: {{evento.hora}}<br>
-      <br>
-      Descrição: {{evento.descricao}}<br>
-      <br>
-      Valor associado: R$ {{evento.valorAssociado}}<br>
-      <br>
-      Valor não associado: R$ {{evento.valorNaoAssociado}}<br>
-    </h6>
+    
+    <div class="linha"><ion-icon name="pin" color="primary"></ion-icon><span class="subtitulo"> Local</span></div>
+    <div class="dados">{{evento.local}}</div>
+
+    <div>
+      <div class="esquerda">
+        <div class="linha"><ion-icon name="calendar" color="primary"></ion-icon><span class="subtitulo"> Data</span></div>
+        <div class="dados">{{evento.data | amDateFormat:'L'}}</div>
+      </div>
+      <div class="direita">
+        <div class="linha"><ion-icon name="time" color="primary"></ion-icon><span class="subtitulo"> Hora</span></div> 
+        <div class="dados">{{evento.hora}}</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="esquerda">
+        <div class="linha"><ion-icon name="cash" color="primary"></ion-icon><span class="subtitulo"> Valor associado</span></div>
+        <div class="dados">R$ {{evento.valorAssociado}}</div>
+      </div>
+      <div class="direita">
+        <div class="linha"><ion-icon name="cash" color="primary"></ion-icon><span class="subtitulo"> Valor não associado</span></div>
+        <div class="dados">R$ {{evento.valorNaoAssociado}}</div>
+      </div>
+    </div>
+
+    <div class="subtituloMeio"> Descrição</div>
+    <div id="descricao">{{evento.descricao}}</div>
+
     <button type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="redirecionar(evento.link)">Inscrever-se</button>
   </div>
 </ion-content>
-<!-- <ion-icon name="time"></ion-icon> -->

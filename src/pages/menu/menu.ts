@@ -6,7 +6,7 @@ import { ListaBeneficioPage } from '../lista-beneficio/lista-beneficio';
 import { ListaVagaPage } from '../lista-vaga/lista-vaga';
 import { SobrePage } from '../sobre/sobre';
 import { ListaAssociadoPage } from '../lista-associado/lista-associado';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @IonicPage()
 @Component({
@@ -18,7 +18,8 @@ export class MenuPage {
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams
+    public navParams: NavParams,
+    public iab: InAppBrowser
     ) {
   }
 
@@ -38,6 +39,10 @@ export class MenuPage {
       break;
       case(local = "V"):
         this.navCtrl.push(ListaVagaPage);
+      break;
+      case(local = "PS"):
+        this.iab.create('https://forms.gle/gv5fyphWZf8Q2xrX9');
+        // this.iab.create('https://docs.google.com/forms/d/1K4cGSJ9yrCEiQ-XO2DWm02bb_ABNfwDWW-K7Hs0L2y0/edit');
       break;
       case(local = "SO"):
         this.navCtrl.push(SobrePage);

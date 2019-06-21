@@ -6,14 +6,16 @@
 
 <ion-content padding>
   <div *ngIf = "vaga">
-    <ion-avatar item-start>
-      <img src={{vaga.imagem}}>
-    </ion-avatar>
-    <div>
-      Nome do Vaga: {{vaga.nome}}<br>
-      Profissão: {{vaga.profissao}}<br>
-      Descrição: {{vaga.descricao}}
-    </div>
+    
+    <div class="linha"><ion-icon name="megaphone" color="primary"></ion-icon><span class="subtitulo"> Nome da Vaga</span></div>
+    <div class="dados">{{vaga.nome}}</div>
+
+    <div class="linha"><ion-icon name="hammer" color="primary"></ion-icon><span class="subtitulo"> Profissão</span></div>
+    <div class="dados">{{vaga.profissao}}</div>
+   
+    <div class="subtituloMeio"> Descrição</div>
+    <div id="descricao">{{vaga.descricao}}</div>
+
     <button type="submit" ion-button float-right shape="round" color="primary" expand="block">Candidatar-se</button>
   </div>
 </ion-content>

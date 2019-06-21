@@ -6,7 +6,13 @@
 </ion-header>
 
 <ion-content padding>
-  <div *ngIf = "servico">
-    <h5>Local: {{servico.descricao}}</h5>
+  <div *ngIf = "servico"> 
+
+    <div class="linha"><ion-icon name="build" color="primary"></ion-icon><span class="subtitulo"> Nome</span></div>
+    <div class="dados">{{servico.nome}}</div>
+
+    <div class="subtituloMeio"> Descrição</div>
+    <div id="descricao">{{servico.descricao}}</div>
+
   </div>
 </ion-content>
