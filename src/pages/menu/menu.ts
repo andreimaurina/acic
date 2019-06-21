@@ -6,7 +6,9 @@ import { ListaBeneficioPage } from '../lista-beneficio/lista-beneficio';
 import { ListaVagaPage } from '../lista-vaga/lista-vaga';
 import { SobrePage } from '../sobre/sobre';
 import { ListaAssociadoPage } from '../lista-associado/lista-associado';
+import { LoginPage } from '../login/login';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AuthProvider } from '../../providers/auth/auth';
 
 @IonicPage()
 @Component({
@@ -16,33 +18,48 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 export class MenuPage {
 
+  admin = false;
+
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams
+    public navParams: NavParams,
+    public authservice: AuthProvider,
+    public afAuth: AngularFireAuth
     ) {
-  }
+    }
+    
+    ionViewWillEnter(){
+      this.admin = this.authservice.logado();
+    }
 
-  direciona(local){
-    switch(local){
-      case(local = "A"):
+    direciona(local){
+      switch(local){
+        case(local = "A"):
         this.navCtrl.push(ListaAssociadoPage);
-      break;
-      case(local = "S"):
+        break;
+        case(local = "S"):
         this.navCtrl.push(ListaServicoPage);
-      break;
-      case(local = "E"):
+        break;
+        case(local = "E"):
         this.navCtrl.push(ListaEventoPage);
-      break;
-      case(local = "B"):
+        break;
+        case(local = "B"):
         this.navCtrl.push(ListaBeneficioPage);
-      break;
-      case(local = "V"):
+        break;
+        case(local = "V"):
         this.navCtrl.push(ListaVagaPage);
-      break;
-      case(local = "SO"):
+        break;
+        case(local = "Sob"):
         this.navCtrl.push(SobrePage);
-      break;
+        break;
+        case(local = "L"):
+        this.navCtrl.push(LoginPage);
+        break;
+      }
+    }
+  
+    fazerLogout(){
+      this.authservice.logout();
+      this.navCtrl.push(MenuPage);
     }
   }
-  
-}

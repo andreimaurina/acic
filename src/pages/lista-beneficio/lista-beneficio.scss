@@ -1,11 +1,19 @@
 page-lista-beneficio {
-
+    ion-fab {
+        padding-bottom: 55px;
+    }
+    
     #divDados{
         font-size: 14px;
         white-space: normal; 
     }
-
+    
     .negrito{
         font-weight: bold;
+    }
+    
+    .space{
+        padding-bottom: 15px;
+        padding-left: 15px;
     }
 }

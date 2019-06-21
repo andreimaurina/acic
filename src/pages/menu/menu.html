@@ -1,8 +1,6 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Menu</ion-title>
-  </ion-navbar>
-</ion-header>
+
+<!-- <ion-icon name="lock" class="login" color="primary" (click)="IrParaLogin()" class="space"></ion-icon>
+<ion-icon name="unlock" class="logout" color="primary" *ngIf="afAuth.auth.currentUser" (click)="fazerLogout()" class="space"></ion-icon> -->
 
 <ion-content id="contentMenu" padding>
   <img src="../../assets/imgs/logoAcic.png"/>
@@ -12,6 +10,12 @@
     <ion-item class="menuItem" text-center (click)="direciona('E')">Eventos</ion-item>
     <ion-item class="menuItem" text-center (click)="direciona('B')">Benefícios</ion-item>
     <ion-item class="menuItem" text-center (click)="direciona('V')">Vagas de Emprego</ion-item>
-    <ion-item class="menuItem" text-center (click)="direciona('SO')">Sobre</ion-item>
+    <ion-item class="menuItem" text-center (click)="direciona('Sob')">Sobre</ion-item>
+    <div *ngIf="!admin">
+      <ion-item class="menuItem" text-center (click)="direciona('L')">Login</ion-item>
+    </div>
+    <div *ngIf="admin">
+      <ion-item class="menuItem" *ngIf="afAuth.auth.currentUser" text-center (click)="fazerLogout()" class="color">Logout</ion-item>
+    </div>
   </ion-list>
 </ion-content>

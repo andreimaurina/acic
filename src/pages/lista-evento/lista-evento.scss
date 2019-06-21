@@ -1,11 +1,22 @@
 page-lista-evento {
-
+    ion-fab {
+        padding-bottom: 55px;
+    }
+    
     #divDados{
         font-size: 14px;
         white-space: normal; 
     }
-
+    
     .negrito{
         font-weight: bold;
+    }
+    
+    .space1{
+        padding-top: 10px;
+    }
+
+    .space2{
+        padding-right: 10px;
     }
 }

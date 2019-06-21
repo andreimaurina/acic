@@ -27,6 +27,8 @@ import { SobreProvider } from '../providers/sobre/sobre';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { MomentModule } from 'ngx-moment';
 import 'moment/locale/pt-br';
+import { LoginPage } from '../pages/login/login';
+import { AuthProvider } from '../providers/auth/auth';
 
 @NgModule({
   declarations: [
@@ -39,9 +41,8 @@ import 'moment/locale/pt-br';
     ListaBeneficioPage,
     ListaServicoPage,   
     ListaVagaPage,
-    SobrePage
-    
-    
+    SobrePage,
+    LoginPage    
   ],
   imports: [
     BrowserModule,
@@ -62,8 +63,8 @@ import 'moment/locale/pt-br';
     ListaBeneficioPage,
     ListaServicoPage, 
     ListaVagaPage,
-    SobrePage
-    
+    SobrePage,
+    LoginPage
   ],
   providers: [
     StatusBar,
@@ -79,8 +80,8 @@ import 'moment/locale/pt-br';
     AngularFireAuth,
     SobreProvider,
     InAppBrowser,
-    SobreProvider
-
+    SobreProvider,
+    AuthProvider
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

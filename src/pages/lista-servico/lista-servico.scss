@@ -1,4 +1,7 @@
 page-lista-servico {
+    ion-fab {
+        padding-bottom: 55px;
+    }
 
     #divDados{
         font-size: 14px;
@@ -11,5 +14,10 @@ page-lista-servico {
 
     .item{
         min-height: 50px;
+    }
+
+    .space{
+        padding-bottom: 15px;
+        padding-left: 15px;
     }
 }

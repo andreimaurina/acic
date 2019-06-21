@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-searchbar placeholder="Buscar..."  (ionInput)="filtrarItens($event)" showCancelButton clearInput></ion-searchbar>
+  <ion-searchbar placeholder="Pesquisar..."  (ionInput)="filtrarItens($event)" showCancelButton clearInput></ion-searchbar>
   <ion-list>
     <ion-card *ngFor="let beneficio of beneficios"> 
       <ion-item>
@@ -14,9 +14,19 @@
           <ion-icon name="cash" color="primary"></ion-icon><span class="negrito"> Valor Associado: </span> {{beneficio.valorAssociado}}<br>
           <ion-icon name="cash" color="primary"></ion-icon><span class="negrito"> Valor não Associado: </span> {{beneficio.valorNaoAssociado}}
         </div>
-      </ion-item>  
+      </ion-item>
+      <div *ngIf="admin">
+        <ion-icon name="trash" color="danger" (click)="excluir(beneficio.key)" class="space"></ion-icon>
+        <ion-icon name="create" color="secondary" (click)="editar(beneficio.key)" class="space"></ion-icon>
+      </div>
     </ion-card> 
   </ion-list>
 </ion-content>
 
- 
+<div *ngIf="admin">
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="novoBeneficio()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</div>

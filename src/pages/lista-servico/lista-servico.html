@@ -5,14 +5,26 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-searchbar placeholder="Buscar..."  (ionInput)="filtrarItens($event)" showCancelButton clearInput></ion-searchbar>
+  <ion-searchbar placeholder="Pesquisar..."  (ionInput)="filtrarItens($event)" showCancelButton clearInput></ion-searchbar>
   <ion-list>
     <ion-card *ngFor="let servico of servicos"> 
       <ion-item id="item">
         <div id="divDados"(click)="mostraDados(servico.key)"> 
           <ion-icon name="build" color="primary"></ion-icon><span class="negrito"> Serviço: </span>{{servico.nome}}<br>
         </div>
-      </ion-item> 
-    </ion-card>  
+      </ion-item>
+      <div *ngIf="admin">
+        <ion-icon name="trash" color="danger" (click)="editar(servico.key)" class="space"></ion-icon>
+        <ion-icon name="create" color="secondary" (click)="excluir(servico.key)" class="space"></ion-icon>
+      </div>
+    </ion-card>
   </ion-list>
 </ion-content>
+
+<div *ngIf="admin">
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="novoServico()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</div>
