@@ -6,17 +6,62 @@
 
 <ion-content padding>
   <div *ngIf = "associado">
-      <span class="negrito"> Bairro: </span>{{associado.bairro}} <br>
-      <span class="negrito"> CEP: </span>{{associado.cep}} <br>
-      <span class="negrito"> Cidade: </span>{{associado.cidade}}<br>
-      <span class="negrito"> Endereço: </span>{{associado.numEndereco}}<br>
-      <span class="negrito"> Rua: </span>{{associado.rua}}<br>
-      <span class="negrito"> Data de Nascimento: </span>{{associado.dataNasc | amDateFormat:'L'}}<br>
-      <span class="negrito"> Facebook: </span>{{associado.Facebook}}<br>
-      <span class="negrito"> Twitter: </span>{{associado.twitter}}<br>
-      <span class="negrito"> Instagram: </span>{{associado.instagram}}<br>
-      <span class="negrito"> Linkedin: </span>{{associado.linkedin}}<br>
-      <span class="negrito"> Sexo: </span>{{associado.sexo}}<br>
-      <span class="negrito"> Telefone: </span> {{associado.telefone}}<br>
+
+    <div class="subtituloMeio">DADOS PESSOAIS</div>
+
+    <div class="linha"><ion-icon name="finger-print" color="primary"></ion-icon><span class="subtitulo"> Nome</span></div>
+    <div class="dados">{{associado.nome}}</div>
+
+    <div class="linha"><ion-icon name="calendar" color="primary"></ion-icon><span class="subtitulo"> Data de Nascimento</span></div>
+    <div class="dados">{{associado.dataNasc | amDateFormat:'L'}}</div>
+
+    <div class="linha"><ion-icon name="person" color="primary"></ion-icon><span class="subtitulo"> Sexo</span></div>
+    <div class="dados">{{associado.sexo}}</div>
+
+    <div class="subtituloMeio">CONTATOS</div>
+
+    <div class="linha"><ion-icon name="call" color="primary"></ion-icon><span class="subtitulo"> Telefone</span></div>
+    <div class="dados">{{associado.telefone}}</div>
+
+    <div class="linha"><ion-icon name="at" color="primary"></ion-icon><span class="subtitulo"> Email</span></div>
+    <div class="dados">{{associado.email}}</div>
+
+    <div *ngIf = associado.facebook>
+      <div class="linha"><ion-icon name="logo-facebook" color="primary"></ion-icon><span class="subtitulo"> Facebook</span></div>
+      <div class="dados">{{associado.facebook}}</div>
+    </div> 
+
+    <div *ngIf = associado.twitter>
+      <div class="linha"><ion-icon name="logo-twitter" color="primary"></ion-icon><span class="subtitulo"> Twitter</span></div>
+      <div class="dados">{{associado.twitter}}</div>
+    </div>
+
+    <div *ngIf = associado.instagram>
+      <div class="linha"><ion-icon name="logo-instagram" color="primary"></ion-icon><span class="subtitulo"> Instagram</span></div>
+      <div class="dados">{{associado.instagram}}</div>
+    </div>
+
+    <div *ngIf = associado.linkedin>
+      <div class="linha"><ion-icon name="logo-linkedin" color="primary"></ion-icon><span class="subtitulo"> Linkedin</span></div>
+      <div class="dados">{{associado.linkedin}}</div>
+    </div>
+
+    <div class="subtituloMeio">ENDEREÇO</div>
+
+    <div class="linha"><ion-icon name="pin" color="primary"></ion-icon><span class="subtitulo"> CEP</span></div>
+    <div class="dados">{{associado.cep}}</div>
+
+    <div class="linha"><ion-icon name="flag" color="primary"></ion-icon><span class="subtitulo"> Cidade</span></div>
+    <div class="dados">{{associado.cidade}}</div>
+
+    <div class="linha"><ion-icon name="compass" color="primary"></ion-icon><span class="subtitulo"> Bairro</span></div>
+    <div class="dados">{{associado.bairro}}</div>
+
+    <div class="linha"><ion-icon name="car" color="primary"></ion-icon><span class="subtitulo"> Rua</span></div>
+    <div class="dados">{{associado.rua}}</div>
+    
+    <div class="linha"><ion-icon name="home" color="primary"></ion-icon><span class="subtitulo"> Número</span></div>
+    <div class="dados">{{associado.numEndereco}}</div>
+    
   </div>
 </ion-content>

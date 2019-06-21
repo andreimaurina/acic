@@ -6,14 +6,47 @@
 
 <ion-content padding>
   <div *ngIf = "associado">
-    Razão Social: {{associado.razaoSocial}}<br>
-    Bairro: {{associado.bairro}} <br>
-    Cep: {{associado.cep}} <br>
-    cidade: {{associado.cidade}}<br>
-    Endereco: {{associado.numEndereco}}<br>
-    Rua:  {{associado.rua}}<br>
-    CNPJ: {{associado.cnpj}}<br>
-    Site: {{associado.site}}<br>
-    Telefone: {{associado.telefone}}
+
+    <div class="subtituloMeio">DADOS PRINCIPAIS</div>
+
+    <div class="linha"><ion-icon name="pricetag" color="primary"></ion-icon><span class="subtitulo"> CNPJ</span></div>
+    <div class="dados">{{associado.cnpj}}</div>
+
+    <div class="linha"><ion-icon name="briefcase" color="primary"></ion-icon><span class="subtitulo"> Nome Fantasia</span></div>
+    <div class="dados">{{associado.nomeFantasia}}</div>
+
+    <div class="linha"><ion-icon name="filing" color="primary"></ion-icon><span class="subtitulo"> Razão Social</span></div>
+    <div class="dados">{{associado.razaoSocial}}</div>
+
+    <div class="subtituloMeio">CONTATOS</div>
+
+    <div class="linha"><ion-icon name="call" color="primary"></ion-icon><span class="subtitulo"> Telefone</span></div>
+    <div class="dados">{{associado.telefone}}</div>
+
+    <div class="linha"><ion-icon name="at" color="primary"></ion-icon><span class="subtitulo"> Email</span></div>
+    <div class="dados">{{associado.email}}</div>
+
+    <div *ngIf = associado.site>
+      <div class="linha"><ion-icon name="globe" color="primary"></ion-icon><span class="subtitulo"> Site</span></div>
+      <div class="dados">{{associado.site}}</div>
+    </div>
+
+    <div class="subtituloMeio">ENDEREÇO</div>
+
+    <div class="linha"><ion-icon name="pin" color="primary"></ion-icon><span class="subtitulo"> CEP</span></div>
+    <div class="dados">{{associado.cep}}</div>
+
+    <div class="linha"><ion-icon name="flag" color="primary"></ion-icon><span class="subtitulo"> Cidade</span></div>
+    <div class="dados">{{associado.cidade}}</div>
+
+    <div class="linha"><ion-icon name="compass" color="primary"></ion-icon><span class="subtitulo"> Bairro</span></div>
+    <div class="dados">{{associado.bairro}}</div>
+
+    <div class="linha"><ion-icon name="car" color="primary"></ion-icon><span class="subtitulo"> Rua</span></div>
+    <div class="dados">{{associado.rua}}</div>
+
+    <div class="linha"><ion-icon name="home" color="primary"></ion-icon><span class="subtitulo"> Número</span></div>
+    <div class="dados">{{associado.numEndereco}}</div>
+
   </div>
 </ion-content>                                  

@@ -9,6 +9,7 @@ import { ListaAssociadoPage } from '../lista-associado/lista-associado';
 import { LoginPage } from '../login/login';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthProvider } from '../../providers/auth/auth';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @IonicPage()
 @Component({
@@ -24,7 +25,8 @@ export class MenuPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public authservice: AuthProvider,
-    public afAuth: AngularFireAuth
+    public afAuth: AngularFireAuth,
+    public iab: InAppBrowser
     ) {
     }
     
@@ -50,6 +52,12 @@ export class MenuPage {
         this.navCtrl.push(ListaVagaPage);
         break;
         case(local = "Sob"):
+      break;
+      case(local = "PS"):
+        this.iab.create('https://forms.gle/gv5fyphWZf8Q2xrX9');
+        // this.iab.create('https://docs.google.com/forms/d/1K4cGSJ9yrCEiQ-XO2DWm02bb_ABNfwDWW-K7Hs0L2y0/edit');
+      break;
+      case(local = "SO"):
         this.navCtrl.push(SobrePage);
         break;
         case(local = "L"):

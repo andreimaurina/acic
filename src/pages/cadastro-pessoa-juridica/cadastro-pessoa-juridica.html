@@ -23,33 +23,36 @@
       <ion-label color="primary" floating>Site</ion-label>
       <ion-input name="site" [(ngModel)]="associado.site"></ion-input>
     </ion-item>
-    <ion-item> 
-      <ion-label color="primary" floating>* Telefone</ion-label>
-      <ion-input name="telefone" [(ngModel)]="associado.telefone" type="number" required></ion-input>
-    </ion-item> 
-    <ion-item>
-      <br>
-      <label>Endereço:</label> 
-      <ion-label color="primary" floating>* CEP</ion-label>
-      <ion-input name="cep" [(ngModel)]="associado.cep" type="number" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label color="primary" floating>* Cidade</ion-label>
-      <ion-input name="cidade" [(ngModel)]="associado.cidade" required></ion-input>
-    </ion-item>  
-    <ion-item>
-      <ion-label color="primary" floating>* Rua</ion-label>
-      <ion-input name="rua" [(ngModel)]="associado.rua" required></ion-input>
-    </ion-item> 
-    <ion-item>
-      <ion-label color="primary" floating>* Número </ion-label>
-      <ion-input name="numEndereco" [(ngModel)]="associado.numEndereco" type="number" required></ion-input>
-    </ion-item> 
-    <ion-item>
-      <ion-label color="primary" floating>* Bairro</ion-label>
-      <ion-input name="bairro" [(ngModel)]="associado.bairro" required></ion-input>
-    </ion-item>
-    <button ion-button float-right color="danger" (click)="navCtrl.pop()">Cancelar</button> 
+  <ion-item> 
+    <ion-label color="primary" floating>* Telefone</ion-label>
+    <ion-input name="telefone" [(ngModel)]="associado.telefone" type="number" required></ion-input>
+  </ion-item> 
+  <ion-item>
+    <ion-label color="primary" floating>* Email</ion-label>
+    <ion-input name="facebook" [(ngModel)]="associado.email"></ion-input>
+  </ion-item>
+  <br>
+  <label>Endereço:</label> 
+  <ion-item>
+    <ion-label color="primary" floating>* CEP</ion-label>
+    <ion-input name="cep" [(ngModel)]="associado.cep" type="number" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>* Cidade</ion-label>
+    <ion-input name="cidade" [(ngModel)]="associado.cidade" required></ion-input>
+  </ion-item>  
+  <ion-item>
+    <ion-label color="primary" floating>* Rua</ion-label>
+    <ion-input name="rua" [(ngModel)]="associado.rua" required></ion-input>
+  </ion-item> 
+  <ion-item>
+    <ion-label color="primary" floating>* Número </ion-label>
+    <ion-input name="numEndereco" [(ngModel)]="associado.numEndereco" type="number" required></ion-input>
+  </ion-item> 
+  <ion-item>
+    <ion-label color="primary" floating>* Bairro</ion-label>
+    <ion-input name="bairro" [(ngModel)]="associado.bairro" required></ion-input>
+  </ion-item>   
     <button [disabled]="!formulario.form.valid" type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="gravar(associado.key)">Salvar</button>
   </form>
 </ion-content>
