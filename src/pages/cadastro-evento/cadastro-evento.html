@@ -11,6 +11,10 @@
       <ion-input name="nome" [(ngModel)]="evento.nome" required></ion-input>
     </ion-item>
     <ion-item>
+      <ion-label color="primary" floating>* Local</ion-label>
+      <ion-input name="local" [(ngModel)]="evento.local" required></ion-input>
+    </ion-item>
+    <ion-item>
       <ion-label color="primary" floating>* Data</ion-label>
       <ion-datetime displayFormat="DD de MMMM de YYYY" name="data" [(ngModel)]="evento.data" required
         monthNames = "Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro"
@@ -26,10 +30,6 @@
       </ion-datetime>
     </ion-item>
     <ion-item>
-      <ion-label color="primary" floating>* Local</ion-label>
-      <ion-input name="local" [(ngModel)]="evento.local" required></ion-input>
-    </ion-item>
-    <ion-item>
       <ion-label color="primary" floating>* Descrição</ion-label>
       <ion-textarea name="descricao" [(ngModel)]="evento.descricao" required></ion-textarea>
     </ion-item>
@@ -38,8 +38,9 @@
       <ion-input name="link" [(ngModel)]="evento.link" required></ion-input>
     </ion-item>
     <p id="https">Ex: http://portalacic.com.br/</p>
-    <br>
-    <label>Valores:</label>
+    
+    <div class="separador">VALORES</div> 
+
     <ion-item>
       <ion-label color="primary" floating>* Valor para Associado</ion-label>
       <ion-input name="valorAssociado" [(ngModel)]="evento.valorAssociado" type="number" required></ion-input>
@@ -50,5 +51,6 @@
     </ion-item>
     <br>
     <button [disabled]="!formulario.form.valid" type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="chamaGravar(evento.key)">Gravar</button>
+    <button ion-button float-right color="danger" (click)="navCtrl.pop()">Cancelar</button>
   </form>
 </ion-content>

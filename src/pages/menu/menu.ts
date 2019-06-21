@@ -37,31 +37,29 @@ export class MenuPage {
     direciona(local){
       switch(local){
         case(local = "A"):
-        this.navCtrl.push(ListaAssociadoPage);
+          this.navCtrl.push(ListaAssociadoPage);
         break;
         case(local = "S"):
-        this.navCtrl.push(ListaServicoPage);
+          this.navCtrl.push(ListaServicoPage);
         break;
         case(local = "E"):
-        this.navCtrl.push(ListaEventoPage);
+          this.navCtrl.push(ListaEventoPage);
         break;
         case(local = "B"):
-        this.navCtrl.push(ListaBeneficioPage);
+          this.navCtrl.push(ListaBeneficioPage);
         break;
         case(local = "V"):
-        this.navCtrl.push(ListaVagaPage);
+          this.navCtrl.push(ListaVagaPage);
         break;
-        case(local = "Sob"):
-      break;
-      case(local = "PS"):
-        this.iab.create('https://forms.gle/gv5fyphWZf8Q2xrX9');
-        // this.iab.create('https://docs.google.com/forms/d/1K4cGSJ9yrCEiQ-XO2DWm02bb_ABNfwDWW-K7Hs0L2y0/edit');
-      break;
-      case(local = "SO"):
-        this.navCtrl.push(SobrePage);
+        case(local = "PS"):
+          this.iab.create('https://forms.gle/gv5fyphWZf8Q2xrX9');
+          // this.iab.create('https://docs.google.com/forms/d/1K4cGSJ9yrCEiQ-XO2DWm02bb_ABNfwDWW-K7Hs0L2y0/edit');
+        break;
+        case(local = "SO"):
+          this.navCtrl.push(SobrePage);
         break;
         case(local = "L"):
-        this.navCtrl.push(LoginPage);
+          this.navCtrl.push(LoginPage);
         break;
       }
     }

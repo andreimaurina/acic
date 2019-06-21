@@ -7,6 +7,9 @@
 <ion-content padding>
   <div *ngIf = "evento">
     
+    <div class="linha"><ion-icon name="paper" color="primary"></ion-icon><span class="subtitulo"> Nome</span></div>
+    <div class="dados">{{evento.nome}}</div>
+
     <div class="linha"><ion-icon name="pin" color="primary"></ion-icon><span class="subtitulo"> Local</span></div>
     <div class="dados">{{evento.local}}</div>
 

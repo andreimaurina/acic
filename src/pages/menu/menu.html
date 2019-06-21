@@ -10,14 +10,13 @@
     <ion-item class="menuItem" text-center (click)="direciona('E')">Eventos</ion-item>
     <ion-item class="menuItem" text-center (click)="direciona('B')">Benefícios</ion-item>
     <ion-item class="menuItem" text-center (click)="direciona('V')">Vagas de Emprego</ion-item>
-    <ion-item class="menuItem" text-center (click)="direciona('Sob')">Sobre</ion-item>
+    <ion-item class="menuItem" text-center (click)="direciona('PS')">Pesquisa de Satisfação</ion-item>
+    <ion-item class="menuItem" text-center (click)="direciona('SO')">Sobre</ion-item>
     <div *ngIf="!admin">
       <ion-item class="menuItem" text-center (click)="direciona('L')">Login</ion-item>
     </div>
     <div *ngIf="admin">
       <ion-item class="menuItem" *ngIf="afAuth.auth.currentUser" text-center (click)="fazerLogout()" class="color">Logout</ion-item>
     </div>
-    <ion-item class="menuItem" text-center (click)="direciona('PS')">Pesquisa de Satisfação</ion-item>
-    <ion-item class="menuItem" text-center (click)="direciona('SO')">Sobre</ion-item>
   </ion-list>
 </ion-content>

@@ -6,14 +6,9 @@
 
 <ion-content padding>
   <form *ngIf = "beneficio" #formulario="ngForm">
-    <label>Informações do benefício:</label>
     <ion-item>
       <ion-label color="primary" floating>* Nome do Beneficio</ion-label>
       <ion-input name="nome" [(ngModel)]="beneficio.nome" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label color="primary" floating>* Descrição</ion-label>
-      <ion-textarea name="descricao" [(ngModel)]="beneficio.descricao" required></ion-textarea>
     </ion-item>
     <ion-item>
       <ion-label color="primary" floating>* Valor para Associado</ion-label>
@@ -23,7 +18,12 @@
       <ion-label color="primary" floating>* Valor para não Associado</ion-label>
       <ion-input name="valorNaoAssociado" [(ngModel)]="beneficio.valorNaoAssociado" type="number" required></ion-input>
     </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>* Descrição</ion-label>
+      <ion-textarea name="descricao" [(ngModel)]="beneficio.descricao" required></ion-textarea>
+    </ion-item>
     <br>
     <button [disabled]="!formulario.form.valid" type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="chamaGravar(beneficio.key)">Gravar</button>
+    <button ion-button float-right color="danger" (click)="navCtrl.pop()">Cancelar</button>
   </form>
 </ion-content>
