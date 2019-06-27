@@ -7,11 +7,11 @@
 <ion-content padding>
   <ion-item>
     <ion-label color="primary" floating>E-mail</ion-label>
-    <ion-input type="email" [(ngModel)]="credentials.email"></ion-input>
+    <ion-input type="email" [(ngModel)]="credentials.email" required></ion-input>
   </ion-item>
   <ion-item>
     <ion-label color="primary" floating>Senha</ion-label>
-    <ion-input [type]="passwordType" [(ngModel)]="credentials.password"></ion-input>
+    <ion-input [type]="passwordType" [(ngModel)]="credentials.password" required></ion-input>
     <ion-icon name="eye" [color]="passwordShown === true ? 'dark' : 'gray'" item-end
     (click)="togglePassword()"></ion-icon>
   </ion-item>

@@ -12,10 +12,10 @@
     <ion-item class="menuItem" text-center (click)="direciona('V')">Vagas de Emprego</ion-item>
     <ion-item class="menuItem" text-center (click)="direciona('PS')">Pesquisa de Satisfação</ion-item>
     <ion-item class="menuItem" text-center (click)="direciona('SO')">Sobre</ion-item>
-    <div *ngIf="!admin">
+    <div *ngIf="admin">
       <ion-item class="menuItem" text-center (click)="direciona('L')">Login</ion-item>
     </div>
-    <div *ngIf="admin">
+    <div *ngIf="!admin">
       <ion-item class="menuItem" *ngIf="afAuth.auth.currentUser" text-center (click)="fazerLogout()" class="color">Logout</ion-item>
     </div>
   </ion-list>
