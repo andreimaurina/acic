@@ -19,7 +19,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 export class MenuPage {
 
-  admin = false;
+  admin = null;
 
   constructor(
     public navCtrl: NavController,
