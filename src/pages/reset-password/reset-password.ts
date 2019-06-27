@@ -11,7 +11,7 @@ import { AuthProvider } from '../../providers/auth/auth';
 
 export class ResetPasswordPage {
 
-  email: string;
+  email: string =null;
 
   constructor(
     public navCtrl: NavController,

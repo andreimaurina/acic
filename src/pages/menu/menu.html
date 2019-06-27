@@ -4,6 +4,12 @@
 
 <ion-content id="contentMenu" padding>
   <img src="../../assets/imgs/logoAcic.png"/>
+  <div *ngIf="admin">
+    <h4 id="nomeUsuarioLogado" *ngIf="afAuth.auth.currentUser">
+      Bem-vindo, {{afAuth.auth.currentUser.displayName}}!
+    </h4>
+  </div>
+  
   <ion-list id="listMenu">
     <ion-item class="menuItem" text-center (click)="direciona('A')">Associados</ion-item>
     <ion-item class="menuItem" text-center (click)="direciona('S')">Serviços</ion-item>
