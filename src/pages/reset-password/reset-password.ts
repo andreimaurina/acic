@@ -28,10 +28,10 @@ export class ResetPasswordPage {
   resetPassword() {
     if (this.email == null){
       let alert = this.alertCtrl.create();
-          alert.setTitle('Erro: nenhum e-mail informado.');
-          alert.addButton('Ok');
-          alert.present().then(() => {
-          });
+      alert.setTitle('Erro: nenhum e-mail informado.');
+      alert.addButton('Ok');
+      alert.present().then(() => {
+      });
     } else {
       this.authservice.resetPassword(this.email).then((res: any) => {
       

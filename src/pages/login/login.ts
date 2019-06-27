@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { usercreds } from '../../models/interfaces/usercreds';
 import { AuthProvider } from '../../providers/auth/auth';
 
@@ -16,7 +16,8 @@ export class LoginPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public authservice: AuthProvider
+    public authservice: AuthProvider,
+    public alertCtrl: AlertController
     ) {
     }
     
@@ -35,15 +36,29 @@ export class LoginPage {
     }
     
     signIn() {
-      this.authservice.login(this.credentials).then((res: any) => {
-        if (!res.code)
-        this.navCtrl.pop();
-        else
-        alert(res);
-      })
-      
+      if (this.credentials.email == null){
+        let alert = this.alertCtrl.create();
+        alert.setTitle('Erro: e-mail não preenchido.');
+        alert.addButton('Ok');
+        alert.present().then(() => {
+      });
+      } else {
+        if (this.credentials.password == null){
+          let alert = this.alertCtrl.create();
+          alert.setTitle('Erro: senha não preenchida.');
+          alert.addButton('Ok');
+          alert.present().then(() => {
+        });
+      } else {
+          this.authservice.login(this.credentials).then((res: any) => {
+          if (!res.code)
+            this.navCtrl.pop();
+          else
+            alert(res);
+          })
+        }
+      }
     }
-    
     resetPassword(){
       this.navCtrl.push('ResetPasswordPage');
     }
