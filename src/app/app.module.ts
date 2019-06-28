@@ -29,6 +29,7 @@ import { MomentModule } from 'ngx-moment';
 import 'moment/locale/pt-br';
 import { LoginPage } from '../pages/login/login';
 import { AuthProvider } from '../providers/auth/auth';
+import { BrMaskerModule } from 'brmasker-ionic-3';
 
 @NgModule({
   declarations: [
@@ -42,10 +43,11 @@ import { AuthProvider } from '../providers/auth/auth';
     ListaServicoPage,   
     ListaVagaPage,
     SobrePage,
-    LoginPage    
+    LoginPage 
   ],
   imports: [
     BrowserModule,
+    BrMaskerModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
     AngularFireModule.initializeApp(config),

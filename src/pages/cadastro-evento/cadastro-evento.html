@@ -43,11 +43,11 @@
 
     <ion-item>
       <ion-label color="primary" floating>* Valor para Associado</ion-label>
-      <ion-input name="valorAssociado" [(ngModel)]="evento.valorAssociado" type="number" required></ion-input>
+      <ion-input name="valorAssociado" [(ngModel)]="evento.valorAssociado" [brmasker]="{money: true,thousand: '.',decimal:2}" required></ion-input>
     </ion-item>
     <ion-item>
         <ion-label color="primary" floating>* Valor para não Associado</ion-label>
-        <ion-input name="valorNaoAssociado" [(ngModel)]="evento.valorNaoAssociado" type="number" required></ion-input>
+        <ion-input name="valorNaoAssociado" [(ngModel)]="evento.valorNaoAssociado" [brmasker]="{money: true,thousand: '.',decimal:2}" required></ion-input>
     </ion-item>
     <br>
     <button [disabled]="!formulario.form.valid" type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="chamaGravar(evento.key)">Gravar</button>

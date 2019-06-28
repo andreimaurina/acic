@@ -12,11 +12,11 @@
     </ion-item>
     <ion-item>
       <ion-label color="primary" floating>* Valor para Associado</ion-label>
-      <ion-input name="valorAssociado" [(ngModel)]="beneficio.valorAssociado" type="number" required></ion-input>
+      <ion-input name="valorAssociado" [(ngModel)]="beneficio.valorAssociado" [brmasker]="{money: true,thousand: '.',decimal:2}" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary" floating>* Valor para não Associado</ion-label>
-      <ion-input name="valorNaoAssociado" [(ngModel)]="beneficio.valorNaoAssociado" type="number" required></ion-input>
+      <ion-input name="valorNaoAssociado" [(ngModel)]="beneficio.valorNaoAssociado" [brmasker]="{money: true,thousand: '.',decimal:2}" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary" floating>* Descrição</ion-label>

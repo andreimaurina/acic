@@ -1,7 +1,8 @@
 import { Component } from '@angular/core'; 
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Evento } from '../../models/Evento';
 import { EventoProvider } from '../../providers/evento/evento';
+import * as moment from 'moment'
 
 @IonicPage()
 @Component({
@@ -16,7 +17,8 @@ export class CadastroEventoPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
-    public provedor: EventoProvider
+    public provedor: EventoProvider,
+    public alerCtrl : AlertController
     ) {
     this.id = this.navParams.data.id;
     if (!this.id) {
@@ -34,8 +36,27 @@ export class CadastroEventoPage {
   }
 
   chamaGravar(id){
-    this.provedor.gravar(this.evento,id);
-    this.navCtrl.pop();
+    var dataGravar = this.evento.data
+    var DataAtual = moment().format('YYYY MM DD');
+    var dataDepois = moment(dataGravar).isAfter(DataAtual)
+    if(dataDepois){
+      this.provedor.gravar(this.evento,id);
+      this.navCtrl.pop();
+    } else {
+      let alert = this.alerCtrl.create();
+      alert.setTitle('Atenção!');
+      alert.setSubTitle('A data do cadastro é anterior à atual! Deseja continuar?');
+      alert.addButton('Cancelar');
+      alert.addButton({
+        text: 'Ok',
+        handler: data => {
+          this.provedor.gravar(this.evento,id);
+          this.navCtrl.pop();
+        }
+      });
+      alert.present().then(() => {
+      });
+    }
   }
 
 }

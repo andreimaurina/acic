@@ -12,7 +12,7 @@
 
     <ion-item>
       <ion-label color="primary" floating>* CNPJ</ion-label>
-      <ion-input name="cnpj" [(ngModel)]="associado.cnpj" type="number" required></ion-input>
+      <ion-input name="cnpj" [(ngModel)]="associado.cnpj" [brmasker]="{mask:'00.000.000/0000-00', len:18,type:'num'}" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary" floating>* Nome Fantasia</ion-label>
@@ -27,7 +27,7 @@
 
     <ion-item> 
       <ion-label color="primary" floating>* Telefone</ion-label>
-      <ion-input name="telefone" [(ngModel)]="associado.telefone" type="number" required></ion-input>
+      <ion-input name="telefone" [(ngModel)]="associado.telefone" [brmasker]="{phone: true}" required></ion-input>
     </ion-item> 
     <ion-item>
       <ion-label color="primary" floating>* Email</ion-label>
@@ -42,7 +42,7 @@
 
     <ion-item>
       <ion-label color="primary" floating>* CEP</ion-label>
-      <ion-input name="cep" [(ngModel)]="associado.cep" type="number" required></ion-input>
+      <ion-input name="cep" [(ngModel)]="associado.cep" [brmasker]="{mask:'00.000-000', len:10,type:'num'}" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary" floating>* Cidade</ion-label>

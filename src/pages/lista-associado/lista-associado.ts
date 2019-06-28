@@ -134,7 +134,8 @@ export class ListaAssociadoPage {
   
   excluir(id) {
     let alert = this.alerCtrl.create();
-    alert.setTitle('Tem certeza que deseja excluir?');
+    alert.setTitle('Atenção!');
+    alert.setSubTitle('Tem certeza que deseja excluir?');
     alert.addButton('Cancelar');
     alert.addButton({
       text: 'Ok',
