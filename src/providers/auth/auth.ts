@@ -19,9 +19,7 @@ export class AuthProvider {
       var promise = new Promise((resolve, reject) => {
         this.afireauth.auth.signInWithEmailAndPassword(credentials.email, credentials.password).then(() => {
           resolve(true);
-          let alert = this.alertCtrl.create();
-          alert.setTitle('Logado! :)');
-          //this.usuario = 1 //----------------------------------------------    descomentar para login sumir botões
+          this.usuario = 1
         }).catch((err) => {
           //alert("Não logado! "  + "\n" + "Verifique suas credenciais...");
           let alert = this.alertCtrl.create();
@@ -47,6 +45,11 @@ export class AuthProvider {
     logout(){
       this.afireauth.auth.signOut();
       this.usuario=null;
+      let alert = this.alertCtrl.create();
+      alert.setTitle(this.afireauth.auth.currentUser.displayName + ', Logout realizado com sucesso!');
+      alert.addButton('Ok');
+      alert.present().then(() => {
+      });
     }
     
     resetPassword(email) {
