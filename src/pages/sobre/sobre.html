@@ -1,16 +1,41 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Sobre</ion-title>
-  </ion-navbar>
-</ion-header>
+  <ion-header>
+    <ion-navbar>
+      <ion-title>Sobre</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-segment  class="SwipedTabs-tabs">
+      <ion-segment-button *ngFor='let tab of tabs ; let i = index ' value="IngoreMe" (click)="selectTab(i)"
+        [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }' >
+          {{tab}}
+      </ion-segment-button>
+    </ion-segment>
 
-<ion-content padding>
-  <img src="../../assets/imgs/logoAcic.png"/>
-  <ion-list>
-    <div *ngFor="let sobre of sobres"  >
-      <div id="texto" *ngIf="!editando">
-        {{sobre.texto}}
-      </div>
-    </div>  
-  </ion-list>
-</ion-content> 
+      <div id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
+    
+    <ion-slides #SwipedTabsSlider  (ionSlideDrag)="animateIndicator($event)"
+                  (ionSlideWillChange)="updateIndicatorPosition()"
+                  (ionSlideDidChange)="updateIndicatorPosition()"
+                  (pan)="updateIndicatorPosition()"
+                  [pager]="false">
+      <ion-slide>
+        <h1 id="texto">
+          <img src="../../assets/imgs/logoAcic.png"/>
+          <ion-list>
+            <div *ngFor="let sobre of sobres"  >
+             <div *ngIf="!editando">
+               {{sobre.texto}}
+             </div>
+            </div>  
+          </ion-list>
+        </h1>
+      </ion-slide>
+      <ion-slide>
+        <h1>Page 2 </h1>
+      </ion-slide>
+      <ion-slide>
+        <h1>Page 3 </h1>
+      </ion-slide>
+    </ion-slides>
+  </ion-content> 
