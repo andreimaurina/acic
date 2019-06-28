@@ -11,6 +11,10 @@ export class VagaProvider {
   constructor(public http: HttpClient) {
   }
   
+  candidatarSe(vagas){
+
+  }
+
   listar(){
     return this.ref.once('value')
       .then(

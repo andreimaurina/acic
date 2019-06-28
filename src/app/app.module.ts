@@ -30,6 +30,7 @@ import 'moment/locale/pt-br';
 import { LoginPage } from '../pages/login/login';
 import { AuthProvider } from '../providers/auth/auth';
 import { BrMaskerModule } from 'brmasker-ionic-3';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { BrMaskerModule } from 'brmasker-ionic-3';
     SobreProvider,
     InAppBrowser,
     SobreProvider,
-    AuthProvider
+    AuthProvider,
+    SocialSharing
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

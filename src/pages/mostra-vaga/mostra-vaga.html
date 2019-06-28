@@ -16,6 +16,8 @@
     <div class="subtituloMeio"> Descrição</div>
     <div id="descricao">{{vaga.descricao}}</div>
 
-    <button type="submit" ion-button float-right shape="round" color="primary" expand="block">Candidatar-se</button>
+    <button type="submit" ion-button float-right shape="round" color="primary" (click)="candidatarSe()" expand="block">
+      Candidatar-se
+    </button>
   </div>
 </ion-content>
