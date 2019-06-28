@@ -38,7 +38,8 @@ export class CadastroServicoPage {
     this.provedor.gravar(this.servico,id).then(
       ()=>{
         let alert = this.alertCtrl.create();
-        alert.setTitle('Gravado com sucesso!');
+        alert.setTitle('Informação');
+        alert.setSubTitle('Serviço gravado com sucesso!')
         alert.addButton({
           text: 'Ok',
           handler: data => {

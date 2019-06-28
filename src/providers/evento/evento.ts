@@ -28,10 +28,10 @@ export class EventoProvider {
   gravar(evento, id = null){
     if (!id) {
       let newEvento = this.ref.push();
-      newEvento.set(evento);
+      return newEvento.set(evento);
     }else {
       let newEvento = firebase.database().ref(`Eventos/${id}`);
-      newEvento.update(evento);
+      return newEvento.update(evento);
     }
   }
 

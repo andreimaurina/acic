@@ -28,10 +28,10 @@ export class VagaProvider {
   gravar(vaga, id = null){
     if (!id) {
       let newVaga = this.ref.push();
-      newVaga.set(vaga);
+      return newVaga.set(vaga);
     }else {
       let newVaga = firebase.database().ref(`Vagas/${id}`);
-      newVaga.update(vaga);
+      return newVaga.update(vaga);
     }
   }
 

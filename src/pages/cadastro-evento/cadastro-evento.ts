@@ -40,7 +40,11 @@ export class CadastroEventoPage {
     var DataAtual = moment().format('YYYY MM DD');
     var dataDepois = moment(dataGravar).isAfter(DataAtual)
     if(dataDepois){
-      this.provedor.gravar(this.evento,id);
+      this.provedor.gravar(this.evento,id).then(
+        ()=>{
+            this.abrePopupConfirmacao();
+        }
+      )
       this.navCtrl.pop();
     } else {
       let alert = this.alerCtrl.create();
@@ -59,4 +63,17 @@ export class CadastroEventoPage {
     }
   }
 
+  abrePopupConfirmacao(){
+    let alert= this.alerCtrl.create();
+    alert.setTitle('Informação');
+    alert.setSubTitle('Beneficio gravado com sucesso!');
+    alert.addButton({
+      text: 'ok',
+      handler: data=> {
+        this.navCtrl.pop();
+      }
+    });
+    alert.present().then(() =>{   
+    });
+  }
 }

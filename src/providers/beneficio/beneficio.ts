@@ -28,10 +28,10 @@ export class BeneficioProvider {
   gravar(beneficio, id = null){
     if (!id) {
       let newBeneficio = this.ref.push();
-      newBeneficio.set(beneficio);
+      return newBeneficio.set(beneficio);
     }else {
       let newBeneficio = firebase.database().ref(`Beneficios/${id}`);
-      newBeneficio.update(beneficio);
+      return newBeneficio.update(beneficio);
     }
   }
 
