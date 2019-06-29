@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Vaga } from '../../models/Vaga';
 import { VagaProvider } from '../../providers/vaga/vaga';
 
@@ -16,7 +16,8 @@ export class CadastroVagaPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public provedor: VagaProvider
+    public provedor: VagaProvider,
+    public alertCtrl : AlertController 
     ) {
     this.id = this.navParams.data.id;
     if (!this.id) {
@@ -34,8 +35,20 @@ export class CadastroVagaPage {
   }
 
   gravar(id){
-    this.provedor.gravar(this.vaga,id);
-    this.navCtrl.pop();
+    this.provedor.gravar(this.vaga,id).then(
+      ()=>{
+        let alert= this.alertCtrl.create();
+        alert.setTitle('Informação');
+        alert.setSubTitle('Vaga gravada com sucesso!');
+        alert.addButton({
+          text : 'ok',
+          handler:data=> {
+            this.navCtrl.pop();
+          }
+        });
+        alert.present().then(() => {
+        });
+      }
+    )
   }
-
 }
