@@ -16,9 +16,9 @@ export class AssociadoProvider {
 
   listar(){
     return this.ref.once('value') 
-      .then(
+    .then(
       resp => snapshotToArray(resp)
-      );
+    );
   }
   
   gravar(associado, id = null){

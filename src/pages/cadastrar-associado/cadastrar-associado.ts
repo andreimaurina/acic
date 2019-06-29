@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import {Associado, PessoaFisica, PessoaJuridica} from '../../models/Associado';
 import { AssociadoProvider } from '../../providers/associado/associado';
 
@@ -12,9 +12,12 @@ export class CadastrarAssociadoPage {
   id = null;
   associado: PessoaFisica;
   
-  
-  constructor(public navCtrl: NavController, public navParams: NavParams,public provedor :AssociadoProvider) {
-    
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public provedor :AssociadoProvider,
+    public alertCtrl: AlertController
+    ) {
     this.id = this.navParams.data.id;
     if (!this.id) {
       this.associado = new PessoaFisica();
@@ -27,11 +30,46 @@ export class CadastrarAssociadoPage {
     this.provedor.listarPorId(id)
     .then(
       data => this.associado = data
-      );
-    }
+    );
+  }
     
-    gravar(id){
+  gravar(id){
+    if(id){
       this.provedor.gravar(this.associado,id);
       this.navCtrl.pop();
+    }else{
+      this.verificar().then(
+        data => {
+          if (data){
+            this.provedor.gravar(this.associado,id);
+            this.navCtrl.pop();
+          } else {
+            let alert = this.alertCtrl.create();
+            alert.setTitle('Atenção!');
+            alert.setSubTitle('Este associado já está cadastrado!');
+            alert.addButton('Ok');
+            alert.present().then(() => {
+            });
+          }
+        }
+      );
     }
   }
+
+  verificar(){
+    return this.provedor.listar()
+    .then(
+      data => {
+        const listaAssociados = data;
+        const cpf = this.associado.cpf;
+        const associados = listaAssociados.filter((elemento) => {
+          if (elemento.cpf==cpf){
+            return true;
+          }
+          return false;
+        });
+        return associados.length == 0;
+      }
+    );
+  }
+}

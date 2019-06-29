@@ -13,9 +13,9 @@ export class FeedNoticiaProvider {
 
   listar(){
     return this.ref.once('value')
-      .then(
-        resp => snapshotToArray(resp)
-        );
+    .then(
+      resp => snapshotToArray(resp)
+    );
   }
 
 }
