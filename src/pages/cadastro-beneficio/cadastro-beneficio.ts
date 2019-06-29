@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'; 
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Beneficio } from '../../models/Beneficio';
 import { BeneficioProvider } from '../../providers/beneficio/beneficio';
 
@@ -16,7 +16,8 @@ export class CadastroBeneficioPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
-    public provedor: BeneficioProvider
+    public provedor: BeneficioProvider,
+    public alertCtrl : AlertController
     ) {
     this.id = this.navParams.data.id;
     if (!this.id) {
@@ -34,8 +35,20 @@ export class CadastroBeneficioPage {
   }
 
   chamaGravar(id){
-    this.provedor.gravar(this.beneficio,id);
-    this.navCtrl.pop();
+    this.provedor.gravar(this.beneficio,id).then(
+      ()=>{
+        let alert= this.alertCtrl.create();
+        alert.setTitle('Informação');
+        alert.setSubTitle('Beneficio gravado com sucesso!');
+        alert.addButton({
+          text: 'ok',
+          handler: data=> {
+            this.navCtrl.pop();
+          }
+        });
+        alert.present().then(() =>{   
+        });
+      }
+    )
   }
-
 }
