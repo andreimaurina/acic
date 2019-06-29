@@ -33,28 +33,44 @@ export class CadastrarAssociadoPage {
     );
   }
     
-  gravar(id){
-    if(id){
-      this.provedor.gravar(this.associado,id);
-      this.navCtrl.pop();
-    }else{
-      this.verificar().then(
-        data => {
-          if (data){
-            this.provedor.gravar(this.associado,id);
-            this.navCtrl.pop();
-          } else {
-            let alert = this.alertCtrl.create();
-            alert.setTitle('Atenção!');
-            alert.setSubTitle('Este associado já está cadastrado!');
-            alert.addButton('Ok');
-            alert.present().then(() => {
-            });
-          }
-        }
-      );
-    }
-  }
+  // gravar(id){
+  //   if(id){
+  //     this.provedor.gravar(this.associado,id);
+  //     this.navCtrl.pop();
+  //   }else{
+  //     this.verificar().then(
+  //       data => {
+  //         if (data){
+  //           this.provedor.gravar(this.associado,id);
+  //           this.navCtrl.pop();
+  //         } else {
+  //           let alert = this.alertCtrl.create();
+  //           alert.setTitle('Atenção!');
+  //           alert.setSubTitle('Este associado já está cadastrado!');
+  //           alert.addButton('Ok');
+  //           alert.present().then(() => {
+  //           });
+  //         }
+  //       }
+  //     );
+  //   gravar(id){
+  //     this.provedor.gravar(this.associado,id).then(
+  //       ()=>{
+  //         let alert= this.alertCtrl.create();
+  //         alert.setTitle('Informação');
+  //         alert.setSubTitle('Associado gravado com sucesso');
+  //         alert.addButton({
+  //           text: 'ok',
+  //           handler: data=> {
+  //             this.navCtrl.pop();
+  //           }
+  //         });
+  //         alert.present().then(() =>{
+  //         });
+  //       }
+  //     )
+  //   }
+  // }
 
   verificar(){
     return this.provedor.listar()
@@ -72,4 +88,6 @@ export class CadastrarAssociadoPage {
       }
     );
   }
+
+  
 }

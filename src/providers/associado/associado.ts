@@ -24,10 +24,10 @@ export class AssociadoProvider {
   gravar(associado, id = null){
     if (!id) {
       let newAssociado = this.ref.push();
-      newAssociado.set(associado);
+      return newAssociado.set(associado);
     }else {
       let newAssociado = firebase.database().ref(`Associados/${id}`);
-      newAssociado.update(associado);
+      return newAssociado.update(associado);
     }
   }
 
