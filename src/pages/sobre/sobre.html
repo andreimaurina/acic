@@ -12,9 +12,9 @@
       </ion-segment-button>
     </ion-segment>
 
-      <div id="texto" id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
+    <div id="texto" id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
     
-    <ion-slides #SwipedTabsSlider  (ionSlideDrag)="animateIndicator($event)"
+    <ion-slides id="texto" #SwipedTabsSlider  (ionSlideDrag)="animateIndicator($event)"
       (ionSlideWillChange)="updateIndicatorPosition()"
       (ionSlideDidChange)="updateIndicatorPosition()"
       (pan)="updateIndicatorPosition()"
@@ -59,6 +59,6 @@
             </div>  
           </h1>
          </ion-slide>
-         
+
     </ion-slides>
   </ion-content> 
