@@ -12,30 +12,53 @@
       </ion-segment-button>
     </ion-segment>
 
-      <div id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
+      <div id="texto" id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
     
     <ion-slides #SwipedTabsSlider  (ionSlideDrag)="animateIndicator($event)"
-                  (ionSlideWillChange)="updateIndicatorPosition()"
-                  (ionSlideDidChange)="updateIndicatorPosition()"
-                  (pan)="updateIndicatorPosition()"
-                  [pager]="false">
+      (ionSlideWillChange)="updateIndicatorPosition()"
+      (ionSlideDidChange)="updateIndicatorPosition()"
+      (pan)="updateIndicatorPosition()"
+      [pager]="false">
+
       <ion-slide>
-        <h1 id="texto">
-          <img src="../../assets/imgs/logoAcic.png"/>
-          <ion-list>
-            <div *ngFor="let sobre of sobres"  >
-             <div *ngIf="!editando">
-               {{sobre.texto}}
-             </div>
-            </div>  
-          </ion-list>
+        <h1>
+          <div *ngFor="let sobre of sobres"  >
+            <div *ngIf="!editando">
+              {{sobre.historia}}
+            </div>
+          </div>  
         </h1>
       </ion-slide>
+
       <ion-slide>
-        <h1>Page 2 </h1>
+        <h1>
+          <div *ngFor="let sobre of sobres"  >
+            <div *ngIf="!editando">
+              {{sobre.visao}}
+            </div>
+          </div>  
+        </h1>
       </ion-slide>
+
       <ion-slide>
-        <h1>Page 3 </h1>
-      </ion-slide>
+          <h1>
+            <div *ngFor="let sobre of sobres"  >
+              <div *ngIf="!editando">
+                {{sobre.missao}}
+              </div>
+            </div>  
+          </h1>
+        </ion-slide>
+
+        <ion-slide>
+          <h1>
+            <div *ngFor="let sobre of sobres"  >
+              <div *ngIf="!editando">
+                {{sobre.diretoria}}
+              </div>
+            </div>  
+          </h1>
+         </ion-slide>
+         
     </ion-slides>
   </ion-content> 
