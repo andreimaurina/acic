@@ -21,7 +21,7 @@ export class SobrePage {
      public navParams: NavParams,
      public provedor: SobreProvider
     ) {
-      this.tabs=["História","Visão","Missão"];
+      this.tabs=["História","Visão","Missão","Diretoria"];
   }
   ionViewDidEnter() {
     this.SwipedTabsIndicator = document.getElementById("indicator");
