@@ -66,7 +66,7 @@ export class CadastroEventoPage {
   abrePopupConfirmacao(){
     let alert= this.alerCtrl.create();
     alert.setTitle('Informação');
-    alert.setSubTitle('Beneficio gravado com sucesso!');
+    alert.setSubTitle('Evento gravado com sucesso!');
     alert.addButton({
       text: 'ok',
       handler: data=> {

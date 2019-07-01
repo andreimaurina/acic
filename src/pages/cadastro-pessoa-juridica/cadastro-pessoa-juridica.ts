@@ -35,14 +35,20 @@ export class CadastroPessoaJuridicaPage {
 
   gravar(id){
     if(id){
-      this.provedor.gravar(this.associado,id);
-      this.navCtrl.pop();
+      this.provedor.gravar(this.associado,id).then(
+        ()=>{
+            this.abrePopupConfirmacao();
+        }
+      );
     }else{
       this.verificar().then(
         data => {
           if (data){
-            this.provedor.gravar(this.associado,id);
-            this.navCtrl.pop();
+            this.provedor.gravar(this.associado,id).then(
+              ()=>{
+                  this.abrePopupConfirmacao();
+              }
+            );
           } else {
             let alert = this.alertCtrl.create();
             alert.setTitle('Atenção!');
@@ -73,5 +79,18 @@ export class CadastroPessoaJuridicaPage {
     );
   }
 
+  abrePopupConfirmacao(){
+    let alert= this.alertCtrl.create();
+    alert.setTitle('Informação');
+    alert.setSubTitle('Associado gravado com sucesso!');
+    alert.addButton({
+      text: 'ok',
+      handler: data=> {
+        this.navCtrl.pop();
+      }
+    });
+    alert.present().then(() =>{
+    });
+  }
 
 }

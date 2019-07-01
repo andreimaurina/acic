@@ -36,7 +36,7 @@ export class MostraVagaPage {
   }
 
   candidatarSe(nome,descricao,profissao/*message, subject, to*/){
-    this.socialSharing.shareViaEmail (nome,descricao,profissao)
+    //this.socialSharing.shareViaEmail (nome,descricao,profissao)
   }
   
 }
