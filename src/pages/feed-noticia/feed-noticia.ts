@@ -31,7 +31,7 @@ export class FeedNoticiaPage {
   }
 
   carregando(){
-    this.loading = this.loadingController.create({ content: "Carregando...", duration: 2000 });
+    this.loading = this.loadingController.create({ content: "Carregando...", duration: 1000 });
     this.loading.present();
   }
 

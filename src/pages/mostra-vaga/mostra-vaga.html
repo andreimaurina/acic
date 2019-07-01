@@ -12,11 +12,14 @@
 
     <div class="linha"><ion-icon name="hammer" color="primary"></ion-icon><span class="subtitulo"> Profissão</span></div>
     <div class="dados">{{vaga.profissao}}</div>
+
+    <div class="linha"><ion-icon name="mail-open" color="primary"></ion-icon><span class="subtitulo"> E-mail</span></div>
+    <div class="dados">{{vaga.email}}</div>
    
     <div class="subtituloMeio"> Descrição</div>
     <div id="descricao">{{vaga.descricao}}</div>
 
-    <button type="submit" ion-button float-right shape="round" color="primary" (click)="candidatarSe()" expand="block">
+    <button type="submit" ion-button float-right shape="round" color="primary" (click)="candidatarSe(vaga)" expand="block">
       Candidatar-se
     </button>
   </div>
