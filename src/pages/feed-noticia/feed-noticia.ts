@@ -26,7 +26,7 @@ export class FeedNoticiaPage {
     this.carregando();
     this.provedor.listar()
     .then(
-      data => this.noticias = data
+      data => this.noticias = data.reverse()
     );
   }
 

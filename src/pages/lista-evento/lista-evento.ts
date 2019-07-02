@@ -31,7 +31,7 @@ export class ListaEventoPage {
   chamaListar(){
     this.provedor.listar()
     .then(
-      data => this.eventos = data
+      data => this.eventos = data.reverse()
     );
   }
       

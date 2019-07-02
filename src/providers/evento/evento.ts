@@ -12,7 +12,7 @@ export class EventoProvider {
   }
 
   listar(){
-    return this.ref.once('value')
+    return this.ref.orderByChild("data").once('value')
       .then(
         resp => snapshotToArray(resp)
       );

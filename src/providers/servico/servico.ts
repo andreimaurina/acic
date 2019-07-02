@@ -1,10 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
-import {Servico} from '../../models/Servico';
-import { v } from '@angular/core/src/render3';
-
-
 
 @Injectable()
 export class ServicoProvider {
@@ -16,7 +12,7 @@ export class ServicoProvider {
   }
 
   listar(){
-    return this.ref.once('value')
+    return this.ref.orderByChild("nome").once('value')
       .then(
         resp => snapshotToArray(resp)
       );

@@ -2,7 +2,6 @@ export class Associado {
     tipo: string;
     email: string;
     telefone: string;
-    dataNasc: string;
     cep: string;
     cidade: string;
     rua: string;
@@ -10,13 +9,14 @@ export class Associado {
     bairro: string;
     constructor(tipo: string) {
         this.tipo = tipo;
-      }
+    }
 }
-  
+
 export class PessoaFisica extends Associado {
     cpf: string;
     sexo: string;
     nome: string;
+    dataNasc: string;
     facebook: string;
     instagram: string;
     twitter: string;

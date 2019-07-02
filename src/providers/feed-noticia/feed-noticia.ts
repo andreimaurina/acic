@@ -6,13 +6,15 @@ import * as firebase from 'Firebase';
 export class FeedNoticiaProvider {
 
   noticias = [];
-  ref = firebase.database().ref('Noticias/');
+  ref = firebase.database().ref('Noticias/')
 
-  constructor(public http: HttpClient) {
+  constructor(
+    public http: HttpClient
+    ) {
   }
 
   listar(){
-    return this.ref.once('value')
+    return this.ref.orderByChild("guid").limitToFirst(30).once('value')
     .then(
       resp => snapshotToArray(resp)
     );

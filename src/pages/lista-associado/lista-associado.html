@@ -20,11 +20,21 @@
         <div id="divDados"(click)="mostrarDados(associado.key,associado.tipo)">
           <div *ngIf="tipo == 'pessoaJuridica'">
             <ion-icon name="home" color="primary"></ion-icon><span class="negrito"> Empresa: </span>{{associado.nomeFantasia}}<br>
-            <ion-icon name="globe" color="primary"></ion-icon><span class="negrito"> Site: </span>{{associado.site}}
+            <div *ngIf = "associado.site">
+              <ion-icon name="globe" color="primary"></ion-icon><span class="negrito"> Site: </span>{{associado.site}}
+            </div>
+            <div *ngIf = "!associado.site">
+              <ion-icon name="call" color="primary"></ion-icon><span class="negrito"> Telefone: </span>{{associado.telefone}}
+            </div>
           </div>
           <div *ngIf="tipo == 'pessoaFisica'"> 
             <ion-icon name="person" color="primary"></ion-icon><span class="negrito"> Nome: </span>{{associado.nome}}<br>
-            <ion-icon name="logo-facebook" color="primary"></ion-icon><span class="negrito"> facebook: </span>{{associado.facebook}}
+            <div *ngIf = "associado.facebook">
+              <ion-icon name="logo-facebook" color="primary"></ion-icon><span class="negrito"> Facebook: </span>{{associado.facebook}}
+            </div>
+            <div *ngIf = "!associado.facebook">
+              <ion-icon name="call" color="primary"></ion-icon><span class="negrito"> Telefone: </span>{{associado.telefone}}
+            </div>
           </div>
         </div>  
       </ion-item>

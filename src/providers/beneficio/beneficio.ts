@@ -12,7 +12,7 @@ export class BeneficioProvider {
   }
 
   listar(){
-    return this.ref.once('value')
+    return this.ref.orderByChild("nome").once('value')
       .then(
         resp => snapshotToArray(resp)
       );
