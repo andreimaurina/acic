@@ -36,7 +36,7 @@ export class BeneficioProvider {
   }
 
   excluir(id){
-    firebase.database().ref('Beneficios/'+id).remove();
+    return firebase.database().ref('Beneficios/'+id).remove();
   }
 
 }

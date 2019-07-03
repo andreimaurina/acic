@@ -36,7 +36,7 @@ export class EventoProvider {
   }
 
   excluir(id){
-    firebase.database().ref('Eventos/'+id).remove();
+    return firebase.database().ref('Eventos/'+id).remove();
   }
 
 }

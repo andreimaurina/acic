@@ -36,8 +36,8 @@ export class AuthProvider {
     
     logado(){
       if (this.usuario == null){
-        //return false; //----------------------------     descomentar para login sumir botões
-        //} else {      //----------------------------     descomentar para login sumir botões
+        return false; //----------------------------     descomentar para login sumir botões
+        } else {      //----------------------------     descomentar para login sumir botões
         return true;
       }
     }
