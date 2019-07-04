@@ -30,7 +30,7 @@ export class ListaAssociadoPage {
     public auth: AuthProvider
   ) { 
   }  
-    
+  
   ionViewWillEnter(){
     this.admin = this.auth.logado();
     this.segment.value = this.tipo;
@@ -149,7 +149,6 @@ export class ListaAssociadoPage {
   }
       
   editar(id,tipo){
-    console.log(id);
     if (tipo == 'pessoaFisica'){
       this.navCtrl.push('CadastrarAssociadoPage',{id: id});
     }else{

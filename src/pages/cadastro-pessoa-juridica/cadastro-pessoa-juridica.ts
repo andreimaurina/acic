@@ -34,6 +34,7 @@ export class CadastroPessoaJuridicaPage {
   }
 
   gravar(id){
+    this.associado.nome = this.associado.nomeFantasia
     if(id){
       this.provedor.gravar(this.associado,id).then(
         ()=>{

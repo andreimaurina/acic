@@ -1,4 +1,5 @@
 export class Associado {
+    nome: string;
     tipo: string;
     email: string;
     telefone: string;
@@ -15,7 +16,6 @@ export class Associado {
 export class PessoaFisica extends Associado {
     cpf: string;
     sexo: string;
-    nome: string;
     dataNasc: string;
     facebook: string;
     instagram: string;
