@@ -31,6 +31,7 @@ import { LoginPage } from '../pages/login/login';
 import { AuthProvider } from '../providers/auth/auth';
 import { BrMaskerModule } from 'brmasker-ionic-3';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { Network } from  '@ionic-native/network';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     LoginPage
   ],
   providers: [
+    Network,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
