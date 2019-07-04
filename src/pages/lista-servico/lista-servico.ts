@@ -74,8 +74,21 @@ export class ListaServicoPage {
     alert.addButton({
       text: 'Ok',
       handler: data => {
-        this.provedor.excluir(id);
-        this.chamaListar();
+        this.provedor.excluir(id).then(
+          ()=>{
+            let alert = this.alertCtrl.create();
+            alert.setTitle('Informação');
+            alert.setSubTitle('Serviço excluído com sucesso!')
+            alert.addButton({
+              text: 'Ok',
+              handler: data => {
+                this.chamaListar();
+              }
+            });
+            alert.present().then(() => {
+            });
+          }
+        );
       }
     });
     alert.present().then(() => {

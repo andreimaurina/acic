@@ -40,7 +40,7 @@ export class VagaProvider {
   }
 
   excluir(id){
-    firebase.database().ref('Vagas/'+id).remove();
+    return firebase.database().ref('Vagas/'+id).remove();
   }
 
 }

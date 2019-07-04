@@ -23,11 +23,6 @@
     <div class="linha"><ion-icon name="call" color="primary"></ion-icon><span class="subtitulo"> Telefone</span></div>
     <div class="dados">{{associado.telefone}}</div>
 
-    <div *ngIf = associado.email>
-      <div class="linha"><ion-icon name="at" color="primary"></ion-icon><span class="subtitulo"> Email</span></div>
-      <div class="dados">{{associado.email}}</div>
-    </div>
-
     <div *ngIf = associado.site>
       <div class="linha"><ion-icon name="globe" color="primary"></ion-icon><span class="subtitulo"> Site</span></div>
       <div class="dados">{{associado.site}}</div>
