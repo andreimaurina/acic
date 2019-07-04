@@ -36,7 +36,7 @@ export class ServicoProvider {
   }
 
   excluir(id){
-    firebase.database().ref('Servicos/'+id).remove();
+    return firebase.database().ref('Servicos/'+id).remove();
   } 
 }
 

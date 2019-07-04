@@ -140,7 +140,21 @@ export class ListaAssociadoPage {
     alert.addButton({
       text: 'Ok',
       handler: data => {
-        this.provedor.excluir(id);
+        this.provedor.excluir(id).then(
+          ()=>{
+            let alert = this.alerCtrl.create();
+            alert.setTitle('Informação');
+            alert.setSubTitle('Associado excluído com sucesso!')
+            alert.addButton({
+              text: 'Ok',
+              handler: data => {
+                this.chamaListar();
+              }
+            });
+            alert.present().then(() => {
+            });
+          }
+        );
         this.chamaListar();
       }
     });

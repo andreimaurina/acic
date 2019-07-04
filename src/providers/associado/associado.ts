@@ -32,7 +32,7 @@ export class AssociadoProvider {
   }
 
   excluir(id){
-    firebase.database().ref('Associados/'+id).remove();
+    return firebase.database().ref('Associados/'+id).remove();
   }
 
   listarPorId(id){
