@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FeedNoticiaProvider }  from '../../providers/feed-noticia/feed-noticia';
 import { LoadingController } from 'ionic-angular';
 import { Network } from  '@ionic-native/network';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @IonicPage()
 @Component({
@@ -20,7 +21,8 @@ export class FeedNoticiaPage {
     public network: Network,
     public navParams: NavParams,
     public provedor: FeedNoticiaProvider,
-    public loadingController:LoadingController
+    public loadingController:LoadingController,
+    public socialSharing: SocialSharing
     ) {
   }
 
@@ -41,6 +43,11 @@ export class FeedNoticiaPage {
   carregando(){
     this.loading = this.loadingController.create({ content: "Carregando...", duration: 1000 });
     this.loading.present();
+  }
+
+  compartilhar(link){
+    console.log(link);
+    this.socialSharing.share(link);
   }
 
 }

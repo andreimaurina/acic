@@ -4,7 +4,8 @@
     <ion-item *ngFor="let noticia of noticias">
       <div class="titulo">{{noticia.titulo}}</div>
       <div [innerHTML]="noticia.descricao"></div>
-      <div class="dataPub">Pub: {{noticia.pubDate}}</div>
+      <span class="dataPub">Pub: {{noticia.pubDate}}</span>
+      <span class="direita"><ion-icon name="share" color="primary" (click)="compartilhar(noticia.link)"></ion-icon></span>
     </ion-item>  
   </ion-list>
 </ion-content>

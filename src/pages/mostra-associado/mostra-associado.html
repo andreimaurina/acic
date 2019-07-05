@@ -24,6 +24,13 @@
     <div class="dados">{{associado.telefone}}
     </div>
 
+    <div *ngIf="admin">
+      <div *ngIf = associado.email>
+        <div class="linha"><ion-icon name="at" color="primary"></ion-icon><span class="subtitulo"> Email</span></div>
+        <div class="dados">{{associado.email}}</div>
+      </div>
+    </div>
+
     <div *ngIf = associado.facebook>
       <div class="linha"><ion-icon name="logo-facebook" color="primary"></ion-icon><span class="subtitulo"> Facebook</span></div>
       <div class="dados">{{associado.facebook}}</div>
