@@ -62,10 +62,22 @@ page-login {
     .input-cover {
         position: static;
     }*/
+
     #botaoLogin{
         background-color: #ccf5ff;
     }
+
     #resetPassword{
         text-align: center;
+    }
+
+    .mostraSenha{
+        font-size:25px;
+        height: 50px;
+        line-height: 3;
+    }
+
+    #botao{
+        height: 50px;
     }
 }

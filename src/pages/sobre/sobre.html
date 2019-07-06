@@ -7,108 +7,99 @@
 <ion-content padding>
   <ion-segment  class="SwipedTabs-tabs">
     <ion-segment-button *ngFor='let tab of tabs ; let i = index ' value="IngoreMe" (click)="selectTab(i)"
-    [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }' >
-    {{tab}}
-  </ion-segment-button>
-</ion-segment>
+      [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }' >
+      {{tab}}
+    </ion-segment-button>
+  </ion-segment>
 
-<div id="tabs" id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
+  <div id="tabs" id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
 
-<section>
-  <ion-slides #SwipedTabsSlider  (ionSlideDrag)="animateIndicator($event)"
-  (ionSlideWillChange)="updateIndicatorPosition()"
-  (ionSlideDidChange)="updateIndicatorPosition()"
-  (pan)="updateIndicatorPosition()"
-  [pager]="false">
-  
-  <ion-slide>
-    <h1>
-      <div *ngFor="let sobre of sobres"  >
-        <div class="texto" *ngIf="!editando">
-          {{sobre.historia}}
-        </div>
-        <div id="areadetexto" *ngIf="editando">
-          <ion-textarea [(ngModel)]="sobre.historia" name="historia"></ion-textarea>
-        </div>
-        <div id="botoes" class="texto" *ngIf="admin">
-          <span *ngIf="!editando">
-            <button ion-button float-right color="primary" (click)="editar(true)">Editar</button>
-          </span>  
-          <span *ngIf="editando">
-            <button ion-button float-right color="danger" (click)="editar(false)">Cancelar</button>
-            <button ion-button float-right color="secundary" (click)="gravar(sobres.key)">Salvar</button>
-          </span>   
-        </div>
-      </div>  
-    </h1>
-  </ion-slide>
-  
-  <ion-slide>
-    <h1>
-      <div *ngFor="let sobre of sobres"  >
-        <div class="texto" *ngIf="!editando">
-          {{sobre.visao}}
-        </div>
-        <div id="areadetexto" *ngIf="editando">
-          <ion-textarea [(ngModel)]="sobre.visao" name="visao"></ion-textarea>
-        </div>
-        <div id="botoes" class="texto" *ngIf="admin">
-          <span *ngIf="!editando">
-            <button ion-button float-right color="primary" (click)="editar(true)">Editar</button>
-          </span>  
-          <span *ngIf="editando">
-            <button ion-button float-right color="danger" (click)="editar(false)">Cancelar</button>
-            <button ion-button float-right color="secundary" (click)="gravar(sobres.key)">Salvar</button>
-          </span>   
-        </div>
-      </div>  
-    </h1>
-  </ion-slide>
-  
-  <ion-slide>
-    <h1>
-      <div *ngFor="let sobre of sobres"  >
-        <div class="texto" *ngIf="!editando">
-          {{sobre.missao}}
-        </div>
-        <div id="areadetexto" *ngIf="editando">
-          <ion-textarea [(ngModel)]="sobre.missao" name="missao"></ion-textarea>
-        </div>
-        <div id="botoes" class="texto" *ngIf="admin">
-          <span *ngIf="!editando">
-            <button ion-button float-right color="primary" (click)="editar(true)">Editar</button>
-          </span>  
-          <span *ngIf="editando">
-            <button ion-button float-right color="danger" (click)="editar(false)">Cancelar</button>
-            <button ion-button float-right color="secundary" (click)="gravar(sobres.key)">Salvar</button>
-          </span>   
-        </div>
-      </div>  
-    </h1>
-  </ion-slide>
-  
-  <ion-slide>
-    <h1>
-      <div *ngFor="let sobre of sobres"  >
-        <div class="texto" *ngIf="!editando">
-          {{sobre.diretoria}}
-        </div>
-        <div id="areadetexto" *ngIf="editando">
-          <ion-textarea [(ngModel)]="sobre.diretoria" name="diretoria"></ion-textarea>
-        </div>
-        <div id="botoes" class="texto" *ngIf="admin">
-          <span *ngIf="!editando">
-            <button ion-button float-right color="primary" (click)="editar(true)">Editar</button>
-          </span>  
-          <span *ngIf="editando">
-            <button ion-button float-right color="danger" (click)="editar(false)">Cancelar</button>
-            <button ion-button float-right color="secundary" (click)="gravar(sobres.key)">Salvar</button>
-          </span>   
-        </div>
-      </div>  
-    </h1>
-  </ion-slide>
-  
-</ion-slides>
-</section>
+  <section>
+    <ion-slides #SwipedTabsSlider  (ionSlideDrag)="animateIndicator($event)"
+      (ionSlideWillChange)="updateIndicatorPosition()"
+      (ionSlideDidChange)="updateIndicatorPosition()"
+      (pan)="updateIndicatorPosition()"
+      [pager]="false">
+
+      <ion-slide>
+        <div *ngFor="let sobre of sobres"  >
+          <div class="texto" *ngIf="!editando">
+            {{sobre.historia}}
+          </div>
+          <div id="areadetexto" *ngIf="editando">
+            <ion-textarea [(ngModel)]="sobre.historia" name="historia"></ion-textarea>
+          </div>
+          <div id="botoes" class="texto" *ngIf="admin">
+            <span *ngIf="!editando">
+              <button ion-button float-right color="primary" (click)="editar(true)">Editar</button>
+            </span>  
+            <span *ngIf="editando">
+              <button ion-button float-right color="danger" (click)="editar(false)">Cancelar</button>
+              <button ion-button float-right color="secundary" (click)="gravar(sobre.key)">Salvar</button>
+            </span>   
+          </div>
+        </div>  
+      </ion-slide>
+
+      <ion-slide>
+        <div *ngFor="let sobre of sobres"  >
+          <div class="texto" *ngIf="!editando">
+            {{sobre.visao}}
+          </div>
+          <div id="areadetexto" *ngIf="editando">
+            <ion-textarea [(ngModel)]="sobre.visao" name="visao"></ion-textarea>
+          </div>
+          <div id="botoes" class="texto" *ngIf="admin">
+            <span *ngIf="!editando">
+              <button ion-button float-right color="primary" (click)="editar(true)">Editar</button>
+            </span>  
+            <span *ngIf="editando">
+              <button ion-button float-right color="danger" (click)="editar(false)">Cancelar</button>
+              <button ion-button float-right color="secundary" (click)="gravar(sobre.key)">Salvar</button>
+            </span>   
+          </div>
+        </div>  
+      </ion-slide>
+
+      <ion-slide>
+        <div *ngFor="let sobre of sobres"  >
+          <div class="texto" *ngIf="!editando">
+            {{sobre.missao}}
+          </div>
+          <div id="areadetexto" *ngIf="editando">
+            <ion-textarea [(ngModel)]="sobre.missao" name="missao"></ion-textarea>
+          </div>
+          <div id="botoes" class="texto" *ngIf="admin">
+            <span *ngIf="!editando">
+              <button ion-button float-right color="primary" (click)="editar(true)">Editar</button>
+            </span>  
+            <span *ngIf="editando">
+              <button ion-button float-right color="danger" (click)="editar(false)">Cancelar</button>
+              <button ion-button float-right color="secundary" (click)="gravar(sobre.key)">Salvar</button>
+            </span>   
+          </div>
+        </div>  
+      </ion-slide>
+
+      <ion-slide>
+        <div *ngFor="let sobre of sobres"  >
+          <div class="texto" *ngIf="!editando">
+            {{sobre.diretoria}}
+          </div>
+          <div id="areadetexto" *ngIf="editando">
+            <ion-textarea [(ngModel)]="sobre.diretoria" name="diretoria"></ion-textarea>
+          </div>
+          <div id="botoes" class="texto" *ngIf="admin">
+            <span *ngIf="!editando">
+              <button ion-button float-right color="primary" (click)="editar(true)">Editar</button>
+            </span>  
+            <span *ngIf="editando">
+              <button ion-button float-right color="danger" (click)="editar(false)">Cancelar</button>
+              <button ion-button float-right color="secundary" (click)="gravar(sobre.key)">Salvar</button>
+            </span>   
+          </div>
+        </div>  
+      </ion-slide>
+    </ion-slides>
+  </section>
 </ion-content>

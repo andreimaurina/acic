@@ -10,7 +10,6 @@ export class TabsPage {
 
   tab1Root = FeedNoticiaPage;
   tab2Root = MenuPage;
-  tab3Root = CadastrarAssociadoPage;
 
   constructor() {
   }

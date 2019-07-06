@@ -12,8 +12,12 @@
       <ion-input name="nome" [(ngModel)]="vaga.nome" required></ion-input>
     </ion-item>
     <ion-item>
+      <ion-label color="primary" floating>* Email para Envio</ion-label>
+      <ion-input name="email" [(ngModel)]="vaga.email" required></ion-input>
+    </ion-item>
+    <ion-item>
       <ion-label color="primary" floating>* Profissão</ion-label>
-      <ion-input name="profissao"[(ngModel)]="vaga.profissao" required></ion-input>
+      <ion-input name="profissao" [(ngModel)]="vaga.profissao" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary" floating>* Descrição</ion-label>

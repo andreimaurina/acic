@@ -21,22 +21,18 @@ export class ResetPasswordPage {
     ) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ResetPasswordPage');
-  }
-
   resetPassword() {
     if (this.email == null){
       let alert = this.alertCtrl.create();
-      alert.setTitle('Erro: nenhum e-mail informado.');
+      alert.setTitle('Erro');
+      alert.setSubTitle('Nenhum e-mail informado.');
       alert.addButton('Ok');
       alert.present().then(() => {
       });
     } else {
       this.authservice.resetPassword(this.email).then((res: any) => {
-      
         if (!res.code){
-  
+          this.navCtrl.pop();
         }else
           alert(res);
       })

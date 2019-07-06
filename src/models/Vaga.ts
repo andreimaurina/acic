@@ -4,7 +4,7 @@ export class Vaga {
     nome: String;
     profissao: string;
     descricao: string;
+    email: String;
     visibilidade: string;
     empregador: Associado;
-    emailEmpregador: Associado;
 }

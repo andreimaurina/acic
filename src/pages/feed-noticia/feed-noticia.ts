@@ -46,7 +46,6 @@ export class FeedNoticiaPage {
   }
 
   compartilhar(link){
-    console.log(link);
     this.socialSharing.share(link);
   }
 

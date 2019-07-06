@@ -10,8 +10,8 @@ import { AuthProvider } from '../../providers/auth/auth';
 })
 export class LoginPage {
   credentials = {} as usercreds;
-  passwordType: string = 'password';
-  passwordShown: boolean = false;
+  public type = 'password';
+  public showPass = false;
   
   constructor(
     public navCtrl: NavController,
@@ -21,45 +21,47 @@ export class LoginPage {
     ) {
     }
     
-    public togglePassword(){
-      if(this.passwordShown){
-        this.passwordShown = false;
-        this.passwordType = 'password';
+    togglePassword(){
+      this.showPass = !this.showPass;
+      if(this.showPass){
+        this.type = 'text';
       } else {
-        this.passwordShown = true;
-        this.passwordType = 'password';
+        this.type = 'password';
       }
-    }
-    
-    ionViewDidLoad() {
-      console.log('ionViewDidLoad LoginPage');
     }
     
     signIn() {
       if (this.credentials.email == null){
         let alert = this.alertCtrl.create();
-        alert.setTitle('Erro: e-mail não preenchido.');
+        alert.setTitle('Erro');
+        alert.setSubTitle("E-mail não preenchido!");
+        alert.addButton({
+          text : 'ok',
+          handler:data=> {
+            this.credentials.password = "";
+          }
+        });
+        alert.present().then(() => {
+        });
+      } else if (this.credentials.password == null || this.credentials.password == ""){
+        let alert = this.alertCtrl.create();
+        alert.setTitle('Erro');
+        alert.setSubTitle("Senha não preenchida!");
         alert.addButton('Ok');
         alert.present().then(() => {
-      });
-      } else {
-        if (this.credentials.password == null){
-          let alert = this.alertCtrl.create();
-          alert.setTitle('Erro: senha não preenchida.');
-          alert.addButton('Ok');
-          alert.present().then(() => {
         });
-      } else {
-          this.authservice.login(this.credentials).then((res: any) => {
-          if (!res.code)
-            this.navCtrl.pop();
-          else
-            alert(res);
-          })
-        }
+      }else{
+        this.authservice.login(this.credentials).then((res: any) => {
+        if (!res.code)
+          this.navCtrl.pop();
+        else
+          alert(res);
+        });
       }
     }
+
     resetPassword(){
       this.navCtrl.push('ResetPasswordPage');
     }
+
   }

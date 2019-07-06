@@ -14,11 +14,6 @@
       <ion-label color="primary" floating>* Descrição</ion-label>
       <ion-textarea name="descricao" [(ngModel)]="servico.descricao" required></ion-textarea>
     </ion-item>
-    <ion-item>
-      <ion-label color="primary" floating>* Link Completo</ion-label>
-      <ion-input name="link" [(ngModel)]="servico.link" required ></ion-input>
-    </ion-item>
-    <p id="https">Ex: http://portalacic.com.br/</p>
     <br>
     <button [disabled]="!formulario.form.valid" type="submit" ion-button float-right shape="round" color="primary" expand="block" (click)="chamaGravar(servico.key)">Gravar</button>
     <button ion-button float-right color="danger" (click)="navCtrl.pop()">Cancelar</button>

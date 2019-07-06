@@ -33,8 +33,5 @@ export class MostraServicoPage {
       data => this.servico = data
     );
   }
-  redirecionar(link){
-    this.iab.create(link);
-  }
 
 }

@@ -67,6 +67,7 @@ export class SobrePage {
       }
       
       gravar(id){
+        console.log(this.sobres);
         this.provedor.gravar(this.sobres[0],id);
         this.editando = false ; 
       }

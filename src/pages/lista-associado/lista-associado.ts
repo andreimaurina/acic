@@ -155,7 +155,6 @@ export class ListaAssociadoPage {
             });
           }
         );
-        this.chamaListar();
       }
     });
     alert.present().then(() => {

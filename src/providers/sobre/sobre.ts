@@ -20,7 +20,7 @@ export class SobreProvider {
 
   gravar(sobre,id){
     let newSobre = firebase.database().ref(`Sobre/${id}`);
-    newSobre.update(sobre);
+    return newSobre.update(sobre);
   }
 
 }

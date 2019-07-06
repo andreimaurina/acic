@@ -44,8 +44,7 @@ export class CadastroEventoPage {
         ()=>{
             this.abrePopupConfirmacao();
         }
-      )
-      this.navCtrl.pop();
+      );
     } else {
       let alert = this.alerCtrl.create();
       alert.setTitle('Atenção!');

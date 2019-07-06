@@ -16,8 +16,8 @@
   </ion-segment>
   <ion-list>
     <ion-card *ngFor="let associado of associados"> 
-      <ion-item>
-        <div id="divDados"(click)="mostrarDados(associado.key,associado.tipo)">
+      <ion-item (click)="mostrarDados(associado.key,associado.tipo)">
+        <div id="divDados">
           <div *ngIf="tipo == 'pessoaJuridica'">
             <ion-icon name="home" color="primary"></ion-icon><span class="negrito"> Empresa: </span>{{associado.nomeFantasia}}<br>
             <div *ngIf = "associado.site">

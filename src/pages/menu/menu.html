@@ -1,9 +1,14 @@
-
-<!-- <ion-icon name="lock" class="login" color="primary" (click)="IrParaLogin()" class="space"></ion-icon>
-<ion-icon name="unlock" class="logout" color="primary" *ngIf="afAuth.auth.currentUser" (click)="fazerLogout()" class="space"></ion-icon> -->
-
 <ion-content id="contentMenu" padding>
-  <img src="../../assets/imgs/logoAcic.png"/>
+  <div id="logo">
+    <img src="../../assets/imgs/logoAcic.png"/>
+  </div>
+  <div *ngIf="!admin" class="login">
+    <ion-icon name="lock" color="primary" (click)="direciona('L')"></ion-icon>
+  </div>
+  <div *ngIf="admin" class="login">
+    <ion-icon name="unlock" color="primary" (click)="fazerLogout()"></ion-icon>
+  </div>
+
   <div *ngIf="admin">
     <h4 id="nomeUsuarioLogado" *ngIf="afAuth.auth.currentUser">
       Bem-vindo, {{afAuth.auth.currentUser.displayName}}!
@@ -18,11 +23,5 @@
     <ion-item class="menuItem" text-center (click)="direciona('V')">Vagas de Emprego</ion-item>
     <ion-item class="menuItem" text-center (click)="direciona('PS')">Pesquisa de Satisfação</ion-item>
     <ion-item class="menuItem" text-center (click)="direciona('SO')">Sobre</ion-item>
-    <div *ngIf="!admin">
-      <ion-item class="menuItem" text-center (click)="direciona('L')">Login</ion-item>
-    </div>
-    <div *ngIf="admin">
-      <ion-item class="menuItem" *ngIf="afAuth.auth.currentUser" text-center (click)="fazerLogout()" class="color">Logout</ion-item>
-    </div>
   </ion-list>
 </ion-content>

@@ -11,9 +11,13 @@
   </ion-item>
   <ion-item>
     <ion-label color="primary" floating>Senha</ion-label>
-    <ion-input [type]="passwordType" [(ngModel)]="credentials.password" required></ion-input>
-    <ion-icon name="eye" [color]="passwordShown === true ? 'dark' : 'gray'" item-end
-    (click)="togglePassword()"></ion-icon>
+    <ion-input type="{{type}}" [(ngModel)]="credentials.password" required></ion-input>
+    <button *ngIf="!showPass" ion-button clear color="dark" type="button" id="botao" item-end (click)='togglePassword()'>
+      <ion-icon class="mostraSenha" name="eye"></ion-icon>
+    </button>
+    <button *ngIf="showPass" ion-button clear color="dark" type="button" id="botao" item-end (click)='togglePassword()'>
+      <ion-icon class="mostraSenha" name="eye-off"></ion-icon>
+    </button>
   </ion-item>
   <br>
   <div>
