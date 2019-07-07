@@ -62,7 +62,7 @@
       </ion-slide>
 
       <ion-slide>
-        <div *ngFor="let sobre of sobres"  >
+        <div *ngFor="let sobre of sobres">
           <div class="texto" *ngIf="!editando">
             {{sobre.missao}}
           </div>
@@ -71,32 +71,105 @@
           </div>
           <div id="botoes" class="texto" *ngIf="admin">
             <span *ngIf="!editando">
-              <button ion-button float-right color="primary" (click)="editar(true)">Editar</button>
+              <button ion-button float-right class="center" color="primary" (click)="editar(true)">Editar</button>
             </span>  
             <span *ngIf="editando">
               <button ion-button float-right color="danger" (click)="editar(false)">Cancelar</button>
               <button ion-button float-right color="secundary" (click)="gravar(sobre.key)">Salvar</button>
-            </span>   
+            </span>
           </div>
-        </div>  
+        </div>
       </ion-slide>
 
       <ion-slide>
-        <div *ngFor="let sobre of sobres"  >
+        <div *ngFor="let sobre of sobres">
           <div class="texto" *ngIf="!editando">
-            {{sobre.diretoria}}
-          </div>
-          <div id="areadetexto" *ngIf="editando">
-            <ion-textarea [(ngModel)]="sobre.diretoria" name="diretoria"></ion-textarea>
-          </div>
-          <div id="botoes" class="texto" *ngIf="admin">
-            <span *ngIf="!editando">
-              <button ion-button float-right color="primary" (click)="editar(true)">Editar</button>
-            </span>  
-            <span *ngIf="editando">
-              <button ion-button float-right color="danger" (click)="editar(false)">Cancelar</button>
-              <button ion-button float-right color="secundary" (click)="gravar(sobre.key)">Salvar</button>
-            </span>   
+
+            <div class="titulo">Diretoria da ACIC - Biênio 2017/2018</div>
+            
+            <!-- <div *ngIf = sobre.diretoria_presidente>
+              <div class="cargo" floating>Presidente: </div><div floating>{{sobre.diretoria_presidente}}</div>
+            </div> -->
+
+            
+            <div *ngIf = sobre.diretoria_presidente>
+              Presidente: {{sobre.diretoria_presidente}}
+            </div>
+            <hr>
+            <!-- <div id="areadetexto" *ngIf="editando">
+                <ion-input [(ngModel)]="sobre.diretoria_presidente" name="diretoria_presidente"></ion-input>
+            </div>
+
+            <div *ngIf="admin">
+              <span *ngIf="!editando">
+                <ion-icon name="create" color="primary" (click)="editar(true)"></ion-icon>
+              </span>
+              <span *ngIf="editando">
+                <ion-icon name="arrow-back" color="secondary" (click)="editar(false)"></ion-icon>
+                <ion-icon name="checkmark" color="danger" (click)="gravar(sobre.diretoria_presidente)"></ion-icon>
+              </span>
+            </div> -->
+
+            <div *ngIf = sobre.diretoria_vice_presidente_da_industria>
+              Vice Presidente da Indústria: {{sobre.diretoria_vice_presidente_da_industria}}
+            </div>
+            <hr>
+            <div *ngIf = sobre.diretoria_vice_presidente_do_comercio>
+              Vice Presidente do Comércio: {{sobre.diretoria_vice_presidente_do_comercio}}
+            </div>
+            <hr>
+            <div *ngIf = sobre.diretoria_diretor_secretario>
+              Diretor Secretário: {{sobre.diretoria_diretor_secretario}}
+            </div>
+            <hr>
+            <div *ngIf = sobre.diretoria_vice_diretor_secretario>
+              Vice Diretor Secretário: {{sobre.diretoria_vice_diretor_secretario}}
+            </div>
+            <hr>
+            <div *ngIf = sobre.diretoria_diretor_financeiro>
+              Diretor Financeiro: {{sobre.diretoria_diretor_financeiro}}
+            </div>
+            <hr>
+            <div *ngIf = sobre.diretoria_diretor_social>
+              Vice Diretor Financeiro: {{sobre.diretoria_diretor_social}}
+            </div>
+            <hr>
+            <div *ngIf = sobre.diretoria_diretor_social>
+              Diretor Social: {{sobre.diretoria_diretor_social}}
+            </div>
+            <hr>
+            <div *ngIf = sobre.diretoria_vice-diretor_social>
+              Vice-Diretor Social: {{sobre.diretoria_vice-diretor_social}}
+            </div>
+
+              <div class="titulo">Conselho Fiscal</div>
+
+            <div *ngIf = sobre.conselho_fiscal_01>
+              {{sobre.conselho_fiscal_01}}
+            </div>
+            <hr>
+            <div *ngIf = sobre.conselho_fiscal_02>
+              {{sobre.conselho_fiscal_02}}
+            </div>
+            <hr>
+            <div *ngIf = sobre.conselho_fiscal_03>
+              {{sobre.conselho_fiscal_03}}
+            </div>
+
+              <div class="titulo">Suplentes</div>
+
+            <div *ngIf = sobre.suplente_01>
+              {{sobre.suplente_01}}
+            </div>
+            <hr>
+            <div *ngIf = sobre.suplente_02>
+              {{sobre.suplente_02}}
+            </div>
+            <hr>
+            <div *ngIf = sobre.suplente_03>
+              {{sobre.suplente_03}}
+            </div>
+
           </div>
         </div>  
       </ion-slide>

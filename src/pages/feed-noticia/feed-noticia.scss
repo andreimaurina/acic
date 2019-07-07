@@ -1,8 +1,11 @@
 page-feed-noticia {
     img {
-        width: 100%;
+        width: 90%;
         height: auto;
         padding-top: 10px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
       }
     
     p{  
@@ -14,16 +17,16 @@ page-feed-noticia {
 
     .titulo{
         white-space: normal;
-        text-align: center;
+        text-align: left;
         font-weight: bold;
         font-size: 20px;
     }
 
     .dataPub{
-        white-space: normal;
         text-align: left;
         font-size: 10px; 
-        padding-top: 10px;
+        padding-top: 15px;
+        float: left;
     }
 
     .direita{
