@@ -33,6 +33,7 @@ export class ResetPasswordPage {
       this.authservice.resetPassword(this.email).then((res: any) => {
         if (!res.code){
           this.navCtrl.pop();
+          this.email=null;
         }else
           alert(res);
       })
