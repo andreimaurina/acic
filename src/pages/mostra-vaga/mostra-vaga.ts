@@ -35,7 +35,18 @@ export class MostraVagaPage {
   }
 
   candidatarSe(vagas/*message, subject, to*/){
-    this.socialSharing.shareViaEmail (vagas.descricao/*corpo do e-mail*/,vagas.profissao/*assunto*/,vagas.email/*e-mail destinatário*/);
+    this.socialSharing.shareViaEmail (
+      ('Olá, ' + '<br> <br>' +
+      
+      'Estou interessado na vaga: ' + '<br> <br>' + 
+      
+      'Vaga: ' + "'" + vagas.nome + "'" + '<br>' +  
+      'Profissão: ' + "'" + vagas.profissao + "'" + '<br>' +
+      '_____________________________'
+      )/*corpo do e-mail*/,
+      
+      ('Interesse na Vaga: ' + vagas.nome/*assunto*/),
+      vagas.email/*e-mail destinatário*/);
   }
   
 }

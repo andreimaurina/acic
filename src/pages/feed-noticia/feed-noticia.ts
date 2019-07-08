@@ -24,15 +24,23 @@ export class FeedNoticiaPage {
     public loadingController:LoadingController,
     public socialSharing: SocialSharing
     ) {
+      //alert('testaConexao');
+      let disconnectSubscription = this.network.onDisconnect().subscribe(() => {
+        console.log('Testeeeeeeeeeeeeee de novoooooo');
+        alert('Sem conexão à internet');
+      });
+      disconnectSubscription.unsubscribe();
+  }
+
+  verificaConexaoInternet() {
+    
   }
 
   ionViewDidEnter(){
-    this.network.onDisconnect().subscribe(data  => {
-     console.log(data);
-    }, error  =>  console.log(error));
+    
    }
 
-  ionViewDidLoad(){ 
+  ionViewDidLoad(){
     this.carregando();
     this.provedor.listar()
     .then(
