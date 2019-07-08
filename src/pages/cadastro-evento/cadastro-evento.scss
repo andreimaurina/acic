@@ -11,4 +11,21 @@ page-cadastro-evento {
         text-align: center;
         padding-top: 10px;
     }
+
+    ion-textarea {
+        display: table;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        text-indent: 20px;
+        width: 100%;
+        height: auto;
+        min-height: 75px;
+        max-height: 250px;
+    }
+    
+    textarea {
+        height: 250px;
+    }
 }
