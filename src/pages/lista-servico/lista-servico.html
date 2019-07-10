@@ -1,16 +1,16 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Lista de Serviços</ion-title>
+    <ion-title>Lista de Soluções</ion-title> <!-- Trocado "Serviços" para "Soluções" -->
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-searchbar placeholder="Pesquisar..."  (ionInput)="filtrarItens($event)" showCancelButton clearInput></ion-searchbar>
   <ion-list>
-    <ion-card *ngFor="let servico of servicos"> 
+    <ion-card *ngFor="let servico of servicos">
       <ion-item id="item">
-        <div id="divDados"(click)="mostraDados(servico.key)"> 
-          <ion-icon name="build" color="primary"></ion-icon><span class="negrito"> Serviço: </span>{{servico.nome}}<br>
+        <div id="divDados"(click)="mostraDados(servico.key)">
+          <ion-icon name="build" color="primary"></ion-icon><span class="negrito"> Solução: </span>{{servico.nome}}<br> <!-- Trocado "Serviços" para "Soluções" -->
         </div>
       </ion-item>
       <div *ngIf="admin">
