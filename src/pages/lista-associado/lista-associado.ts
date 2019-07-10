@@ -98,15 +98,15 @@ export class ListaAssociadoPage {
     
     alert.addInput({
       type: 'radio',
-      label: 'Pessoa Física',
-      value: 'PF',
+      label: 'Pessoa Jurídica',
+      value: 'PJ',
       checked: true
     });
-    
+
     alert.addInput({
       type: 'radio',
-      label: 'Pessoa Jurídica',
-      value: 'PJ'
+      label: 'Pessoa Física',
+      value: 'PF'
     });
     
     alert.addButton('Cancelar');

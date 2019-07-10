@@ -18,7 +18,7 @@
     <div class="linha"><ion-icon name="person" color="primary"></ion-icon><span class="subtitulo"> Sexo</span></div>
     <div class="dados">{{associado.sexo}}</div>
 
-    <div class="subtituloMeio">CONTATOS</div>
+    <div class="subtituloMeio">CONTATO</div>
 
     <div class="linha"><ion-icon name="call" color="primary"></ion-icon><span class="subtitulo"> Telefone</span></div>
     <div class="dados">{{associado.telefone}}
@@ -26,7 +26,7 @@
 
     <div *ngIf="admin">
       <div *ngIf = associado.email>
-        <div class="linha"><ion-icon name="mail-open" color="primary"></ion-icon><span class="subtitulo"> Email</span></div>
+        <div class="linha"><ion-icon name="mail-open" color="primary"></ion-icon><span class="subtitulo"> E-mail</span></div>
         <div class="dados">{{associado.email}}</div>
       </div>
     </div>

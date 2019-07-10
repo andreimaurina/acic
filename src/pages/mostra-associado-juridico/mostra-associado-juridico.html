@@ -12,20 +12,20 @@
     <div class="linha"><ion-icon name="pricetag" color="primary"></ion-icon><span class="subtitulo"> CNPJ</span></div>
     <div class="dados">{{associado.cnpj}}</div>
 
-    <div class="linha"><ion-icon name="briefcase" color="primary"></ion-icon><span class="subtitulo"> Nome Fantasia</span></div>
+    <div class="linha"><ion-icon name="briefcase" color="primary"></ion-icon><span class="subtitulo"> Nome Comercial</span></div> <!-- Trocado "Nome Fantasia" para "Nome Comercial" -->
     <div class="dados">{{associado.nomeFantasia}}</div>
 
-    <div class="linha"><ion-icon name="filing" color="primary"></ion-icon><span class="subtitulo"> Razão Social</span></div>
+    <div class="linha"><ion-icon name="filing" color="primary"></ion-icon><span class="subtitulo"> Nome Empresarial</span></div> <!-- Trocado "Razão Social" para "Nome Empresarial" -->
     <div class="dados">{{associado.razaoSocial}}</div>
 
-    <div class="subtituloMeio">CONTATOS</div>
+    <div class="subtituloMeio">CONTATO</div>
 
     <div class="linha"><ion-icon name="call" color="primary"></ion-icon><span class="subtitulo"> Telefone</span></div>
     <div class="dados">{{associado.telefone}}</div>
 
     <div *ngIf="admin">
       <div *ngIf = associado.email>
-        <div class="linha"><ion-icon name="mail-open" color="primary"></ion-icon><span class="subtitulo"> Email</span></div>
+        <div class="linha"><ion-icon name="mail-open" color="primary"></ion-icon><span class="subtitulo"> E-mail</span></div>
         <div class="dados">{{associado.email}}</div>
       </div>
     </div>
@@ -53,4 +53,4 @@
     <div class="dados">{{associado.numEndereco}}</div>
 
   </div>
-</ion-content>                                  
+</ion-content>

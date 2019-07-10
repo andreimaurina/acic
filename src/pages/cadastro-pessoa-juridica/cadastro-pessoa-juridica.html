@@ -15,13 +15,15 @@
       <ion-input name="cnpj" [(ngModel)]="associado.cnpj" [brmasker]="{mask:'00.000.000/0000-00', len:18,type:'num'}" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label color="primary" floating>* Nome Fantasia</ion-label>
+      <ion-label color="primary" floating>* Nome Comercial</ion-label> <!-- Trocado "Nome Fantasia" para "Nome Comercial" -->
       <ion-input name="nomeFantasia" [(ngModel)]="associado.nomeFantasia" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label color="primary" floating>* Razão Social</ion-label>
+      <ion-label color="primary" floating>* Nome Empresarial</ion-label> <!-- Trocado "Razão Social" para "Nome Empresarial" -->
       <ion-input name="razaoSocial" [(ngModel)]="associado.razaoSocial" required></ion-input>
     </ion-item>
+
+    <br>
 
     <div class="separador">CONTATO</div> 
 
@@ -30,7 +32,7 @@
       <ion-input name="telefone" [(ngModel)]="associado.telefone" [brmasker]="{phone: true}" required></ion-input>
     </ion-item> 
     <ion-item>
-      <ion-label color="primary" floating>Email</ion-label>
+      <ion-label color="primary" floating>E-mail</ion-label>
       <ion-input name="email" [(ngModel)]="associado.email"></ion-input>
     </ion-item>
     <ion-item>
@@ -38,6 +40,8 @@
       <ion-input name="site" [(ngModel)]="associado.site"></ion-input>
     </ion-item>
     
+    <br>
+
     <div class="separador">ENDEREÇO</div> 
 
     <ion-item>
@@ -65,4 +69,3 @@
     <button ion-button float-right color="danger" (click)="navCtrl.pop()">Cancelar</button>
   </form>
 </ion-content>
-

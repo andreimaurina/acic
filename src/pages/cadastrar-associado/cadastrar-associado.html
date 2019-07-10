@@ -28,20 +28,22 @@
     <ion-item>
       <ion-label color="primary" floating>* Sexo</ion-label>
       <ion-select name="sexo" [(ngModel)]="associado.sexo" required>
-        <ion-option value="f">Feminino</ion-option>
         <ion-option value="m">Masculino</ion-option>
+        <ion-option value="f">Feminino</ion-option>
         <ion-option value="i">Indefinido</ion-option>
       </ion-select>
     </ion-item>
 
-    <div class="separador">CONTATOS</div> 
+    <br>
+
+    <div class="separador">CONTATO</div> 
     
     <ion-item>
       <ion-label color="primary" floating>* Telefone</ion-label>
       <ion-input name="telefone" [(ngModel)]="associado.telefone" [brmasker]="{phone: true}" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label color="primary" floating>Email</ion-label>
+      <ion-label color="primary" floating>E-mail</ion-label>
       <ion-input name="email" [(ngModel)]="associado.email"></ion-input>
     </ion-item>
     <ion-item>
@@ -59,8 +61,10 @@
     <ion-item>
       <ion-label color="primary" floating>Linkedin</ion-label>
       <ion-input name="linkedin" [(ngModel)]="associado.linkedin"></ion-input>
-    </ion-item> 
-    
+    </ion-item>
+
+    <br>
+
     <div class="separador">ENDEREÇO</div> 
 
     <ion-item>
