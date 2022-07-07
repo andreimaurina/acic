@@ -39,7 +39,7 @@
     "ionic-angular": "3.9.3",
     "ionic2-super-tabs": "^5.2.0",
     "ionicons": "3.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "ng2-currency-mask": "^5.3.1",
     "ngx-moment": "^3.4.0",
     "rxjs": "5.5.11",
